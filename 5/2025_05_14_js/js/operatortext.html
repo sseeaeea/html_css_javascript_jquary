@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+    <!-- 
+    적정체중을 구하는 공식
+
+    적정체중 = {본인신장 - 100} * 0.9
+
+    철수의 키 180cm
+    철수의 몸무게 74kg 
+    철수의 적정체중
+    적정체중 = (180-100)*0.9 = 72kg
+
+    사용자에게 질의 응답을받을 수 있는 prompt창
+
+    사람마다 키와 몸무게가 다르기 때문에 위에 있는 계산방식은
+    이때 사용자로부터 특정한 응답을 받기 위해서는
+    prompt창을 이용할 수 있다.
+    prompt창은 "prompt메서드"라도도 부르며()안에 질문과
+    기본 응답을 ,로 구분하여 입력할 수 있다.
+    이때 기본응답은 생락이 가능하다
+    prompt창에 사용자가 입력한 모든 값은 문자열로 반환되며
+    prompt창이 위치했던 해당 변수에 그 값이 다시 담기게 된다.
+
+    [기본형]
+    prompt("질문", "기본응답")
+    -->
+</body>
+<script>
+    function appropriate_weight(){
+        let name = prompt("당신의 이름은?");
+        let height = Number(prompt("당신의 키는?"));
+        let weight = Number(prompt("당신의 몸무게는?"));
+        let normal;
+
+        normal = (height - 100)*0.9;
+        document.write("안녕하세요  " + name + "님! <br>");
+        document.write("당신의 키는 " + height + "이며, 당신의 적정 체중은 " + normal + "KG 입니다.<br>");
+        document.write("당신의 현재 몸무게는" + weight +"이며 <br>");
+        if(weight - 5 >= normal){
+            document.write(name + "님은 현재 과체중입니다.<br>")
+        }
+        else if(weight + 5 <= normal){
+            document.write(name + "님은 현재 저체중입니다.<br>")
+        }
+        else{
+            document.write(name + "님은 현재 정상체중입니다.<br>")
+        } 
+    }
+
+    appropriate_weight();
+</script>
+</html>

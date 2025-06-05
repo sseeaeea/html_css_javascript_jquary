@@ -1,0 +1,98 @@
+홈페이지 마크업 해보기
+
+[공통사항]
+1. header, footer는 100%로 하고, 컨텐츠 영역은 1600px.
+2. 웹 폰트 연결(Roboto)하기
+3. section과 section사이 여백은 250px
+4. gutter는 40px
+5. 각 섹션의 제목은 Roboto폰트 47px로 하고 bold로 출력하기.
+6. 내용은 Roboto폰트 20px로 하고 Light로 출력.
+7. 메인컬러는 #3f3d56(네이비색) 포인트컬러는 #f50057(핫핑크색)
+    버튼 컬러 #19163c(진네이비) 로 출력.
+
+[요구사항]
+1. 제목과 내용은 메인비주얼을 제외하고 모두 #3f3d56(네이비색)으로
+    출력해주세요. 
+2. 메인비주얼의 높이는 980px로 하고 넘어가는 부분은 가려주세요.
+3. header의 높이는 100px로 하고 배경과 겹쳐 주세요.
+4. transition으로 움직이는 효과를 최소 2개이상 구현해주세요.(6번 포함)
+5. 버튼색은 #19163c로 출력하고 마우스를 올리면 #f50057(핫핑크색)으로 바뀌게 해주세요.
+6. 두번째 섹션 our services에도 css를 이용해 움직임 효과를 구현해주세요.
+7. 마지막 섹션 Please leave your name, email address... 부분은 글자 크기를 30px로 구현해주세요.
+8. 메뉴의 넓이는 630px로 잡아주세요. 
+
+
+
+[텍스트]
+We are big explorers.
+
+We are always looking for your needs.
+What are you waiting for?
+Come With Us!!!
+
+WHAT WE DO?
+
+We find what we like 
+through your search. 
+And it provides better
+information.
+
+How do you find it?
+
+Our service.
+
+Let me introduce our main services.
+
+Data analysis
+
+I analyze the data 
+on what you often look for.
+Of course, I only search for
+what you allow.
+
+Information filtering
+
+We select and store
+only safe information from
+the information we found.
+
+Data exposure
+
+When you search for 
+similar words, It shows us useful 
+information we found.
+
+Sharing information
+
+If you want to share
+this information with others, 
+you can share it 
+using a simple button.
+
+This perfect app is free!
+
+The only app that will give you a new experience.
+Download it right now.
+
+App store
+Play store
+
+Is there a problem?
+Please leave your name, email address, 
+and problem on this form.
+Personal information is strictly secured.
+
+
+* Questions
+Please fill out your questions in detail.
+The more you fill in, the more accurate you will get.
+
+
+
+
+
+
+
+
+
+

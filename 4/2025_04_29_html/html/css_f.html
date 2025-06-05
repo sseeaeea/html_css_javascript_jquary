@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css함수</title>
+    <style>
+        .con{
+            width: 100%;
+            border: 2px solid #888;
+        }
+
+        .con > div{
+            margin-bottom: 10px;
+        }
+
+        .box{
+            width: calc(750px / 5);
+            background-color: aquamarine;
+        }
+        .box:first-child{
+            width: calc(100% - 80px);
+        }
+
+        .box:nth-child(2){
+            /* 넓이를 적용하는데, 100%와 700px중 작은값을 사용함 */
+            width: min(100%, 700px);
+        }
+
+        .box:nth-child(3){
+            /* 1em = 16px */
+            width: max(13vw, 12em);
+        }
+
+        .box:nth-child(4){
+            /* 글자 크기를 제한한다  16px보다 작아질 수 없고 32px보다 커질 수 없다.
+            만약 범위안에 들어있다면 최적값을 사용한다*/
+            font-size: clamp(16px, 2vw, 32px);
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    css함수
+    
+    css가 처음 등장했을때는 단순한 스타일링 기능만 제공했다.
+    예를들어 색상이나 글꼴, 줄 간격 등 사이트의 겉 모습을 제어하는 속성만 제공했다.
+    그런데 웹페이지와 어플리케이션 디자인이 점점 복잡해지면서 스타일을 좀 더 세밀하게
+    제어할 방법이 필요해졌다. 그렇게 등장한것이 바로 css함수이다.
+    컴퓨터 프로그래밍에서 함수란 특정 기능을 의미한다.
+    함수는 기능을 뜻하는 이름뒤에 ()를 붙여 표현한다.
+    예를들어 rgb(red,green,blue)와 같은 속성값들이 이에 해당한다.
+    함수는 함수의 이름에따라 기능이 결정되며, ()안에는 그에 맞는 값만 넣을 수 있다.
+    
+    함수는 특정 값을 넣을때마다 다른 결과값을 보여주는 기능이다.
+
+    [기본형]
+    속성명 : 함수명(값);
+    background : url();
+
+    계산식으로 값을 결정하는 calc()함수
+
+    calc()함수는 계산을 뜻하는 calculation의 줄임말로, 이름 그대로
+    계산식을 사용해서 속성값을 사용하게 해준다.
+    calc()함수의 괄호 안에는 크기값 또는 각도, 시간, 백분율, 숫자 등 다양한
+    단위를 사용한 계산식이 들어간다.
+    +,-,*,/를 가장 많이 사용한다.
+
+    최소값, 최댓값을 적용하는 min(), max()함수
+
+    화면 넓이에 따라 속성값을 다르게 적용할 때 최솟값과 최댓값을 고려할 수 있다.
+    min()함수는 괄호안에 나열된 값 중 가장 작은 값을 반환하고
+    max()함수는 괄호안에 나열된 값 중 가장 큰 값을 반환한다.
+
+    [기본형]
+    min(갑1, 갑2, 갑3...)
+    max(갑1, 갑2, 갑3...)
+
+    값의 범위를 제한하는 clamp()함수
+
+    특정 값의 범위를 고정하거나 제한하는 역할을 한다.
+    clamp함수는 최솟값 최적값 최댓값 이렇게 3개의 값을 쓴다.
+    이렇게 값을 3개로 지정하면 화면 크기에 따라 값을 바꿀 수 있다.
+    최솟값보다 작아질 수 없고 최댓값보다 커질 수 없다.
+
+    [기본형]
+    clamp(최솟값, 최적값, 최댓값)
+
+
+    -->
+
+    <div class="con">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+    </div>
+</body>
+</html>

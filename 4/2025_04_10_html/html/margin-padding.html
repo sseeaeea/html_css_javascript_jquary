@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin, padding</title>
+    <link rel="stylesheet" href="../css/margin-padding.css"/>
+</head>
+<body>
+    <!-- 
+    박스의 여백을 지정하는 margin, padding속성
+    margin속성은 컨텐츠 사이의 간격을 지정하는 바깥쪽여백을 말하며
+    padding속성은 컨텐츠를 여유롭게 보여줄 수 있도록 지정하는
+    안쪽 여백을 말한다.
+    padding은 width와 height의 바깥쪽에 생기며, 컨텐츠영역을 침범할 수 없다.
+    margin은 css박스모델의 가장 바깥쪽에 위치하며, 컨텐츠 사이를 떨어트려
+    여유로운 레이아웃을 만들때 사용한다.
+
+    [기본형]
+    1. 값을 1개만 선언할경우 박스의 사방에 동일한 여백이 지정된다.
+
+    margin : 숫자px(%, vw, vh ...);
+    padding : 숫자px(%, vw, vh ...);
+
+    2. 값을 두개로 나눠 선언할경우 첫번째 자리는 상/하의 자리
+    두번째 자리는 좌/우의 자리
+    margin : 숫자px 숫자px;
+    padding : 숫자px 숫자px;
+    
+    3. 값을 3개로 나눠 선언할경우 첫번째 자리는 상/하의자리
+    두번째 자리는 좌/우의 자리이고 세번째 자리로 bottom부분을 다시 선언한다.
+    (%, vw, vh와같은 단위 사용가능)
+
+    margin : 숫자px 숫자px 숫자px;
+    padding : 숫자px 숫자px 숫자px;
+
+    4. 값을 4개로 나눠쓸경우 top을 기준으로 시계방향으로 적용되며
+    각각 다른 여백을 지정할 수 있다.
+    margin : 숫자px 숫자px 숫자px 숫자px;
+    padding : 숫자px 숫자px 숫자px 숫자px;
+    
+    5. 박스의 일부분에만 여백을 지정하고자 하는 경우
+    margin-top : 숫자px 또는 다른 단위;
+    margin-left : 숫자px 또는 다른 단위;
+    margin-bottom : 숫자px 또는 다른 단위;
+    margin-right : 숫자px 또는 다른 단위;
+
+    padding-top : 숫자px 또는 다른 단위;
+    padding-left : 숫자px 또는 다른 단위;
+    padding-bottom : 숫자px 또는 다른 단위;
+    padding-right : 숫자px 또는 다른 단위;
+    -->
+    <div class="box1">
+        <h2>title_1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum modi tempora</p>
+    </div>
+</body>
+</html>

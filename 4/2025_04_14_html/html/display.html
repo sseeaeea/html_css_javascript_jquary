@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표현속성</title>
+    <link rel="stylesheet" href="../css/display.css">
+</head>
+<body>
+    <!-- 
+    display : 표현속성
+
+    웹문서에서 사용되는 태그는 inline, block, inline-block 속성으로 나눠진다.
+    해당 태그의 고유한 속성을 바꾸고싶을때 사용하는 속성으로 
+    굉장히 많이 사용되는 속성중 하나이다.
+
+    [속성값]
+    1. none : 화면에서 요소와 요소가 차지하고 있던 공간까지 모두 숨긴다.
+    2. block : 숨겨져 있던 요소를 다시 나타내거나 inline또는 inline-block속성을
+    가지고있는 태그를 block속성으로 바꾼다.
+    3. inline : block 또는 inline-block속성을 가진 태그를 inline속성으로 바꾼다.
+    4. inline-block : inline 또는 block속성을 가진 태그를 inline-block속성으로 바꿀때 사용한다.
+    -->
+
+    <!-- inline => block -->
+    <span>inline</span>
+    <span>inline</span>
+    <span>inline</span>
+
+    <!-- block => inline -->
+    <div>block</div>
+    <div>block</div>
+    <div>block</div>
+
+    <!-- inline => inline-block -->
+     <b>inline-block</b>
+     <b>inline-block</b>
+     <b>inline-block</b>
+
+     <!-- none -->
+     <div class="box1" id="box">box1</div>
+     <div class="box2" id="box">box2</div>
+     <div class="box3" id="box">box3</div>
+     <!-- 
+     화면에서 요소를 숨기는 방법
+
+     레이아웃 작업을 할 때 요소를화면에서 숨기고 싶을때가 있다. 이때 두가지 방법으로 요소를 숨길 수 있다.
+     1. 요소가 차지하고있던 공간까지 모두 숨기는 방법
+     2. 요소의 자리는 남겨두고 모양만 숨기고자 할때.
+
+     1번방법을 구현하고 싶다면 display : none를 사용하고
+     2번방법을 구현하고 싶다면 visibility : hidden을 사용한다.
+
+     숨겨진 요소를 다시 나타내고자 한다면 선언한 속성에다라 반대 속성값으로 나타낼 수 있다.
+
+     visibility: hidden으로 숨긴 요소는 visibility: visible로 나타내고
+     display: none으로 숨긴 요소는 display: block으로 나타낸다.
+     -->
+     
+</body>
+</html>

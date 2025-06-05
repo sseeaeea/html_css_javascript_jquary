@@ -1,0 +1,115 @@
+@charset "utf-8";
+@import url(../css/reset.css);
+
+.container{
+    width:  1000px;
+    height: auto;
+    margin: 0 auto;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    background-color: aquamarine;
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+}
+/* 로고 */
+header h1{
+    font-size: 28px;
+    font-weight: bold;
+    
+}
+
+h1 > a{
+    color: black;
+}
+/* 메뉴 */
+#gnb{
+    width: fit-content;
+    height: fit-content;
+    background-color: blueviolet;
+}
+
+#gnb > ul{
+    display: flex;
+    gap: 20px;
+}
+
+main{
+    width: 100%;
+    height: fit-content;
+    margin: 10px 0;
+}
+
+main > section{
+    width: 700px;
+    float: left;
+    background-color: yellow;
+}
+
+main > section > article{
+    width: 100%;
+    border: 2px solid chocolate;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+article > p{
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+article > h2{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+main > aside{
+    width: 280px;
+    float: right;
+    background-color: bisque;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid chartreuse;
+}
+
+aside > h2{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+aside > p{
+    margin-top: 10px;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+#adver_link > ul{
+    list-style: circle inside;
+    line-height: 30px;
+    color: darkgoldenrod;
+}
+
+.banner{
+    height: 100%;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    background-color: rgb(134, 17, 17);
+    text-align: center;
+    font-size: 18px;
+    color: dodgerblue;
+}
+
+footer{
+    width: 100%;
+    height: 50px;
+    clear: both;
+    background-color: darkgoldenrod;
+    text-align: center;
+    line-height: 50px;
+}

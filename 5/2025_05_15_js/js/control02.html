@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문-조건문</title>
+</head>
+<body>
+    <!-- 
+    else문(그렇지 않으면)
+
+    if문의 조건식이 만족하지 않았을 경우 코드를 실행시킨다.
+
+    [기본형]
+    if(조건식){
+       조건식이 만족하면 실행할 코드
+    }
+    else{
+       if문의 조건식이 만족하지 않았을때 실행할 코드
+    }
+
+    confirm()메서드
+
+    confirm()메서드는 사용자에게 확답을 받기 위해 사용하는 창으로
+    컨펌창 또는 확인취소창 이라고 부른다.
+
+    [기본형]
+    confirm("사용자에게 보내는 메시지");
+
+    else if문
+
+    else if문은 두가지 이상의 조건식과 정해놓은 조건식을 만족하지 않았을때
+    실행할 코드로 이루어져있다. else if문은 단독으로 사용할 수 없고 if문과
+    함께 쓰여야 한다.
+
+    else if문은 가장 위에 있는 조건식1부터 마지막 조건식까지 차례로 검사하면서
+    만족(true)하는 값이 나오면 그에 해당하는 코드를 실행 시키고 종료한다.
+    조건식 중 만족하는 갓ㅂ이 하나도 없으면 마지막 else문을 실행시키고 종료한다.
+
+    [기본형]
+
+    if(조건식1){
+       조건식1이 만족하면 실행할 코드
+    }
+    else if(조건식2){
+       조건식2이 만족하면 실행할 코드
+    }
+    else if(조건식3){
+       조건식3이 만족하면 실행할 코드
+    }
+    else if(조건식4){
+       조건식4이 만족하면 실행할 코드
+    }
+    -->
+</body>
+<script>
+    //사용자에게 좋아하는 숫자를 묻고,
+    //짝수면 "당신이 좋아하는 숫자는 짝수네요"
+    //홀수면 "당신이 좋아하는 숫자는 홀수네요"출력하기
+
+    function even(){
+        let number = Number(prompt("당신이 좋아하는 숫자는 무엇입니까?"));
+
+        if (number % 2 === 0){
+            document.write("당신이 좋아하는 숫자는 짝수네요<br>");
+        }
+        else{
+            document.write("당신이 좋아하는 숫자는 홀수네요<br>");
+        }
+    }
+    even();
+
+    //사용자에게 탈퇴 여부를 묻고, 확인을 누르면 "탈퇴 완료되었습니다."
+    //취소를 누르면 "탈퇴가 취소되었습니다."를 출력하기
+
+    function secession(){
+        let result = confirm("정말 탈퇴하시겠습니까?");
+
+        if(result == true){
+            document.write("탈퇴 완료되었습니다<br>");
+        }
+        else if(result == false){
+            document.write("탈퇴 취소되었습니다<br>");
+        }
+    }
+    secession()
+
+    function season(){
+        let what_season = Number(prompt("지금이 몇월입니까?"));
+
+        if(3 <= what_season && what_season <= 5){
+            document.write("벚꽃의 계절 봄이네요!<br>");
+        }
+        else if(6 <= what_season && what_season <= 8){
+            document.write("여행가기 좋은 계절 여름이네요!<br>");
+        }
+        else if(9 <= what_season && what_season <= 11){
+            document.write("독서의 계절 가을이네요!!<br>");
+        }
+        else if(what_season >= 13){
+            document.write(what_season + "월이라는 달은 없어요<br>")
+        }
+        else{
+            document.write("스키의 계절 겨울이네요!<br>")
+        }
+    }
+    season()
+</script>
+</html>

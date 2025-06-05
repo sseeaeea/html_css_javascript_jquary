@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 자식박스에 적용하는 속성</title>
+    <link rel="stylesheet" href="../css/flex1.css">
+</head>
+<body>
+    <!-- 
+    앞에서 배운 속성들은 flex가 적용된 부모박스에 적용하는 정렬 속성들이다.
+    아래 두 속성은 '자식박스'에 직접 적용하는 속성이다.
+    마찬가지로 반드시 부모박스에 flex가 적용되어야만 쓸 수 있다.
+
+    1. order : 순서 변경 속성
+
+    order속성을 통해 flex안쪽 자식 요소의 순서를 직접 변경할 수 있다.
+    order속성은 부모요소가 아닌 '자식요소'에 적응해야 한다.
+    order의 기본값은 0이며 양수나 음수로 순서를 바꿀 수 있다.
+    작은 수일수록 나열 순서가 앞으로 온다.
+
+    2. align-self : 개별 요소 세로 정렬속성
+
+    align-self는 개별 요소를 세로로 각각 정렬할때 사용하는 속성이다.
+    align-self는 align-items에서 사용하는 속성값을 똑같이 사용한다.
+    값을 지정한 해당 태그의 세로 위치를 바꿀 수 있다.
+
+    [속성값]
+    - flex-start : 해당 자식요소를 부모박스의 top위치에 정렬한다.
+    - center : 해당 자식요소를 부모박스의 middle위치에 정렬한다.
+    - flex-end : 해당 자식요소를 부모박스의 bottom위치에 정렬한다.
+    - baseline : 해당 자식요소를 부모박스의 글자시작위치에 정렬한다.
+    - stretch : 해당 자식요소를 부모박스의 크기에 맞게 늘린다.
+    -->
+
+    <div class="container">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+    </div>
+</body>
+</html>

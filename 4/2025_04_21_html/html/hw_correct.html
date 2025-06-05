@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        header{
+            /* 브라우저 100% */
+            width: 100%;
+            height: 110px;
+            background-color: #21283b;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header a{
+            color: white;
+        }
+
+        header:hover{
+            background-color: white;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        }
+        /* 메뉴 */
+        #gnb{
+            width: fit-content;
+            height: fit-content;
+            margin-left: 52px;
+        }
+
+        #gnb > ul{
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            gap: 60px;
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+
+        /* 로고 */
+        h1{
+            width: fit-content;
+            height: fit-content;
+        }
+
+        img{
+            filter: invert(1) brightness(1.2);
+        }
+        /* 로그인 + 아이콘 */
+        .icon_wrap{
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        :is(.account, .account > a){
+            display: flex;
+            align-items: center;
+        }
+        /* 회원가입 */
+        .account > a:first-child::after{
+            content: '|';
+            font-size: 14px;
+            /* 글자 사이에 양옆으로 동일한 마진을 줄 때 사용하는 속성 */
+            margin-inline: 20px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        /* 검색 + sns */
+        .icons{
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .icons img{
+            width: 32px;
+            height: 32px;
+        }
+
+        .all_menu{
+            width: 110px;
+            height: 110px;
+            background-color: #ff282a;
+        }
+
+        .all_menu img{
+            width: 56px;
+            height: 56px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- 메뉴 -->
+        <nav id="gnb">
+            <ul>
+                <li><a href="#">company</a></li>
+                <li><a href="#">contents</a></li>
+                <li><a href="#">store</a></li>
+                <li><a href="#">community</a></li>
+                <li><a href="#">도입</a></li>
+            </ul>
+        </nav>
+        <h1>
+            <a href="#"><img src="../image/logo.svg" alt="로고"></a>
+        </h1>
+        <!-- 로그인 + 아이콘 -->
+         <div class="icon_wrap">
+            <a href="#">
+                <img src="../image/account.svg" alt="회원가입">
+                <span>회원가입</span>
+            </a>
+            <a href="">
+                <img src="../image/lock.svg" alt="로그인">
+                <span>로그인</span>
+            </a>
+         </div>
+         <!-- 검색 + sns -->
+          <div class="icons">
+            <div>
+                <img src="../image/search.svg" alt="검색">
+            </div>
+            <a href="#">
+                <img src="../image/camera.svg" alt="sns">
+            </a>
+          </div>
+          <div class="all_menu">
+            <img src="../image/menu.svg" alt="전체메뉴">
+          </div>
+    </header>
+</body>
+</html>

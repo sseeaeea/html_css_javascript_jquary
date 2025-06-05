@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상태 선택자</title>
+    <link rel="stylesheet" href="../css/selector08.css">
+</head>
+<body>
+    <!-- 
+    상태 선택자
+
+    상태 선택자는 입력 양식 태그의 상태를 선택할 때 사용하는 선택자이다.
+    입력 양식 태그란 사용자가 입력할 수 있는 기능을가지고 있는 태그들을 말한다.
+
+    [기본형]
+    - input : checked
+    : 체크박스가 체크된 상태라면, 해당 체크박스를 선택한다.
+
+    - 선택자 : focus
+    : 포커스(=초점)상태의 태그를 선택한다. 포커스란 브라우저에서 tap키를 눌렀을때
+    활성화되는 태그를 말한다.
+
+    - 선택자 : enabled
+    : 사용가능한 상태의 태그를 선택한다.
+
+    - 선택자 : disabled
+    : 사용 불가능한 상태의 태그를 선택한다.
+    -->
+
+    <h2>체크박스</h2>
+    <p>
+        <input type="checkbox">
+        <span>항목1</span>
+    </p>
+    <h2>입력 할 수 있는 상태</h2>
+    <p>
+        <input type="text">
+    </p>
+    <h2>입력 할 수 없는 상태</h2>
+    <p>
+        <input type="text" disabled>
+    </p>
+</body>
+</html>

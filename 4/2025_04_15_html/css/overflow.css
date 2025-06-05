@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    width: 200px;
+    border: 2px solid black;
+    margin: 20px;
+    float: left;
+}
+
+.content1{
+    height: 200px;   
+}
+
+.content2{
+    height: 200px;
+    /* 기본값으로 컨텐츠가 흘러넘쳐도 보여준다. overflow속성을 안쓴것과 같다.*/
+    overflow: visible; 
+}
+
+.content3{
+    /* 높이가 없을경우 컨텐츠에 맞춰 부모박스가 늘어남 */
+    overflow: hidden;
+}
+
+.content4{
+    height: 200px;
+    overflow: hidden;
+}

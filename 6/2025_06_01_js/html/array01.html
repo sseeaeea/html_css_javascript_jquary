@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열의 고차원 함수</title>
+</head>
+<body>
+    <!-- 
+    배열의 고차원 함수
+
+    배열의 고차원 함수는 배열안을 첫번째 요소부터 순환하면서
+    반복문처럼 접근하여 원하는 요소만 걸러내거나, 모든 요소에
+    동일한 이벤트 등을 등록하고싶을때 사용하는 함수이다.
+    배열의 고차원 함수는 배열의 메서드이며, 인수로 함수를 받는다는
+    특징이 있다. 이렇게 인수로 전달되는 함수를 '콜백함수'라고 부르며
+    익명함수 형태로 사용한다.
+
+    1. forEach()
+
+    forEach()메서드는 배열을 순회하여 각 요소를 처리할 때 사용한다.
+    배열에 반복문을 적용한 것처럼 첫번째 인덱스 요소로부터 차례로 접근하여
+    특정 코드를 실행하도록 만든다.
+    forEach()메서드의 첫번째 매개변수에는 배열의 요소가 순차적으로
+    대입된다. 두번째 매개변수에는 인덱스번호가 담기며, 두번째 매개변수부터는
+    생략이 가능하다. 세번째 매개변수인 array자리에는 forEach()함수를 호출한
+    배열이 들어갈 수 있다. 이 매개변수를 이용해서 원본 배열에 접근할 수 있다.
+
+    [기본형]
+    배열.forEach(function(){코드;}); -> 익명함수 형태
+    배열.forEach((element, index, array) => { 코드; }); -> 화살표함수 형태
+
+    Tip. forEach는 기존 배열을 바꾸는 메서드이다. forEach메서드는
+    배열의 각 요소를 순회하며 해당 요소에 대해 어떤 동작을 수행시키고자 할때
+    유용한 메서드이다. 이 함수는 반환값이 없으므로 각 요소를 처리하거나
+    어떤 작업을 수행하는 용도로 주로 활용된다.
+
+    1. 배열 요소를 출력하기
+    2. 배열의 요소들을 합산하기
+    -->
+
+    <h3 class="title">제목1</h3>
+    <h3 class="title">제목2</h3>
+    <h3 class="title">제목3</h3>
+</body>
+<script>
+    const arr1 = ['가', '나', '다'];
+
+    arr1.forEach(function(element){
+        console.log(element);
+    });
+
+    const arr2 = document.getElementsByClassName("title");
+    //forEach는 배열에만 사용할 수 있다. 하지만 getElementBy~로 데려오는
+    //태그요소는 HTMLCollection이라는 유사배열안에 저장된다.
+    //그래서 forEach문을 올바르게 실행시키려면 Array.form을 붙여줘야한다.
+    //Array.form(배열)은 유사 배열을 배열로 바꾸겠다는 뜻이다.
+    Array.form(arr2).forEach((element) => console.log(element));
+
+    const arr3 = document.querySelectorAll(".title");
+    //nodeList에 저장된 요소들은 Array.form(배열)이 없어도 forEach메서드를 사용가능
+    arr3.forEach((ele,index) => {
+        console.log("요소 : " , ele + ", 인덱스번호 : " , index);
+        ele.style.color = "blue"
+    });
+</script>
+</html>

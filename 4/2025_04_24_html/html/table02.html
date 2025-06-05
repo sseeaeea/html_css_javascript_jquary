@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표의 칸 합치기</title>
+    <style>
+        table{
+            border: 3px solid tomato;
+            margin-bottom: 20px;
+        }
+        th,
+        td{
+            border: 2px solid royalblue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    colspan과 rowspan속성
+
+    표를 만든 후 표의 행이나 열을 합칠경우 colspan과 rowspan을 사용할 수 있다.
+    이 속성은 셀(칸)을 합치는 속성으로 칸을 만드는 th태그나 td태그에 적용할 수 있다.
+    colspan과 rowspan의 값은 숫자를 사용하며 해당 숫자만큼 칸을 차지한다.
+
+    [기본형]
+    1. 표의 가로 칸을 합칠경우
+    <td colspan="숫자"></td>
+    <th colspan="숫자"></th>
+
+    2. 표의 세로칸을 합칠경우
+    <td rowspan="숫자"></td>
+    <th rowspan="숫자"></th>
+    -->
+
+    <!-- 2행 2열 -->
+
+    <table>
+        <caption>colspan</caption>
+        <tr>
+            <td colspan="2">1행1열</td>
+        </tr>
+        <tr>
+            <td>2행1열</td>
+            <td>2행2열</td>
+        </tr>
+    </table>
+
+    <table>
+        <caption>rowspan</caption>
+        <tr>
+            <td rowspan="2">1행1열</td>
+            <td>1행2열</td>
+        </tr>
+        <tr>
+            <td>2행2열</td>
+        </tr>
+    </table>
+    <!-- 3행 3열 -->
+    <table>
+        <tr>
+            <td rowspan="3">1행1열</td>
+            <td>1행2열</td>
+            <td>1행3열</td>
+        </tr>
+        <tr>
+            <td colspan="2">2행2열</td>
+        </tr>
+        <tr>
+            <td>3행2열</td>
+            <td>3행3열</td>
+        </tr>
+    </table>
+    <!-- 시간표 -->
+
+    <table>
+        <caption>가을학기 수업시간표</caption>
+        <tr>
+            <td>시간</td>
+            <td>월</td>
+            <td>화</td>
+            <td>수</td>
+            <td>목</td>
+        </tr>
+        <tr>
+            <td>7:30</td>
+            <td colspan="4">아침식사</td>
+        </tr>
+        <tr>
+            <td>8:00</td>
+            <td rowspan="2">경영학: 강의<br>B관 256호</td>
+            <td rowspan="3">물리학: 강의<br>J관 309호</td>
+            <td rowspan="2">경영학: 강의<br>B관 256호</td>
+            <td rowspan="3">물리학: 강의<br>J관 309호</td>
+        </tr>
+        <tr>
+            <td>8:30</td>
+        </tr>
+        <tr>
+            <td>9:00</td>
+            <td rowspan="2">응용수학<br>H관 100호</td>
+            <td rowspan="2">응용수학<br>H관 100호</td>
+        </tr>
+        <tr>
+            <td>9:30</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>

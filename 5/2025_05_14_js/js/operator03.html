@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <!-- 
+    5. 비교연산자
+
+    두 데이터를 크다, 작다, 같다와 같이 비교할때 사용하는 연산자이다.
+    연산된 결과값은 'true' 또는 'false'로 반환된다.
+
+    [기본형]
+    - A > B : A는 B보다 크다.(초과)
+    - A < B : A는 B보다 작다.(미만)
+    - A <= B : A는 B보다 작거나 같다.(이하)
+    - A >= B : A는 B보다 크거나 같다.(이상)
+    - A == B : A는 B와 같다.
+
+    ==는 약한비교라고 한다. 숫자를 비교할 경우 자료형은 숫자형이든 문자형이든
+    상관하지 않고 표기된 숫자만 일치하면 true를 반환한다. "10"과 10은 
+    표기된 숫자가 같으므로 같은것으로 인식한다.
+
+    - A != B : A와 B는 다르다.
+
+    !=도 약한 비교이다. 숫자를 비교할 경우 자료형은 마찬가지로 숫자형이든
+    문자형이든 상관하지않고 표기된 숫자만 다르면 true를 반환한다.
+    예를들어 "10"과 10은 같은것으로 인식되어 false를 반환한다.
+
+    - A === B : A는 B와 같다.
+
+    ===는 엄격한 비교이다. 숫자를 비교할 경우 표기된 숫자와 자료형도
+    일치해야만 true를 반환한다. "10"과 10을 비교했을 경우 표기된 숫자는
+    같지만 자료형이 다르므로 false를 반환한다.
+
+    - A !== B : A는 B와 다르다.
+
+    !==는 엄격한 비교이다. 숫자를 비교할 경우 표기된 숫자 또는 자료형이
+    일치하지않으면 true를 반환한다. "10"과 10을 비교할경우 표기된 숫자는 같지만
+    자료형이 다르므로 true를 반환한다.
+    -->
+</body>
+<script>
+    function comparison(){
+        let a = 10;
+        let b = 20;
+        let c = "10";
+        let d = "20"
+        let result;
+
+        console.log(a === 10);
+        console.log(b === 10);
+        console.log(a !== 10);
+        console.log(b !== 10);
+        console.log(a == 10);
+        console.log(b == 10);
+        console.log(a != 10);
+        console.log(b != 10);
+        result = a > b;
+        document.write(result + "<br>");
+        result = a < b;
+        document.write(result + "<br>");
+        result = a <=b;
+        document.write(result + "<br>");
+        result = b == d;
+        document.write(result + "<br>");
+        result = a != b;
+        document.write(result + "<br>");
+        result = b === d;
+        document.write(result + "<br>");
+    }
+    comparison();
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>넓이 높이 속성</title>
+    <link rel="stylesheet" href="../css/width_height.css"/>
+</head>
+<body>
+    <!-- 
+    넓이(width), 높이(height)속성
+
+    박스 모델에서 컨텐츠 영역의 크기를 지정할때 width, height를
+    이용하여 넓이 높이를 지정한다.
+    css박스모델에서는 px말고도 적용할 수 있는 다양한 단위들이 있다.
+    
+    [단위]
+    px : 고정단위, 브라우저의 크기가 변하더라도 바뀌지 않는 크기를 말한다.
+    % : 백분율, 브라우저 또는 부모박스의 크기에 따라 유동적으로 바뀌는 가변단위를 말한다.
+    vw, vh : viewport width, viewport height의 약자로, 반응형에서 많이 사용되는 단위이다.
+    viewport는 '눈에보이는 브라우저의 크기'를 뜻한다.
+    즉, 브라우저가 전체화면이든 작게 줄여져있던, 눈에 보이는 크기에서 쓰여진 숫자만큼의 비율을 적용하여
+    보여주는 단위이다. 반응형시 많이 쓰인다.
+
+    vmin, vmax : 디바이스의 가로넓이와 세로 높이를 비교하여 더 큰쪽(vmax) 또는 더 작은쪽(vmin)의
+    지정된 수치만큼의 비율을 채우는 단위이다. 예를들어 width : 50vmin; 이라고 했을 때 pc환경에서는
+    디바이스의 세로가 가로보다 크기가 더 작으므로 브라우저의 세로 반을 나눠 50%를 채운다.
+    모바일 환경에서는 디바이스의 가로가 세로보다 작으므로 디바이스의 가로 50%를 나눠 채운다.
+
+    auto : 기본값으로 컨텐츠를 채우고 있는 기본 넓이 또는 높이를 말한다.
+    block속성의 경우 브라우저 또는 부모영역의 가로넓이를 꽉 채우며 높이는 컨텐츠가 들어있는 만큼만 차지한다.
+    inline속성의 경우 컨텐츠 글자 크기만큼의 넓이와 높이를 갖는다.
+
+    -->
+
+    <div>block</div>
+    <div class="box2">block</div>
+    <span>inline</span>
+</body>
+</html>

@@ -1,0 +1,32 @@
+@charset "uft-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    font-size: 24px;
+}
+
+.box1{
+    background-color: aquamarine;
+    float: left;
+}
+.box2{
+    background-color: rgb(107, 27, 99);
+    float: left;
+}
+.box3{
+    background-color: rgb(70, 181, 40);
+    clear: both;
+    float: left;
+}
+.box4{
+    background-color: blue;
+    float: left;
+}

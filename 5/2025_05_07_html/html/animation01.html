@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션속성</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            background: linear-gradient(
+                rgba(238, 174, 202, 1)0%,
+                rgba(148, 187, 233, 1)100%
+            );
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            text-align: center;
+            line-height: 200px;
+            color: aliceblue;
+            /* 애니메이션 속성 */
+            /* 애니메이션 이름 지정 */
+            animation-name: rint;
+            /* 애니메이션 진행 시간 */
+            animation-duration: 2s;
+            /* 일정한 속도로 움직임 */
+            animation-timing-function: linear;
+            /* move애니메이션 움직임 만들기 */
+            animation-fill-mode: forwards;
+            /* 애니메이션이 종료되었을때의 모습 */
+            /* 애니메이션이 종료되었을때 */
+            animation-iteration-count : infinite;
+            /*  */
+            animation-direction:alternate-reverse;
+            
+        }
+
+        @keyframes rint{
+            from{
+                    /* 시작할땐 100px지점에서 시작 */
+                  left : 100px;
+                  transform : translateX(0px) rotate(0deg);
+                }
+                50% {
+                    border-radius : 100%;
+                }
+                to{
+                    /* 끝날땐 400px지점에서 종료 */
+                    left : 400px;
+                    transform : translateX(400px) rotate(360deg);
+                }
+        }
+
+        #wrap:hover{
+                animation-play-state: paused;
+            }
+    </style>
+</head>
+<body>
+    <!-- 
+    
+    -->
+    <div id="wrap">
+        <h1>animation</h1>
+    </div>
+</body>
+</html>

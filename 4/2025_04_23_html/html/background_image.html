@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>박스만큼 배경이미지 채우기</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        margin: 20px;
+      }
+      #logo {
+        width: 111px;
+        height: 68px;
+        background: navajowhite url(./img/css_sprites.png) no-repeat;
+      }
+      #search {
+        width: 24px;
+        height: 24px;
+        background: #c3adff url(./img/css_sprites.png) no-repeat;
+        background-position: -111px 0px;
+      }
+      /* 아이콘 넓이 높이 24 */
+    </style>
+  </head>
+  <body>
+    <div id="logo"></div>
+    <div id="search"></div>
+    <div id="person"></div>
+    <div id="lock"></div>
+    <div id="menu"></div>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <!-- 
+    3. 대입(복합대입)연산자
+
+    대입연산자(=)는 연산된 데이터를 변수에 저장할때 사용한다.
+    복합대입연산자는 대입 연산자 앞에 산술 연산자가 붙은것으로 
+    대입연산자와 산술연산자가 복합적으로 적용된것을 말한다.
+
+    [기본형]
+    - a = b : b의값을 a에 대입한다.
+    - a += b : a는 a에서b를 더한값이다.
+    - a -= b : a는 a에서b를 뺀값이다.
+    - a *= b : a는 a와b를 곱한값이다.
+    - a /= b : a는 a에서b를 나눈값이다.
+    - a %= b : a는 a에서b를 나눈 나머지값이다.
+
+    4. 증감 연산자
+
+    증감연산자에는 변수에 들어있는 숫자를 1감소시키는 '감소연산자(--)'와
+    1증가시키는 '증가연산자(++)'가 있다.
+    증감연산자는 앞에서 배운 연산자들과 달리 피연산자가 한개만 필요하다.
+    -->
+</body>
+<script>
+    function assignment_operation(num1, num2){
+        // num2의값은 고정이고 num1의 값만 바뀐다.
+
+        document.write("num1 : " + num1 + "<br>");
+        document.write("num2 : " + num2 + "<br>");
+        num1 = num2;
+        document.write("num1 = num2 : " + num1 + "<br>");
+        num1 += num2;
+        document.write("num1 += num2 : " + num1 + "<br>");
+        num1 -= num2;
+        document.write("num1 -= num2 : " + num1 + "<br>");
+        num1 *= num2;
+        document.write("num1 *= num2 : " + num1 + "<br>");
+        num1 /= num2;
+        document.write("num1 /= num2 : " + num1 + "<br>");
+        num1 %= num2;
+        document.write("num1 %= num2 : " + num1 + "<br>");
+    }
+    assignment_operation(15, 4)
+
+    var table = "<table border='1'>";
+    table += '<tr>'
+    table += '<td>1</td> <td>2</td> <td>3</td>'; 
+    table += '</tr>';
+    table += '</table>';
+
+    document.write(table);
+
+    function number_six(){
+        var six = ""
+        for (var i = 1; i <= 100; i++){
+            if(i %  6 === 0)
+            six += i + "<br>";
+        }
+        document.write(six);
+    }
+
+    function number_six1(){
+        var six1 = ""
+        for (var i = 100; i >= 1; i--){
+            if(i %  6 === 0)
+            six1 += i + "<br>";
+        }
+        document.write(six1);
+    }
+
+    number_six();
+    number_six1();
+</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>버블링&캡쳐링2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      form {
+        background-color: seagreen;
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        color: aqua;
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      div {
+        width: 120px;
+        height: 120px;
+        background-color: sandybrown;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      p {
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h4>태그를 클릭하면 event.target과 this의 정보를 볼 수 있습니다.</h4>
+
+    <form id="form">
+      <div>
+        DIV
+        <p>P</p>
+      </div>
+    </form>
+  </body>
+  <script>
+    const formTag = document.getElementById("form");
+
+    formTag.onclick = function (event) {
+      event.target.style.backgroundColor = "tomato";
+      console.log(event.target);
+      setTimeout(() => {
+        alert("target : " + event.target.tagName + ", this : " + this.tagName);
+        //css 배경색을 원래대로 변경한다. 이때 빈 문자로 표시할 수 있다.
+        event.target.style.backgroundColor = "";
+      }, 0);
+    };
+  </script>
+</html>

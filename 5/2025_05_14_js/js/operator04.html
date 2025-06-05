@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자</title>
+</head>
+<body>
+    <!-- 
+    6. 논리 연산자
+
+    논리연산자에는 ||(or), &&(and), !(not)연산자가 있다.
+    논리연산자는 피연산자가 논리형 데이터인 true 또는 false
+    값을 반환하는 데이터이다.
+
+    ||(or)연산자는 피연산자중 값이 하나라도 true가 포함되어있으면
+    true로 결과값을 반환한다.
+    &&(and)연산자는 피연산자중 값이 하나라도 false가 있으면
+    false로 결과값을 반환한다.
+    !(not)연산자는 '논리부정연산자'로 피연산자의 값이 true면
+    false를 반환하고 값이false면 true를 반환한다.
+
+    연산자의 우선순위
+
+    일반적인 산수를 연산할때처럼 연산자에도 우선순위가 있다.
+    1번부터 순서대로 먼저 계산된다.
+    
+    1. ()
+    2. 단항연산자(--, ++, !)
+    3. 산술연산자(+, -, *, /, %)
+    4. 비교연산자(<, >, <=, >=, ==, !=, ===, !==)
+    5. 논리연산자(||, &&)
+    6. 대입(복합대입)연산자(=, +=, -=, *=, /=, %=)
+    -->
+</body>
+<script>
+    function logical_operator(){
+        let a = 10;
+        let b = 20;
+        let m = 30;
+        let n = 40;
+        let result;
+
+        result = a > b || b >=m || m > n;
+        document.write(result + "<br>");
+
+        result = a > b || b >=m || m <= n;
+        document.write(result + "<br>");
+
+        result = a <= b && b >= m && m <= n;
+        document.write(result + "<br>");
+
+        result = !(a > b);
+        document.write(result + "<br>");
+    }
+
+    logical_operator()
+</script>
+</html>

@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+div{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    background-color: aqua;
+    margin: 15px;
+}
+/* 모든 모서리에 동일한 둥글기 */
+.box1{
+    border-radius: 20px;
+}
+/* 모서리마다 각각 다른 둥글기 */
+.box2{
+    border-radius: 20px 30px 40px 50px;
+}
+/* 대각선 방향으로 동일한 둥글기 */
+.box3{
+    border-radius: 30px 50px;
+}
+/* 둥글기를 %로 적용하는경우 - 원(반드시 정사각형이어야함 */
+.box4{
+    border-radius: 50%;
+}
+/* 정사각형이 아닐때 border-radius를 주면 어떻게되는지 */
+.box5{
+    width: 400px;
+    border-radius: 50%;
+}
+/* 양쪽이 완전히 둥근 버튼형태 만들기 */
+.box6{
+    width: 300px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 40px;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form에서 사용하는 공통 속성들</title>
+</head>
+<body>
+    <!-- 
+    form에서 사용하는 공통 속성들
+
+    1. autcomplete : 자동완성. 값을 on으로 명시하면 브라우저는 사용자가 이전에
+    입력했던 값들을 기반으로, 사용자가 입력한 값과 비슷한 값을 드롭다운해준다.
+    기본값은 off로 되어있다.
+
+    2. enctype : form에 사용자가 입력한 데이터가 서버로 제출될 때 해당 데이터가 
+    인코딩 되는 방식을 명시한다.
+
+    - application/x-www-form-urlencoded : 기본값으로 모든 문자들을 서버로 보내기전에
+    인코딩됨을 명시한다.
+
+    - multipart/form-data : 모든 문자들을 인코딩하지 않음을 명시한다.
+    이 방식은 form요소가 파일이나 이미지를 서버로 전송할 때 주로 사용한다.
+
+    - text/plain : 공백문자는 '+'기호로 변환하지만 나머지 문자는 인코딩죄지 않음을 명시함.
+
+    3. novalidate : 폼 데이터를 서버로 제출할 때 해당 데이터의 유효성 검사를
+    하지 않음을 명시함. input태그에도 쓸 수 있다.
+
+    input태그에 사용하는 공통속성
+
+    1. readonly : 읽기전용 필드임을 명시한다. 사용자가 텍스트를 입력할 수 없다.
+    사용자가 텍스트를 입력할 수 없고 읽기만 가능한 필드를 지정할 때 사용한다.
+
+    2. placeholder : 사용자가 어떤 내용을 입력해야 할지 힌트를 표시할때 사용한다.
+    사용자가 입력을 시작하면 필드를 비워준다.
+
+    3. autofocus : 사용자의 편의를 위해 페이지를 불러오기하자마자 특정 부분에 텍스트 커서가 표시됨
+
+    4. autocomplete: 해당 폼 요소에 자동완성기능을 부여한다.
+
+    5. maxlength : 텍스트 필드에 최대로 입력할 수 있는 문자의 개수를 지정한다.
+
+    6. minlength : 텍스트 필드에 최소로 입력할 수 있는 문자의 개수를 지정한다.
+
+    7. required : 필수 입력 필드임을 지정한다. (빈칸이면 서버로 내용이 안넘어감)
+
+    8. value : 초기값을 지정한다. 실제로 필드에 나타나는 데이터로 placeholder와 다르게
+    입력필드를 포커싱하더라도 글자가 사라지지 않는다. 서버에 넘겨야 하는 값이
+    있을 때 주로 사용한다. 수량 표시 처럼 표시하는 용도로 사용한다.
+    체크박스나 라디오 버튼의 경우 사용자가 어떤 값을 선택했는지에 대한 내용을 서버에
+    전닿할때에도 사용한다.
+
+    9. size : select태그를 쓸 때 화면에 한 번에 표시할 목록의 갯수를 지정한다.
+    -->
+    <h2>form양식 만들기</h2>
+    <form action="#" method="post" autocapitalize="on" novalidate name="join" id="join">
+        <!-- 아이디 -->
+        <div>
+            <label for="user_id">아이디</label>
+            <input type="text" id="user_id" required autofocus>
+        </div>
+        <!-- 비밀번호 -->
+        <div>
+           <label for="user_pw">비밀번호</label>
+           <input type="password" id="user_pw" name="user_pw" required autocomplete="off" minlength="8" maxlength="16">
+        </div>
+        <!-- 핸드폰 번호 입력 -->
+        <div>
+          <label for="phone_number">전화번호</label>            
+          <input type="tel" name="phone_number" id="phone_number" placeholder="-은 제외하고 입력해주세요">
+        </div>
+        <!-- 이용약관 -->
+        <div>
+            <h5>이용약관</h5>
+            <label for="terms">
+                <textarea name="terms" id="terms" rows="3" cols="20" wrap="soft" readonly>제1조(1항) Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut reiciendis aut, magni vitae, aliquid nobis nihil obcaecati harum accusantium illo ducimus nam veniam culpa eveniet non a distinctio cum mollitia.</textarea>
+            </label>
+        </div>
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex가 적용된 박스에 마진 만들기</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 80%;
+        height: 700px;
+        margin: 100px auto;
+        background-color: lavenderblush;
+        /* flex와 하위 정렬속성은 모두 부모박스에 적용 */
+        display: flex;
+        gap: 40px;
+        /* flex-direction: column; */
+      }
+      .container div {
+        width: 100px;
+        height: 100px;
+        background-color: salmon;
+        text-align: center;
+        line-height: 100px;
+      }
+      /* div박스중 막내(ICON)박스의 왼쪽 방향으로 margin을 쭉 끝까지 밀어냄. */
+      .container div:last-child {
+        margin-left: auto;
+        /* margin-top: auto; */
+      }
+      /* div박스중 두번째(GNB)박스의 오른쪽 방향으로 margin을 쭉 끝까지 밀어냄. 
+        위의 코드와 결과가 같음.
+      */
+      .container div:nth-child(2) {
+        margin-right: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      flex가 적용된 박스에 마진 만들기
+      ========================================
+      flex로 자식 박스를 정렬할 때 사이 간격을 주게 되면 어떠한 방법이든 
+      '동일한'간격을 줄 수 밖에 없다. 이때 자식박스와 자식박스 사이의 특정 부분만
+      간격을 더 주고자 한다면 margin을 이용할 수 있다. 
+    -->
+
+    <div class="container">
+      <div>logo</div>
+      <div>GNB</div>
+      <div>ICON</div>
+    </div>
+  </body>
+</html>

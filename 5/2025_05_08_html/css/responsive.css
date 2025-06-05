@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* pc */
+@media screen and (min-width:1440px) {
+    body{
+        background-color: aquamarine;
+        color: blue;
+    }
+
+    h1{
+        color: azure;
+        font-size: 45px;
+    }
+
+    p{
+        font-size: 28px;
+        font-style: italic;
+    }
+}
+/* laptop */
+@media screen and (min-width:840px) and (max-width:1439px) {
+    body{
+        background-color: blueviolet;
+        color: crimson;
+    }
+
+    h1{
+        color: black;
+        font-size: 60px;
+        font-weight: normal;
+    }
+
+    p{
+        font-size: 50px;
+        font-weight: 700;
+    }
+}
+/* mobile */
+@media screen and (max-width:839px) {
+    body{
+        background-color: darkgoldenrod;
+        color: darkorchid;
+    }
+
+    h1{
+        color: coral;
+        font-size: 100px;
+        font-weight: bold;
+    }
+
+    p{
+        font-size: 10px;
+        color: gold;
+    }
+}

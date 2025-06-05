@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력양식태그</title>
+</head>
+<body>
+    <!-- 
+    입력양식태그
+
+    인터넷을 사용하다 보면 사용자의 의견제시나 중요한 정보를 전달받기 위해 
+    회원가입, 로그인, 검색등과 같은 다양한 정보를 입력할 수 있다.
+    이런 공간을form(폼)이라고 부른다.
+    form태그는 block속성을 갖는다.
+
+    <form>태그
+
+    사용자의 정보를 입력받을 수 있는 양식, 칸을 말한다.
+    예를들어 아이디, 비빌번호를 입력할 수 있는 로그인 창이나
+    회원가입을 할 수 있는 양식을 '폼'이라고 부른다.
+
+    [기본형]
+    <form 속성>
+        다양한 입력 양식들...
+    </form>
+
+    [속성]
+    - name : 폼의 이름을 지정한다. 한 문서 안에 여러 개의 form태그가 있을경우
+    폼들을 구분하기 위해 사용한다.
+    - action : 서버주소, 서버가 준비 되지 않았을 경우 #(임시경로)를 사용한다
+    - method : 입력받은 데이터를 서버로 보낼때 어떤 방식으로 보낼지를 지정함.
+    get : 주소 표시줄에 사용자가 입력한 내용이 그대로 표시되고, 256~4049byte까지의
+    데이터만 서버로 전송할 수 있다.
+    post : 대부분의 방식에서 사용하며 사용자의 입력을 표준 입력으로 전송하기 때문에
+    입력내용 길이에 제한을 받지 않는다. 또한 사용자가 입력한 내용이 표시되지 않는다.
+
+    <label>태그
+    
+    폼 요소에 레이블(라벨)을 붙이기 위해 사용하는 태그이다.
+    label태그를 사용하면 폼 요소와 레이블 텍스트가 서로 연결되어 있는 것을 
+    브라우저가 인식할 수 있다. label태그는 inline속성을 갖는다.
+    label태그에는 for라는 속성이 필요하다. for라는 속성은  세트인 input과 연결하여
+    브라우저에 전달하는 속성으로, class나 id명을 짓듯이 이름을 지어주면 된다.
+
+    [기본형]
+    <form>
+        1. label태그 안에 입력양식 태그가 들어가는 경우
+
+        <label for="값">
+            레이블 텍스트
+            <input/>
+        </label>
+
+        2. label태그와 입력양식 태그가 나란히 있는 경우
+
+        <label thrtjd = "값"> 레이블 텍스트</label>
+        <input 속성 = "값"/>
+    </form>
+
+    <fieldset>, <legend>태그
+
+    하나의 폼 안에서 여러 구역을 나누어 표시할때 fieldset태그를 사용한다.
+    예를들어 인터넷 쇼핑몰에서 주문서를 작성할때 개인정보와 배송정보를 나누어 표시하면
+    사용자가 입력하기도 편하고 화면도 깔끔하게 정리할 수 있다.
+
+    legend태그는 '범위'라는 뜻을 가지고있고, fieldset태그로 묶은 그룹에 제목을 붙이는 태그이다.
+
+    [기본형]
+    <fieldset>
+        <legend>그룹이름</legend>
+    </fieldset>
+    -->
+    <form action="#" method="post">
+        <!-- 주문정보 -->
+         <fieldset>
+            <legend>주문 정보</legend>
+            <label for="user_id">아이디</label>
+            <input type="text" name="user_id" id="user_id"/>
+         </fieldset>
+         <!-- label태그를 이용해 폼 요소와 연결하기 -->
+        <label for="user_id">아이디</label>
+        <input type="text" name="user_id" id="user_id"/>
+        <!-- 배송지 -->
+         <fieldset>
+            <legend>배송지</legend>
+            <label for="user_id">아이디</label>
+            <input type="text" name="user_id" id="user_id"/>
+         </fieldset>
+    </form>
+</body>
+</html>

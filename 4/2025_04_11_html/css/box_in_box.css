@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 1081px;
+    height: 120px;
+    margin: 200px auto;
+    /* 컨테이너를 브라우저 중앙에 배치 */
+}
+
+.banner{
+    width: 740px;
+    height: 120px;
+    background-color: aquamarine;
+    float: left;
+}
+
+.login{
+    width: 333px;
+    height: 120px;
+    float: left;
+    background-color: blue;
+    margin-left: 8px;
+}

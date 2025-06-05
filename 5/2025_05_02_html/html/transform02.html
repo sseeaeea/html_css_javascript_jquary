@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3차원 변형속성</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 30px;
+        }
+
+        .box1{
+            background-color: aquamarine;
+            /* x축으로 150px y축으로 100px z축으로 1000px이동한다. */
+            transform: translate3d(150px, 200px, 1000px);
+            margin: 200px;
+        }
+
+        .box2{
+            background-color: rgb(198, 97, 33);
+            /* x축으로 1.5배 확대 y축으로 0.5배 확대 z축으로 6배만큼 가까워진다. */
+            transform: scale3d(1.5, 0.5, 6);
+            margin: 200px;
+        }
+
+        .box3{
+            background-color: rgb(195, 130, 153);
+            /* x축으로 2만큼의 방향성 y축으로 3만큼의 방향성 z축으로 4만큼의 방향성을 가지고
+            벡터로 45도 회전함. */
+            transform: rotate3d(2, 3, 4, 45deg);
+            margin: 200px;
+        }
+
+        section{
+            width: 300px;
+            height: 300px;
+            margin: 200px;
+            border: 3px solid #888;
+        }
+
+        .box4{
+            background-color: blue;
+            transform: rotate(45deg);
+            /* 박스의 0점을 기준으로 넓이, 높이, 값이 100% 위치 */
+            transform-origin: 100% 100%;
+            transform-origin: left;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    x축과 y축과 z축을 이용하는 변형속성이다. 입체 효과 같은 것을 만들 때 사용한다.
+
+    [종류]
+    1. translate3d(x, y ,z) : 특정 크기만큼 이동한다.
+    -translatex : x축으로 특정 크기만큼 이동한다.
+    -translatey : y축으로 특정 크기만큼 이동한다.
+    -translatez : z축으로 특정 크기만큼 이동한다.
+
+    2. scale3d(x,y,z) : 특정 크기만큼 확대/축소한다.
+    - scalex : x축으로 특정 크기만큼 확대/축소한다
+    - scaley : y축으로 특정 크기만큼 확대/축소한다
+    - scalez : z축으로 특정 크기만큼 확대/축소한다
+
+    3. rotate3d(anglex, angley, anglez, angle) : 특정 각도만큼 회전한다.
+    - rotatex : x축으로 특정 크기만큼의 방향성을 가진다.
+    - rotatey : y축으로 특정 크기만큼의 방향성을 가진다.
+    - rotatez : z축으로 특정 크기만큼의 방향성을 가진다.
+
+    - transform-origin : transform의 중심축 변경속성
+    
+    transform이 적용된 요소는 박스의 가로세로 중심을 기준으로 변형된다.
+    이때 중심축을 다른 위치로 옮기고 싶다면 trangform-origin속성을 사용한다.
+    x축과 y축은 백분율(%), left, center, right, top, bottom중에서 
+    지정할 수 있고, z축은 길이값만 사용 가능하다.(px)
+
+    [기본형]
+    transform-origin : x축, y축, z축;
+
+    transform-style : 후손의 3차원 속성을 유지시키는 속성
+
+    태그에 transform을 이용하여 3d속성으로 변형을 주었을 때 
+    모션 효과를 주게되면 3d가 아니라 2d(평면)로 움직임이 발생한다.
+    이때 후손 태그들에 적용된 3d좌표효과를 유지하고 싶다면 사용하는 속성이다.
+    값은 preserve-3d값을 사용한다.
+    -->
+    <div class="box1">translate3d</div>
+    <div class="box2">scale3d</div>
+    <div class="box3">rotate3d</div>
+    <section>
+        <div class="box4">origin</div>
+    </section>
+</body>
+</html>

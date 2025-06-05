@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계시판 실습</title>
+    <style>
+        table{
+            width: 1000px;
+            border-collapse: collapse;
+            table-layout: fixed;
+            margin: 0 auto;
+        }
+        caption{
+            margin-bottom: 40px;
+        }
+        thead{
+            border-top: 3px solid salmon;
+            border-bottom: 1px solid salmon;
+        }
+
+        th, td{
+            padding: 12px;
+            border-bottom: 1px solid salmon;
+        }
+
+        tbody > tr{
+            border-bottom: 1px solid salmon;
+        }
+        tbody > tr > th:first-child{
+            color: #888;
+            text-align: center;
+        }
+
+        tbody > tr > th:nth-child(2){
+            padding-left: 40px;
+        }
+
+        tbody > tr > th:last-child{
+            color: #888;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>IR행사</caption>
+        <!-- 세로줄 스타일링 -->
+        <colgroup>
+            <col width="18%"/>
+            <!-- * : 나머지 전체 -->
+            <col width="*"/>
+            <col width="13%"/>
+        </colgroup>
+        <!-- 제목 -->
+        <thead>
+            <tr>
+                <th>일정</th>
+                <th>행사</th>
+                <th>관련자료</th>
+            </tr>
+        </thead>
+        <!-- 본문 -->
+        <tbody>
+            <tr>
+                <th>2025.03.18</th>
+                <th>IBK투자증권 국내 NDR</th>
+                <th>다운로드</th>
+            </tr>
+            <tr>
+                <th>2025.03.18</th>
+                <th>IBK투자증권 국내 NDR</th>
+                <th>다운로드</th>
+            </tr>
+            <tr>
+                <th>2025.03.18</th>
+                <th>IBK투자증권 국내 NDR</th>
+                <th>다운로드</th>
+            </tr>
+            <tr>
+                <th>2025.03.18</th>
+                <th>IBK투자증권 국내 NDR</th>
+                <th>다운로드</th>
+            </tr>
+            <tr>
+                <th>2025.03.18</th>
+                <th>IBK투자증권 국내 NDR</th>
+                <th>다운로드</th>
+            </tr>
+            <tr>
+                <th>2025.03.18</th>
+                <th>IBK투자증권 국내 NDR</th>
+                <th>다운로드</th>
+            </tr>
+            <tr>
+                <th>2025.03.18</th>
+                <th>IBK투자증권 국내 NDR</th>
+                <th>다운로드</th>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>

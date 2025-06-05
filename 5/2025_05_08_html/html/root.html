@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>root와 var </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 스타일 가이드 */
+        :root{
+            --black_color : #121212;
+            --content_box_color : #f5f5f5;
+            --main_color : #86d578;
+            --lg_font_size : 30px;
+            --p_font_size : 16px;
+            --lg_font_weight : 700;
+        }
+
+        .container{
+            width: 80%;
+            height: fit-content;
+            display: flex;
+            gap: 20px;
+            margin: 100px auto;
+        }
+
+        .card{
+            border-radius: 20px;
+            background-color: var(--content_box_color);
+            flex: 1;
+            padding: 40px;
+            box-sizing: border-box;
+            border: 1px solid var(--content_box_color);
+        }
+
+        .card h3{
+            font-size: var(--lg_font_size);
+            font-weight: var(--lg_font_weight);
+        }
+
+        .card p{
+            font-size: var(--p_font_size);
+        }
+
+        .card:hover{
+            background-color: var(--main_color);
+            border: 1px solid var(--black_color);
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    root 선택자와 var()함수
+
+    root선택자는 문서의 최상위 요소를 선택한다. 웹 문서에서 html에 해당한다.
+    root선택자를 사용하는 가장 큰 이유는 css에서 변수를 사용하기 위해서이다.
+    root를 사용하게되면 해당 사이트를 스타일링할때 사용할 메인컬러, 서브컬러,
+    폰트사이즈나 제목폰트사이즈 등 스타일 가이드처럼 미리 정의해두고 필요할때마다
+    선택해서 사용할 수 있어 굉장히 편리하며 대중적으로 사용되고 있다.
+
+    css변수
+
+    변수란 필요할때마다 값을바꿔서 사용할 수 있도록 이름을 붙인 것을 말한다.
+    css변수는 웹문서의 css코드 어디에서나 사용할 수 있다. 예를 들어 문서의
+    메인컬러를 지정하는 --main-color라는 변수를 만들면 해당 변수안에 있는 값을
+    어디서든 사용할 수 있다.
+
+    css에서 변수를 만들때에는 반드시 root선택자 안에 만들어야 하며, 변수명 앞에
+    -(하이픈)을 두개 붙여서 만든다. 이름은 class나 id 이름 짓듯이
+    보기 좋고 명확한 이름을 사용하는 것이 좋다.
+
+    var()함수
+
+    :root에 변수명으로 사용할 속성값을 정의해 두었다면 해당 속성값은 css어디서든
+    사용할 수 있다.
+    단, 사용할때 var()함수를 같이 이용해야 한다. var는 varieble의 약자로, '변수'를
+    뜻한다. var()소괄호 안에 root에 정의했던 변수명을 --를 포함하여 넣어주면
+    해당하는 값이 적용된다.
+    :root와 var()를 사용하면 디자인 스타일을 일관적으로 유지할 수 있고 수정이 매우
+    용이하기 때문에 실무에서도 굉장히 많이 사용하는 스타일이다.
+
+    [기본형]
+    :root{
+         --변수명1 : 값;
+         --변수명2 : 값;
+         --변수명3 : 값;
+    }
+
+    선택자{
+         color : var(--변수명1);
+    }
+    -->
+
+    <div class="container">
+        <div class="card">
+            <h3>비즈니스</h3>
+            <p>카카오에서 진행하는 비즈니스 영역을 확인할 수 있습니다.</p>
+        </div>
+        <div class="card">
+            <h3>일상/편의</h3>
+            <p>카카오에서 진행하는 비즈니스 영역을 확인할 수 있습니다.</p>
+        </div>
+        <div class="card">
+            <h3>쇼핑</h3>
+            <p>카카오에서 진행하는 비즈니스 영역을 확인할 수 있습니다.</p>
+        </div>
+    </div>
+</body>
+</html>

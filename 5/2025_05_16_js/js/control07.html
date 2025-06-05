@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문</title>
+    <style>
+        .green{
+            color: green;
+        }
+        .orange{
+            color: orange;
+        }
+        .yellow{
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    for문
+
+    for문은 while문과 마찬가지로 조건식을 만족할때까지 특정 코드를 반복 실행한다.
+    사용방법은 while문과 같지만 문법이 훨씬 간결하여 많이쓰인다.
+
+    [기본형]
+    for(초기값; 조건식; 증강식){
+        코드
+    }
+
+    - 실행순서
+    초기값검사 -> 조건식검사 -> 조건식검사 -> 만족하면 코드 실행 -> 증감식 -> 조건식검사 -> ...조건식이 false가 될때까지 반복
+
+    continue문
+
+    continue문은 반복문 안에서만 사용할 수 있다.
+    while문에서 사용할경우 contuinue문을 만나면 
+    continue문 다음에 오는 코드는 무시하고 바로
+    조건식으로 가서 조건검사를 실행한다.
+    즉, while문에서 continue문은 '코드를 실행하지 
+    말고 조건검사해!' 라는 뜻이다
+
+    for문에서 사용할경우 continue문을 만나면 continue문 다음에
+    오는 코드는 무시하고 바로 '증감식'으로 가서 증감연산을 실행한다.
+    즉, for문에서 continue문은 '코드를 실행하지말고 증감식을 실행해'라는 뜻이다.
+    -->
+
+    <p class="green"></p>
+    <p class="orange"></p>
+    <p class="yellow"></p>
+</body>
+<script>
+    //1~100까지중 4의배수면 초록 7의배수면 주황
+    function four_seven(){
+        for(let i = 1; i <=100; i++){
+            if(i % 4 === 0 && i % 7 ===0){
+                document.write('<p class="yellow">' + i + "</p>")
+            }
+            else if(i % 7 === 0){
+                document.write('<p class="orange">' + i + "</p>")
+            }
+            else if(i % 4 === 0){
+                document.write('<p class="green">' + i + "</p>")
+            }
+        }
+    }
+
+    four_seven();
+
+    function break1(){
+        for(let i = 1; i <= 10; i++){
+            if (i === 6) break;
+            document.write(i + "<br>")
+        }
+    }
+
+    break1();
+
+    function continue1(){
+        for(let i = 1; i <=10; i++){
+            if(i % 2 ===0) continue;
+            document.write(i + "<br>")
+        }
+    }
+    continue1();
+</script>
+</html>

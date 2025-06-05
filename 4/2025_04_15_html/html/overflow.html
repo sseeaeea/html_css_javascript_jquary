@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow속성</title>
+    <link rel="stylesheet" href="../css/overflow.css">
+</head>
+<body>
+    <!-- 
+    overflow속성
+
+    overflow속성은 내부요소가 부모박스의 범위를 벗어났을때
+    어떻게 처리할 것인지 지정하는 속성이다.
+    웹 페이즈를 만들다보면 컨텐츠에 성격에 따라 항상 높이가 고정되어 있는
+    박스가 있고 컨텐츠의 내용이 자주 업데이트가 되면서 높이가 일정하지 않는 박스도있다.
+    웹페이지에서 기본 구조를 만드는 박스들은 대부분 높이가 고정되어있고, 게시판
+    뉴스페이지등 어떤 박스들은 내용에 따라 박스 높이가 바뀔 수 있다.
+    이런경우 overflow속성을 사용한다.
+
+    [속성값]
+    - hidden : 부모박스에 width와 height가 있을 때 내부요소가 부모영역을 벗어날경우
+    벗어난만큼 숨긴다. 만약 부모박스에 height속성이 지정되지 않으면 내부요소만큼
+    부모영역이 늘어난다.
+
+    - scroll : 영역을 벗어나는 부분은 스크롤바를 통해 나타나게 만든다.
+    - visible : 기본값으로 영역에서 벗어나더라도 그대로 보여준다.
+    - auto : 영역을 벗어나면 스크롤을 만들어 보여주고, 벗어나지 않으면
+    스크롤을 만들지 않는다.
+    - initial : 기본값으로 설정함.
+    - inherit : 부모요소의 속성을 상속받는다.
+    -->
+
+    <!-- 박스의 높이에 맞게 컨텐츠가 들어있는 경우 -->
+
+    <div class="content1">
+        <h4>컨텐츠 양이 일정</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <!-- 박스의 높이보다 텍스트의 양이 많아서 박스 밖으로 흘러나오는 경우 -->
+    <div class="content2">
+        <h4>컨텐트의 양이 많거나 유동적일때 흘러넘침</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem vitae non autem blanditiis iusto sequi architecto omnis error illo ducimus accusamus sed accusantium, dolor ad placeat quibusdam, veritatis reiciendis iste?</p>
+    </div>
+    <!-- 박스의 높이를 설정하지 않고 overflow:hidden을 지정했을때 -->
+    <div class="content3">
+        <h4>컨텐트의 양에따라 높이가 늘어남</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa officiis nostrum corporis vero, nobis ab aperiam aspernatur exercitationem ullam, sint dignissimos, odit voluptatibus numquam magni? Est architecto omnis perspiciatis ad. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem vitae non autem blanditiis iusto sequi architecto omnis error illo ducimus accusamus sed accusantium, dolor ad placeat quibusdam, veritatis reiciendis iste?</p>
+    </div>
+    <!-- 박스의 높이를 지정하고 overflow:hidden을 지정했을때 -->
+    <div class="content4">
+        <h4>박스의 지정된 높이만큼만 보여짐</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem vitae non autem blanditiis iusto sequi architecto omnis error illo ducimus accusamus sed accusantium, dolor ad placeat quibusdam, veritatis reiciendis iste?</p>
+    </div>
+</body>
+</html>

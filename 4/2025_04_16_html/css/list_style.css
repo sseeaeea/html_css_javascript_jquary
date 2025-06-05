@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+/* 
+브라우저 기본 여백을 없애면 ul, ol의 앞에 있는 숫자와 불릿은 브라우저 바깥으로 빠지면서
+화면에서 사라진 것처럼 보인다.
+하지만 실제로 사라진 것이 아니기 때문에 웹사이트의 메뉴를 작업할때에는 
+반드시 list-style : none;으로 초기화해야한다.
+*/
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style-type: circle;
+    list-style-type: square;
+    list-style-type: none;
+    list-style-type: disc;
+
+    list-style-position: inside;
+    list-style-position: outside;
+
+    /* 메뉴목록을 초기화하기 */
+    list-style: none;
+}
+
+ol{
+    list-style-type: decimal-leading-zero;
+    list-style-type: lower-roman;
+    list-style-type: upper-roman;
+    list-style-type: lower-alpha;
+    list-style-type: upper-alpha;
+    list-style-type: armenian;
+    list-style-type: georgian;
+    list-style-type: decimal;
+
+    list-style-position: inside; 
+    list-style-position: outside;
+
+    /* 숫자가 보이도록 들여쓰기 */
+    list-style: lower-alpha inside;
+
+    /* 숫자 + 들여쓰기 여부 */
+    list-style: upper-alpha outside;
+}

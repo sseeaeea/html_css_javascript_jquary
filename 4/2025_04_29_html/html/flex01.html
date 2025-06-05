@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex속성</title>
+    <style>
+      .container {
+        width: 800px;
+        height: 50px;
+        border: 3px solid pink;
+        display: flex;
+        gap: 10px;
+        margin-bottom: 40px;
+      }
+      .container > div {
+        background-color: pink;
+        color: #fff;
+        height: 100%;
+        line-height: 50px;
+        flex-basis: 150px;
+      }
+      .box1-1 {
+        flex-grow: 1; /*기본크기(150) + 남는 여백의 1/4 */
+      }
+      .box1-2 {
+        flex-grow: 1; /*기본크기(150) + 남는 여백의 1/4 */
+      }
+      .box1-3 {
+        flex-grow: 0; /*기본크기(150) */
+      }
+      .box1-4 {
+        flex-grow: 2; /*기본크기(150) + 남는 여백의 2/4 */
+      }
+
+      /* 두번째 컨테이너 */
+      .container:nth-of-type(2) {
+        width: 800px;
+        border: 3px solid powderblue;
+      }
+      .container:nth-of-type(2) > div {
+        background-color: powderblue;
+        flex-basis: 300px;
+      }
+      .box2-1 {
+        flex-shrink: 1; /* 기본크기 - 부족한 공간의 1/4 */
+      }
+      .box2-2 {
+        flex-shrink: 0; /* 기본크기 */
+      }
+      .box2-3 {
+        flex-shrink: 1; /* 기본크기 - 부족한 공간의 1/4 */
+      }
+      .box2-4 {
+        flex-shrink: 2; /* 기본크기 - 부족한 공간의 2/4 */
+      }
+
+      /* 세번째 컨테이너 */
+      .container:last-of-type {
+        border: 3px solid purple;
+      }
+      .container:last-of-type > div {
+        background-color: purple;
+        /*
+          flex-grow : 1; 확장하고
+          flex-shrink : 1; 축소함
+          flex-basis : 0%; 기본크기는 0%
+        */
+        flex: 1;
+        /*
+          flex-grow : 0; 확장하지 않고
+          flex-shrink : 0; 축소함
+          flex-basis : 0%; 기본크기는 0%
+        */
+        flex: 0 1;
+        /*
+          flex-grow : 1; 확장하고
+          flex-shrink : 1; 축소함
+          flex-basis : 150px; 기본크기는 150px
+        */
+        flex: 1 150px;
+        /*
+          flex-grow : 0; 확장하지 않고
+          flex-shrink : 0; 축소하지 않고
+          flex-basis : auto; 기본크기는 auto
+        */
+        flex: none;
+        /* 
+          flex-grow : 1; 확장하고
+          flex-shrink : 1; 축소함
+          flex-basis : auto; 기본크기는 auto
+        */
+        flex: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+      flex박스 레이아웃
+      ===============================
+      플렉스 박스 레이아웃은 웹 요소를 배치하기도 쉽지만 화면 너비에 따라 웹 요소의 크기를
+      자동으로 바꿀 수 있어 매우 편리하다. 그래서 반응형 웹을 만들 때 적합하다.
+
+      플렉서블 박스 레이아웃
+      ==================================
+      플렉스 박스의 공식 명칭은 플렉서블 박스 레이아웃이다. 화면 크기가 달라지면 그에 맞춰
+      플렉스 항목(자식)을 늘리거나 줄일 수 있는 유연한 상자를 활용해 레이아웃을 만든다는 의미이다.
+      항목마다 크기를 조절하려면 4가지 속성을 플렉스 항목에 지정해야한다.
+
+      flex속성★★★★★★★
+      =========================================
+      1. flex-basis : 플렉스 항목(자식요소)의 기본 크기를 지정한다.
+      2. flex-grow : 공간이 남으면 플렉스 항목을 늘린다.
+      3. flex-shrink : 공간이 부족하면 플렉스 항목을 줄인다.
+      4. flex : flex-basis, flex-grow,flex-shrink속성을 한꺼번에 지정한다.
+
+      기본 크기를 지정하는 flex-basis속성
+      =====================================================
+      flex-basis속성은 플렉스된 자식박스의 기본 크기를 지정한다.
+      플렉스 항목을 가로(row)로 배치한다면 이 값은 자식박스의 너비이고, 
+      세로(column)로 배치한다면 이 값은 자식박스의 높이가 된다.
+      
+      flex-basis의 기본값은 auto인데 이 값에는 여러 의미가 있다.
+      플렉스 항목에 width속성이 지정되어 있다면 그 값을 flex-basis의
+      값으로 사용한다. 만약 width값이 없다면 컨텐츠가 들어있는 만큼만 크기를 차지한다.
+      세로로 배치할 경우에는 height값을 사용하고 height이 없다면 역시 컨텐츠 크기만큼
+      크기를 차지한다.
+
+      플렉스의 항목을 확장하는 flex-grow
+      ===================================================
+      화면 너비가 큰 환경에서 접속할 경우 플렉스 컨테이너에
+      항목을 채우고도 남는 공간이 생긴다. 이때 남은 공간을 
+      어떻게 나눌지를 flex-grow속성으로 지정한다.
+
+      flex-grow의 기본값은 0이고, 확장하지 않겠다는 의미이다.
+      그리고 음숫값은 쓸 수 없다. 1이상의 값을 사용할 수 있다.
+
+
+      플렉스의 항목을 확장하는 flex-shrink
+      ===============================================
+      플렉스 컨테이너(부모)의 너비가 줄어들 경우 그 안에 있는 플렉스
+      항목의 너비도 자연스럽게 줄어들도록 설정할 수 있는데,
+      이때 flex-shrink속성을 사용한다.
+
+      flex-shrink의 기본값은 1이며, 컨테이너에 맞춰 플렉스 항목(자식)을 축소한다.
+      만약 플렉스 항목마다 shrink값이 다르다면 grow와 마찬가지로 비율대로
+      공간을 계산한다. 또 0이라는 값을 쓰면 항목을 줄이지 않겠다는 의미이다.
+
+      
+      확장,축소를 한 번에 지정하는 flex속성
+      ================================================
+      flex속성은 flex-grow와 flex-shrink, flex-basis를 한 번에 선언하는 속성이다.
+      값을 지정할때에는 공백으로 구분하며 첫 번째 자리는 grow의 자리, 두번째 자리는 
+      shrink의 자리, 마지막 세번째는 basis의 자리이다. 
+      3개 속성의 기본값은 flex: 0 1 auto;이다.
+
+      flex속성에 값으로 숫자 하나만 지정할 경우 flex-grow의 값으로 사용된다.
+      나머지 shrink는 1, basis는 0이 된다. flex-basis의 기본값은 auto지만 이때는
+      값으로 0을 사용한다. flex-basis값이 0이면 확장, 축소하는 상황에 따라 항목의
+      기본 크기가 결정된다.
+      ex) flex : 1;  => flex : 1 1 0;
+      
+      flex속성에 값이 2개일 경우 첫번째 자리는 grow의 자리, 두번째자리는 그냥 숫자만 쓸 경우
+      shrink의 자리가 되고, 단위가 있다면 basis의 자리가 된다.
+      ex) flex : 1 1;    => flex : 1 1 0;
+          flex : 1 150px; => flex : 1 1 150px;
+
+      flex의 값을 none으로 설정하면 플렉스 항목을 축소하거나 확장하지 않겠다는 의미이다.
+      크기는 미리 정해놓은 width와 height값을 사용하거나 값이 없다면 내용의 크기에 따라
+      결정된다. flex : 0 0 auto;와 같다. 플렉스 박스에서 특정 부분만 확장,축소하지 않도록
+      만들고 싶을 때 사용한다.
+      ex) flex : none;  => flex : 0 0 auto;
+
+      flex의 값을 auto로 지정하면 플렉스 항목의 크기를 auto로 설정한다. 플렉스 항목에
+      width와 height가 있다면 그 값을 크기로 사용하고 값이 없다면 내용이 들어있는 만큼만
+      크기로 사용한다. 그리고 grow와 shrink의 값은 각각 1로 설정한다. 공간이 남는다면
+      플렉스 항목을 똑같은 크기로 채우고, 공간이 부족하면 같은 비율로 축소한다.
+      ex) flex : auto;  => flex : 1 1 auto;
+    -->
+    <div class="container">
+      <div class="box1-1">1</div>
+      <div class="box1-2">2</div>
+      <div class="box1-3">3</div>
+      <div class="box1-4">4</div>
+    </div>
+
+    <div class="container">
+      <div class="box2-1">1</div>
+      <div class="box2-2">2</div>
+      <div class="box2-3">3</div>
+      <div class="box2-4">4</div>
+    </div>
+
+    <div class="container">
+      <div class="box3-1">1</div>
+      <div class="box3-2">2</div>
+      <div class="box3-3">3</div>
+      <div class="box3-4">4</div>
+    </div>
+  </body>
+</html>

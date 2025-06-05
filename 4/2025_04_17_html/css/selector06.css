@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+    overflow: hidden;
+    display: flex;
+    gap: 10px;
+}
+
+li{
+    padding: 4px 8px;
+    background-color: aquamarine;
+}
+/* ul에 마우스를 올리면 안에 있는li의 배경색을 바꿀껀데 이 중에서 내 마우스 포인터가 올라간 li는 제외해라. */
+ul:hover li:not(:hover){
+    background-color: blue;
+}

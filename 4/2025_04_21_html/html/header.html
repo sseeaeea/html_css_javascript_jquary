@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+RO:wght@100..400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/reset.css">
+<style>
+    .container{
+        width: 100%;
+        height: auto;
+    }
+
+    header{
+        width: 100%;
+        height: 91px;
+        border-bottom: 1px solid darkgoldenrod;
+        box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.2);
+    }
+
+.con{
+    width: 1712px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+/* 로고 */
+
+h1{
+    font-family: "Playwrite RO", cursive;
+    font-weight: 700;
+    font-size: 26px;
+}
+
+h1 > a{
+    color: darksalmon;
+}
+
+#gnb{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    gap: 40px;
+}
+
+#gnb > ul{
+    width: fit-content;
+    height: fit-content;
+}
+/* 1차메뉴 */
+#gnb > ul > li{
+    font-size: 18px;
+    border-radius: 50px;
+    /* cursor: pointer; */
+}
+
+#gnb > ul > li > a{
+    padding: 8px 24px;
+    color: black;
+    display: block;
+}
+/* 1차메뉴 li에 마우스를 올리면 배경색상 적용 */
+#gnb > ul > li:hover{
+    background-color: black;
+}
+/* 1차메뉴 li에 마우스를 올리면 자손 a태그의 글자색 바꾸기 */
+#gnb > ul > li:hover > a{
+    color: white;
+}
+
+/* 아이콘 영역 */
+
+.icons{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    gap: 40px;
+}
+
+.icons > div{
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+.icons > div:hover{
+    background-color: rgb(170, 170, 170);
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="con">
+                <!-- 로고 -->
+                 <h1>
+                    <a href="#">whffu</a>
+                 </h1>
+                <!-- 메뉴 -->
+                 <nav id="gnb">
+                    <ul>
+                        <li><a href="">소개</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">기술과 서비스</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">약속과 책임</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">소식</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">투자정보</a></li>
+                    </ul>
+                 </nav>
+                <!-- 아이콘 -->
+                 <div class="icons">
+                    <div>
+                        <img src="../image/search.svg" alt="검색">
+                    </div>
+                    <div>
+                        <img src="../image/menu.svg" alt="메뉴">
+                    </div>
+                    <div>
+                        <img src="../image/account.svg" alt="계정">
+                    </div>
+                 </div>
+            </div>
+        </header>
+        <main></main>
+        <footer></footer>
+    </div>
+</body>
+</html>

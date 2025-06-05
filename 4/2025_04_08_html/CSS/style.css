@@ -1,0 +1,29 @@
+@charset "utf-8";
+
+h1{
+    background-color: skyblue;
+    color: tomato;
+    line-height: 40px;
+}
+
+/* 클래스명이 title인 태그를 불러와서 배경색과 글자색 지정 */
+
+.title1{
+    background-color: bisque;
+    color: teal;
+}
+
+
+/* 아이디명이 content인 태그를 불러와서 배경색과 글자색 지정 */
+
+#content{
+    background-color: khaki;
+    color: blueviolet;
+}
+
+/* p태그를 불러와서 글자크기와 글자색 바꾸기 */
+
+p{
+    size: 18px;
+    color: aquamarine;
+}

@@ -1,0 +1,58 @@
+@charset "uft-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+    overflow: hidden;
+    display: flex;
+}
+
+li{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* li중 첫째를 불러옴 */
+
+li:first-child{
+    background-color: aquamarine;
+}
+
+li:last-child{
+    background-color: blueviolet;
+}
+
+li:nth-child(2){
+    background-color: cornflowerblue;
+}
+
+/* li중 홀수번째 형제들 부르기 2n+1 or odd사용 */
+
+li:nth-child(2n+1){
+    border: 2px solid red;
+}
+
+/* li중 짝수번째 형제 */
+li:nth-child(2n)
+{
+    border: 2px solid fuchsia;
+}
+
+/* li중 네번째 형제부터 뒤에있는 모든 형제 선택하기 */
+li:nth-child(n+4){
+    background-color: rgb(255, 18, 18);
+}
+/* li중 네먼째 자식까지 선택하기 */
+li:nth-child(-n+4){
+    background-color: darkslateblue;
+}
+
+li:nth-child(n+3):nth-child(-n+5){
+    background-color: orange;
+}

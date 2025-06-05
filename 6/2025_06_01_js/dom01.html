@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM을 이용한 이벤트 처리</title>
+</head>
+<body>
+    <!-- 
+    DOM을 이용한 이벤트 처리
+
+    앞에서 배운 방식을 이용하여 이벤트를 처리하면 태그속성과 자바스크립트 코드가
+    섞이게 된다. 그래서 자바스크립트 코드를 수정하려면 html태그와 속성을 하나씩
+    살펴보면서 수정해야 한다는 번거로움이 있다.
+    현재는 기존방식보다는 DOM에서 이벤트를 처리하는 방식을 선호하고있다.
+
+    DOM을 이용하여 이벤트 핸들러를 실행시키면 자바스크립트가 주인이 되어
+    이벤트를 처리할 수 있다.
+
+    [기본형]
+    태그요소.on이벤트명 = 함수명; <- 함수명 뒤에는 소괄호가 붙지 않는다.
+    -->
+    <button type="button" id="change">글자색 바꾸기1</button>
+    <button type="button" id="change2">글자색 바꾸기2</button>
+    <button type="button" id="change3">글자색 바꾸기3</button>
+    <p id="content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit consequuntur nostrum quisquam commodi error ea nesciunt, odio voluptas, nemo et cumque repudiandae sint pariatur velit nihil nobis dolore dicta asperiores.</p>
+</body>
+<script>
+    //방법 1. 웹 요소를 변수에 지정 & 미리 만들어둔 함수를 사용
+    const change = document.getElementById("change");
+
+    change.onclick = change_color;
+
+    function change_color(){
+        document.querySelector("p").style.color = "red"
+    }
+
+    //방법 2. 웹 요소를 따로 변수로 만들지 않고 이벤트 적용
+    //웹 요소를 프로그램안에서 여러번 사용하지 않는다면 편리한 방식
+    document.getElementById("change2").onclick = change_color;
+
+    //방법 3. 웹 요소를 불러와서 함수를 직접 선언하여 이벤트 적용
+    //함수를 다른 태그와 공유하지 않고 딱 한번만 쓸 경우
+    document.getElementById("change3").onclick = function(){
+        document.querySelector("p").style.color = "skyblue"
+    };
+</script>
+</html

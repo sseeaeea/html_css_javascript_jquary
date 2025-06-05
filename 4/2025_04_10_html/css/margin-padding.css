@@ -1,0 +1,16 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+div{
+    width: 200px;
+    height: 200px;
+    border: 10px solid red;
+    background-color: aquamarine;
+}
+
+.box1{
+    margin: 20px;
+    padding: 30px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열</title>
+</head>
+<body>
+
+</body>
+<script>
+    var green_arr = ["교대", "방배", "사당"];
+    var yellow_arr = ["미금", "정자", "수서"];
+
+    // green_arr의 2번인덱스부터 1개의 데이터를 삭제하고 서초와 역삼을 넣기
+    green_arr.splice(2, 1,"서초", "역삼");
+    document.write(green_arr + "<br>")
+
+    // yellow_arr의 마지막 인덱스의 데이터를 data1에 저장
+    var data1 = yellow_arr.pop();
+
+    // yellow_arr의 첫번째 인덱스의 데이터를 data2에 저장
+    var data2 = yellow_arr.shift();
+
+    // yellow_arr의 마지막 인덱스에 data2를 밀어넣기
+    yellow_arr.push(data2);
+
+    // yellow_arr의 첫번째 인덱스에 data1를 밀어넣기
+    yellow_arr.push(data1);
+
+    document.write(data1 + "<br>")
+    document.write(data2 + "<br>")
+
+    var number = [1, 2, 3, 4, 5];
+    // 인수가 1개면 해당인덱스번호부터 마지막 인덱스까지 모두 잘라냄.
+    var new_number = number.splice(1);
+
+    document.write("반환된 배열: " + new_number + "<br>");
+    document.write("변경된 배열: " + number + "<br>");
+
+    // 인수2개
+    var study = ["html", "css", "web", "jquary"]
+    // 인수가 2개면 해당 인덱스 번호부터 지정된 갯수만큼 데이터를 삭제한다.
+    var new_study = study.splice(2,1);
+    document.write("반환된 배열: " + new_study + "<br>");
+    document.write("변경된 배열: " + study + "<br>");
+
+    var new_study2 = study.splice(2, 1, "js");
+    document.write("반환된 배열: " + new_study2 + "<br>");
+    document.write("변경된 배열: " + study + "<br>");
+</script>
+</html>

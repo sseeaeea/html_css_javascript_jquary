@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+/* input태그가 chedked상태가 되면 바로뒤의 span태그에 글자색을 바꿔라 */
+input:checked + span{
+    color: aquamarine;
+}
+/* input이 focus되면 배경색과 글자색을 바꿔라 */
+input:focus{
+    color: rebeccapurple;
+    background-color: blue;
+}
+
+input:enabled{
+    background-color: darkgoldenrod;
+    border: 1px solid coral;
+    color: dimgray;
+}

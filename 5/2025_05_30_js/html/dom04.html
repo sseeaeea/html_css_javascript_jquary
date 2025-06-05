@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 요소의 내용 수정하기</title>
+</head>
+<body>
+    <!-- 
+    웹 요소의 내용을 수정하는 프로퍼티
+
+    html태그안에 들어있는 src나 alt와 같은 속성들은 attribute node라고 표현하고
+    자바스크립트의 객체에서 사용하는 속성들은 property라고 부른다
+
+    자바스크립트에서는 웹 요소의 내용을 변경할 수 있다.
+    내용을 수정하는 가장 쉬운 방법은 inner Text나 innerHTML프로퍼티를 사용하는 것이다.
+    inner Text는 태그안에 텍스트내용만 수정하고 innerHTML은 태그까지 반영하여 내용을 수정한다.
+
+    [기본형]
+    1. innerText
+
+    요소.innerText; <- 해당 요소의 텍스트 내용을 가져옴
+    요소.innerText = 값; <- 해당 요소의 텍스트 내용을 다른 내용으로 바꿈.
+
+    2. innerHTML
+
+    요소.innerHTML <- 해당 요소안에 들어있는 텍스트와 태그 내용을 모두 가져온다.
+    요소.innerHTML = 값 <- 해당 요소안에 들어있는 태그와 내용을 모두 바꾼다..
+    -->
+    <button type="button" id="button1">innerText로 표시하기</button>
+    <button type="button" id="button2">innerHTML로 표시하기</button>
+    <h1>현재시각</h1>
+    <div class="current">
+        <!-- 버튼을 클릭하면 기존 내용을 사라진다 -->
+        <h4>기존내용</h4>
+    </div>
+</body>
+<script>
+    let user = {
+        name: "김땡땡",
+        age: 20,
+    };
+
+
+    //버튼들 가져오기
+    const btn1 = document.getElementById("button1")
+    const btn2 = document.getElementById("button2")
+    let now = new Date(); //현재 날짜와 시간정보
+    // btn1을 클릭하면 이벤트 핸들러를 실행
+    btn1.onclick = function(){
+        document.getElementById("current").innerText = now;
+    }
+    btn2.onclick = function(){
+        document.getElementById("current").innerHTML = '<em>' + now + '</em>';
+    }
+</script>
+</html>

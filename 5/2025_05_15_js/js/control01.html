@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문-조건문</title>
+</head>
+<body>
+    <!-- 
+    제어문이란?
+
+    제어문은 프로그램의 흐름을 제어할 수 있도록 도와주는 문장을
+    말한다. 제어문에는 조건식의 만족여부에 따라, 코드를 제어할 수 있는
+    '조건문'과 변수와 일치하는 값을 찾아 코드를 제어할 수 있는 '선택문'과
+    특정 코드를 원하는 횟수만큼 반복 실행할 수 있는 '반복문'이 있다.
+
+    조건문 - if()
+
+    조건문은 조건식의 값이 참(true)인지 거짓(false)인지에 따라
+    자바스크립트 코드를 제어한다.
+    if문은 조건식을 만족(true)헀을 경우에만 코드를 실행시킨다.
+    (조건식)자리는 Boolean메서드의 자리로 어떤 데이터를 입력해도
+    true 또는 false값을 반환한다.
+
+    [기본형]
+    if(조건식) {조건식이 true이면 실행할 코드}
+    -->
+</body>
+<script>
+    var num1 = 10;
+    if(0){
+        //0은 false를 반환하므로 {}안의 코드를 실행시키지 않음
+        document.write("hello<br>")
+    }
+
+    //사용자에게 하루 몇 보 걷는지 묻고 10000보이상이면
+    // "참 좋은 습관을 가지고 게시네요!" 라는 문구를 출력하기
+
+    var walkAmount = Number(prompt("당신은 하루에 몇보를 걷고계신가요?"));
+    if(walkAmount >= 10000){
+        document.write("참 좋은 습관을 가지고 계시네요<br>")
+    }
+
+    //사용자에게 "당신의 하루 통화량은 몇 분인가요?"를 묻고
+    //60분이상이면 "많이 통화하는 편이네요."를 출력해주세요
+
+    function call(){
+        let minuet = Number(prompt("당신의 하루 통화량은 몇 분인가요?<br>"));
+
+        if(minuet >= 60){
+            document.write("많이 통화하는 편이네요<br>")
+        }
+    }
+    call()
+
+    //사용자에게 이름을 물은 후 화면에
+    //"반갑습니다.[사용자이름]님! 을 출력해주세요"
+
+    function name(){
+        let your_name = prompt("당신의 이름은 무엇입니까?")
+
+        if(your_name){
+            document.write("반갑습니다! " + your_name + "님!<br>")
+        }
+    }
+    name()
+</script>
+</html>

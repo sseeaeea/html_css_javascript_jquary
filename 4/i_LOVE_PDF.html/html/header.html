@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메뉴가 있는 header만들기</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        header{
+            width: 100%;
+            height: 50px;
+            background-color: aquamarine;
+            border-bottom: 1px solid black;
+        }
+        .con{
+            width: 1500px;
+            height: 100%;
+            margin: 0 auto;
+            display: flex;
+            background-color: blueviolet;
+            justify-content: space-between;
+        }
+        /* 로고 */
+        h1{
+            width: 100px;
+            padding: 13px 0;
+        }
+
+        nav{
+            width: fit-content;
+            height: 100%;
+            background-color: coral;
+        }
+
+        nav > ul{
+            display: flex;
+            gap: 40px;
+            line-height: 50px;
+        }
+        /* 1차메뉴 */
+        nav > ul > li{
+            color: black;
+            text-transform: uppercase;
+            font: bold;
+            text-align: center;
+            position: relative;
+        }
+
+        nav > ul > li:hover{
+            color: darkkhaki;
+        }
+
+        .submenu{
+            width: 100%;
+            height: 0;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 40px;
+            background-color: lavender;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            overflow: hidden; /* 지정된 넓이 높이 만큼만 보여짐 */
+            transition: 0.5s;
+            color: black;
+        }
+        /* 
+        ul:hoevr는 전체메뉴를 li:hover는 단일메뉴를 드롭다운 하게 만들 수 있다.
+        */
+        nav > ul:hover > li .submenu{
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="con">
+            <h1>
+                <a href="#">
+                    <img src="../image/ilovepdf.svg" alt="로고">
+                </a>
+            </h1>
+            <!-- gnb -->
+            <nav>
+                <ul>
+                    <!-- 1차메뉴 -->
+                    <li>
+                        menu1
+                        <!-- 2차메뉴 -->
+                        <ul class="submenu">
+                            <li>menu1-1</li>
+                            <li>menu1-2</li>
+                            <li>menu1-3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        menu2
+                        <ul class="submenu">
+                            <li>menu2-1</li>
+                            <li>menu2-2</li>
+                            <li>menu2-3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        menu3
+                        <ul class="submenu">
+                            <li>menu3-1</li>
+                            <li>menu3-2</li>
+                            <li>menu3-3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        menu4
+                        <ul class="submenu">
+                            <li>menu4-1</li>
+                            <li>menu4-2</li>
+                            <li>menu4-3</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+</body>
+</html>

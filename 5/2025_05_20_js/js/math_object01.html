@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수학객체</title>
+</head>
+<body>
+    <!-- 
+    수학객체 Math
+
+    자바스크립트 내장 객체에는 수학과 관련된 기능과 속성을 제공하는
+    수학 객체가 있다. 단순한 연산이 아닌 복잡한 계산이나, 산술연산자와
+    같은 연산자로 구할 수 없는 '최대값', '최소값', '반올림'등을 구할때에는
+    수학객체를 사용할 수 있다.
+
+    [메서드와 상수]
+    1. Math.abs(숫자) : 숫자의 절대값을 반환한다.
+    2. Math.max(숫자1, 숫자2, 숫자3) : 숫자 중 가장 큰 값을 반환한다.
+    3. Math.min(숫자1, 숫자2, 숫자3) : 숫자 중 가장 작은 값을 반환한다.
+    4. Math.pow(숫자, 제곱값) : 숫자의 거듭제곱값을 반환한다.
+    5. Math.random() : 0 ~ 1 사이의 난수를 반환한다.
+    6. Math.round(숫자) : 소수점 첫째 자리에서 반올림하여 정수를 반환한다.
+    7. Math.ceil(숫자) : 소수점 첫째 자리에서 올림하여 정수를 반환한다.
+    8. Math.floor(숫자) : 소수점 첫째 자리에서 내림하여 정수를 반환한다.
+    9. Math.sqrt(숫자) : 숫자의 제곱근값을반환한다.
+    10. Math.PI : 원주율 상수를 반환한다. 3.141592...
+
+    Math.random()메서드로 임의의 구간 정수 구하기
+
+    Math.random()메서드를 이용하면 0과 1사이의 난수를 구할 수 있다.
+    만약 0 ~ 1이 아닌 임의로 지정한 숫자 구간에서 난수를 정수로
+    반환받으려면 어떻게 해야할까?
+
+    1. 만약 0 ~ 10 사이의 난수를 반환받으려면 아래와 같이 사용한다.
+    Math.random() * 10
+
+    2. 0 ~ 10 까지의 난수를 정수로만 반환받으려면 내림이나 올림을 사용한다.
+    Math.floor(Math.random() * 11)
+
+    3. 120 ~ 150사이의 난수를 정수로 반환받고싶으면 아래와 같은 공식을 사용한다.
+    Math.floor(Math.random() * 31) => 0 ~ 30까지의 난수를 정수로 변환
+    Math.floor(Math.random() * 31) + 120 => 120 ~ 150까지의 난수를 정수로 변환
+    즉, 난수를 발생하여 원하는 구간의 정수값을 구하려면
+
+    Math.floor(Math.random()) * (최대값 - 최소값 + 1) + 최소값;
+    -->
+</body>
+<script>
+    function math_matics(){
+        let num = 2.1234;
+        let max_num = Math.max(10, 5, 19, 46, 3);
+        document.write(max_num + "<br>");
+        let min_num = Math.min(10, 5, 19, 46, 3);
+        document.write(min_num + "<br>");
+        let round_num = Math.round(num);
+        document.writeln(round_num + "<br>");
+        let ceil_num = Math.ceil(num);
+        document.writeln(ceil_num + "<br>");
+        let floor_num = Math.floor(num);
+        document.writeln(floor_num + "<br>");
+        let random_num = Math.random();
+        document.writeln(random_num + "<br>");
+        let PI_num = Math.PI;
+        document.writeln(PI_num + "<br>");
+    }
+    math_matics();
+
+    function game(){
+        let num = Math.random() * 10;
+        document.write(num + "<br>");
+        let lotto = Math.ceil(Math.random() * 45);
+        document.write(lotto + "<br>");
+
+        document.write("<h2>컴퓨터랑 묵찌빠</h2><br>")
+        let rock_scissor_paper = prompt('묵! 찌! 빠!') // 사용자에게 묵찌빠 정보 받아오기
+        let game_num;
+
+        switch(rock_scissor_paper){
+            case '묵' : game_num = 1
+            break;
+            case '찌' : game_num = 2
+            break;
+            case '빠' : game_num = 3
+            break;
+
+            default : alert("잘못 작성하셨습니다.");
+            location.reload();
+        }
+        // 컴퓨터가 내는 묵찌빠
+        let com = Math.ceil(Math.random() * 3);
+        document.write("컴퓨터가 낸 묵찌빠는? : " + com + "<br>");
+
+        if(game_num == com){
+            document.write("비겼습니다.<br>")
+        }
+        else if (game_num < com){
+            document.write("사용자가 이겼다.<br>")
+        }
+        else if (game_num > com){
+            document.write("컴퓨터가 이겼다.<br>")
+        }
+    }
+    game();
+</script>
+</html>

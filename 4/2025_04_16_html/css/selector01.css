@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+div li{
+    background-color: red;
+}
+
+div > h2{
+    background-color: aquamarine;
+    border: 2px solid cornflowerblue;
+}
+
+/* 후손문법으로 div안에있는 span태그를 불러와서 글자색 바꾸기 */
+div span{
+    color: blue;
+}
+
+/* 자손문법으로 ul안에있는 h2만 불러와서 배경색 지정하기 */
+ul > h2{
+    background-color: crimson;
+}
+
+/* div 자손 span에 3px 점선 테두리 만들기 */
+
+div > span{
+    border-style: dotted;
+    border-width: 3px;
+    border-color: black;
+}

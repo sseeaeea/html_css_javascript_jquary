@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료형</title>
+</head>
+<body>
+    <!-- 
+    4. null과 undifined 데이터
+    
+    null과 undeifined는 변수안에 데이터가 없다는 것을 뜻하는 자료형이다.
+    null은 변수에 기존에 들어가있던 값을 비울때 사용하는 자료형이고, 
+    undifined는 변수명만 선언했을때 기본적으로 들어있는 기본값이다.
+    undifined는 '이 변수에는 값이 정의되지 않았다'를 뜻한다.
+
+    [기본형]
+    var 변수명; => 변수안에는 undifined데이터가 들어있다.
+    var 변수명2 = "hello";
+    변수명2 = null; => 변수명2안에있던 기존값을 비운다.
+
+    typeof
+
+    typeof는 변수안에 들어있는 자료형이 궁금할때 사용한다.
+
+    [기본형]
+    typeof 변수명 또는 데이터;
+
+    변수 선언시 규칙
+
+    1. 변수명의 첫 글자로는 영문자(보통 소문자), $, _만 올 수 있다.
+    - var $num = 10; => ok
+    - var_num = 10; => ok
+    = var 1mu = 10; => x
+
+    2. 변수명의 첫 글자 다음은 영문자, 숫자, $, _ 를 포함할 수 있다.
+
+    3. 변수명으로는 예약어x(ex) document, console, var, let...)
+    : 예약어란 자바스크립트에서 이미 코드로 사용되고잇는 잇는 단어를 의미한다.
+    var var; => x;
+    var document => x;
+    var string => x;
+
+    4. 변수명을 지을때에는 되도록 의미를 부여해야 한다.
+    - var num = 10; => o
+    - var num=> '하이루' => x
+
+    5. 변수명을 사용할때는 대소문자를 구분해야 한다.
+    - var num;
+    document.write(Num); => x
+
+    변수명 표기법
+
+    변수에 이름을 지을때 짧은 이름인 경우 소문자로 짓지만,
+    이름이 단어와 단어 조합힐경우 두 가지 방법으로 변수명을 짓는다.
+
+    1. 카멜표기법(낙타표기법)
+
+    변수명을 단어 + 단어 조합으로 지을때 두번째 단어부터 첫 글자를 대문자로 표기하는 방식.
+    -var userName
+
+    2. 스네이크표기법
+
+    class나 id이름지을때처럼 단어와 단어사이에 _를 포함하여 변수명을 짓는 방식.
+    -var user_name
+
+    
+    -->
+
+    
+</body>
+<script>
+    var box;
+    document.write("box 안에 들어있는 값은 : " + box, "<br>")
+
+    var box2 = "hello";
+    document.write("box2 안에 들어있는 값은 : " + box2, "<br>");
+
+    var box2 = null;
+    document.write("box2 안에 들어있는 값은 : " + box2, "<br>");
+
+    var box3 = '100';
+    document.write("box3 안에 들어있는 값은 : " + typeof box3, "<br>")
+
+    var box4 = 100;
+    document.write("box4 안에 들어있는 값은 : " + typeof box4);
+</script>
+</html>

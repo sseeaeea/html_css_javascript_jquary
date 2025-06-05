@@ -1,0 +1,34 @@
+space 적응형(pc)버전 클론코딩하기(6월 9일까지~~)
+================================
+https://space-nine-eta.vercel.app/
+
+컨텐츠 영역 : 1600px;
+header :넓이 100% 높이 80px
+submenu : 줄간격 44px
+
+
+XE아이콘 사용법 : https://xpressengine.github.io/XEIcon/started.html
+
+XE아이콘 폰트 CDN연결주소 :https://cdn.jsdelivr.net/xeicon/2/xeicon.min.css
+
+사용한 아이콘 폰트(class명)
+====================
+로그인 : xi-user-o
+메뉴 : xi-bars
+메인비주얼에 아래 화살표 : xi-angle-down-thin xi-4x
+
+세번째 섹션
+아이콘1 : xi-code xi-5x
+아이콘2 : xi-text-type xi-5x
+아이콘3 : xi-at xi-5x
+
+버튼에 있는 + : xi-plus
+
+푸터 아이콘1 : xi-stack-overflow
+푸터 아이콘2 :xi-youtube-play
+푸터 아이콘3 :xi-github
+푸터 아이콘4 :xi-instagram
+
+
+메인컬러 : rgba(49, 107, 255, 1);
+서브컬러 : rgba(61, 244, 85, 1);

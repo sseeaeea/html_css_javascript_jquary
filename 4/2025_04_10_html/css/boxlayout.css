@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100%;
+    height: auto;
+    padding: 0px 360px; 
+    /* 안쪽여백 : 위아래는0, 양쪽으로 360px */
+    box-sizing: border-box;
+    /* padding을 width안에 포함시킴 */
+}
+
+.top_title{
+    margin-bottom: 100px;
+    
+}
+/* 후손문법 .top_title안에있는 h3을 불러오라는 뜻*/
+.top_title h3{
+    font-size: 24px;
+    line-height: 2;
+    /* 숫자만 쓰면 폰트에 기본적으로 지정된 줄 높이에서 배수로 적용됨. 1=100%*/
+}
+.top_title span{
+    font-size: 32px;
+    color: blue;
+}
+.top_title h2{
+    font-size: 40px;
+    line-height: 2;
+}
+
+.card{
+    width: 384px;
+    height: fit-content;
+    padding: 20px; 
+    background-color: blue;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
+
+.card_top{
+    width: 100%;
+    height: auto;
+}
+img{
+    /* inline-block속성에서 block속성으로 바꿈 */
+    display: block;
+    border: none;
+    width: 100%;
+    border-radius: 20px;
+}
+a{
+    /* 밑줄 없애기(글자꾸밈은 없음) */
+    text-decoration: none;
+}
+.card_bottom{
+    color: white;
+    margin-top: 20px;
+}
+
+.card_bottom h4{
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.card_bottom h2{
+    margin-bottom: 30px;
+}
+
+.card_bottom p{
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.arrow{
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 16px;
+    text-align: center;
+    line-height: 32px;
+}

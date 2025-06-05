@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* 가상요소는 content속성이 필수로 들어가야한다. */
+h2::before{
+    content: '안녕하세요';
+    color: blue;
+    font-size: 12px;
+    font-style: italic;
+}
+
+p::after{
+    content: 'circle';
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+    content: '잘가세요';
+    display: block;
+    border-radius: 100%;
+    text-indent: -9999px;
+}
+
+p:hover::after{
+    background-color: black;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수표현식</title>
+</head>
+<body>
+    <!-- 
+    함수표현식
+
+    앞에서 배운 일반함수는 함수명을 선언하고 그 이름을 사용해 호출한다.
+    이 방법은 함수의 이름만 알면 어디서나 호출하여 실행할 수 있어
+    많이 사용하는 방법이다.
+    이 밖에도 함수 이름을 지정하지 않고 사용하거나, 함수를 호출하지않고
+    바로 실행하는 방법도 있다.
+    함수 표현식의 종류는 익명함수, 즉시실행함수, ES6버전 최신문법인 
+    화살표 함수가 있다.
+
+    익명함수
+
+    익명함수는 이름이 없는 함수를 말한다. 즉, 익명함수를 선언할때에는
+    함수명을 짓지 않는다. 그대신 이름을 대신해줄 변수에 참조하여
+    변수명으로 호출할 수 있다.
+
+    [기본형]
+    let 변수명 = function(){코드...}
+
+    변수명();
+
+    즉시 실행함수
+
+    일반적으로 함수는 선언하고 필요할때마다 호출해서 실행하는 방법을
+    많이 사용한다. 하지만 한번만 실행하는 함수라면 함수를 정의하면서
+    동시에 실행시킬수 있다.
+    이것이 바로 즉시실행 함수이다.
+    즉시실행함수는 함수를 실행하는 순간 자바스크립트 해석기에서 
+    함수를 바로 해석한다.
+
+    [기본형]
+    (function(매개변수){
+       코드;
+    }(인수));
+    -->
+</body>
+<script>
+    let sum = function(a,b){
+        return a + b;
+    }
+
+    document.write("함수실행결과 : " + sum(10,20) + "<br>");
+
+    (function(){
+        let user_name = prompt("이름을 입력하세요")
+
+        document.write("안녕하세요 제 이름은 " + user_name + "입니다.")
+    }());
+
+    //두개의 함수명이 같을때 지역변수와 지역함수를 선언하여 함수충돌 방지하기
+    (function(){
+        // let num = 100;
+        // function menu(){
+        //     num +=100;
+        //     alert(num);
+        // }
+        // menu();
+        let num = 100;
+        function menu(){
+            num += 100;
+            alert(num);
+        }
+        menu();
+    })();
+
+    (function(){
+        let num = 100;
+        function menu(){
+            alert(num);
+        }
+        menu();
+    })();
+
+</script>
+</html>

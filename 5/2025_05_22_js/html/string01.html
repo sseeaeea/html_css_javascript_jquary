@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열객체</title>
+</head>
+<body>
+    <!-- 
+    문자열객체 String
+
+    문자를 객체로 취급하는 것으로 일반적인 문자형 데이터가 곧 문자열 객체이다.
+    자바스크립트에서 가장 많이 사용되는 객체이다.
+
+    문자열 객체를 생성할때에는 new String("문자형 데이터")를 넣어 표현할 수 있고
+    더 간단하게 " "로 표시해도 된다.
+
+    문자열도 배열과 마찬가지로 첫 글자부터 인덱스 번호가 차례로 부어된다.
+    인덱스번호는 항상 0번부터 시작한다.
+
+    문자열 객체의 메서드와 프로퍼티
+
+    문자열 객체는 문자와 관련된 메서드와 프로퍼티를 제공하여, 이를 사용해 문자에 대한
+    다양한 정보를 얻을 수 있다.
+
+    var str = "javascript"
+
+    [메서드]
+    1. charAt(index)
+    : 문자열에서 인덱스 번호에 해당하는 문자를 반환한다.
+
+    2. indexOf("찾을문자")
+    : 문자열 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자의
+    인덱스번호를 반환한다. 만약 일치하는문자가 없다면 -1을 반환한다.
+
+    3. lastIndexOf("찾을문자")
+    : 문자열 끝에서부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자의
+    인덱스 번호를 반환한다. 만약 일치하는 문자가 없다면 -1을 반환한다.
+
+    4. match("찾을문자")
+    : 문자열 끝에서부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자를
+    반환한다. 만약 일치하는 문자가 없다면 null을 반환한다.
+
+    5. replace("바꿀문자", "새문자")
+    : 문자열 왼쪽부터 바꿀 문자와 일치하는 문자를 찾아 새 문자로 치환한다. 
+    바꿀 문자가 한 문장안에 여러 개가 있더라도 제일 먼저 찾은 문자만 1개 바꿔준다.
+
+    6. replaceAll("바꿀문자", "새문자")
+    : 문자열 왼쪽부터 바꿀문자와 일치하는 문자를 찾아 새 문자로 치환한다.
+    이때 바꿀 문자가 한 문장 안에 여러 개가 있다면 모든 문자를 다 바꿔준다.
+
+    7. search("찾을문자")
+    : 문자열 왼쪽부터 찾을 문자와 일치하는 문자를 찾아 제일 먼저 일치하는 문자의
+    인덱스번호를 반환한다. 찾을 문자를 못 찾더라도 아무것도 반환해주지 않아 잘 사용하지 않는다.
+
+    8. slice(a,b)
+    : a개의 문자를 자르고 b번째 이후의 문자를 자른후 남은 문자를 반환한다.
+
+    9. substring(시작인덱스, 끝인덱스)
+    : 시작 인덱스부터 끝 인덱스 바로 앞까지 문자를 잘라 반환한다.
+
+    10. substr(a, 문자개수)
+    : 문자열에 a인덱스부터 지정한 문자 개수만큼 문자열을 반환한다.
+
+    11. split("문자")
+    : 지정한 문자를 기준으로 문자 데이터를 나누어 배열에 저장하여 반환한다.
+
+    12. toLowerCase()
+    : 대문자를 소문자로 바꾼다.
+
+    13. toUpperCase()
+    : 소문자를 대문자로 바꾼다.
+
+    14. length
+    : 문자열에서 문자의 총 개수를 반환한다.
+
+    15. concat("새로운 문자")
+    : 문자열에 새로운 문자를 결합한다.
+
+    16. charCodeAt(index)
+    : 아스키코드값에 해당하는 문자의 인덱스번호를 반환한다. 아스키코드란 키보드 자판에 들어잇는 고유번호
+
+    17. fromCharCode("아스키코드값");
+    : 아스키코드에 해당하는 문자를 반환
+    한다.
+
+    18. trim();
+    : 문자열에서 앞또는 뒤의 공백 문자열을 삭제한다.
+    문자열 중간의 공백은 삭제하지 않는다.
+    -->
+</body>
+<script>
+    var str = "Hello Thank you good luck to you"
+    document.write(str.charAt(16) + "<br>");
+    document.write(str.indexOf("you") + "<br>");
+    document.write(str.indexOf("you", 16) + "<br>");
+    document.write(str.lastIndexOf("you") + "<br>");
+    document.write(str.match("luck") + "<br>");
+    document.write(str.match("luco") + "<br>");
+    // 6번인덱스부터 5개의 문자를 잘라 반환
+    document.write(str.substr(6,5) + "<br>");
+    // 16번 인덱스부터 20번인덱스의 앞 즉 19번 인덱스까지 잘라 반환
+    document.write(str.substring(16,20) + "<br>");
+    document.write(str.replace("you", "me") + "<br>");
+    document.write(str.replaceAll("you", "me") + "<br>");
+    document.write(str.toLocaleLowerCase() + "<br>");
+    document.write(str.toLocaleUpperCase() + "<br>");
+    document.write(str.length + "<br>");
+    //공백을 기준으로 문자열을 잘라서 배열로 반환한다.
+    var arr = str.split(" ")
+    document.write(arr + "<br>");
+
+    // 배열 arr의 4번 인덱스에 해당하는 데이터를 화면에 출력하기
+
+    document.write(arr[4] + "<br>");
+
+    var arr2 = [
+        {
+            name : '김땡땡',
+            age : 25,
+        },
+        {
+            name : '이땡땡',
+            age : 30,
+            info: function(){
+            document.write("안녕하세요 제 이름은" + this.name + "이고 나이는" + this.age + "입니다.<br>")
+        }
+        }
+    ];
+
+    // 이땡땡 반환받기
+    document.write(arr2 + "<br>");
+    document.write(arr2[1].name + "<br>");
+
+    arr2[1].info();
+</script>
+</html>

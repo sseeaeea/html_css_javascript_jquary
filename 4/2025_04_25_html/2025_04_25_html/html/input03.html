@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다양한 입력양식 태그들</title>
+    <style>
+        /* 포커스 상태일때 나오는 굵은선 없애기 */
+        select, input, textarea, button{
+            outline: none;
+        }
+        /* 포커스 상태일 때 나오는 굵은선 */
+        :is(select, input, textarea, button):focus{
+            border: 1px solid red;
+        }
+        
+        button{
+            border: none;
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    1. <select>태그
+
+    보통 '셀렉트 박스', '선택상자'라고 부르며 여러 데이터중 하나의 데이터를 선택하거나
+    다중으로 선택하는 경우 사용한다. 기본 형식은 1개의 데이터만 선택이 가능하지만
+    multiple속성을 사용하면 다중선택하게 만들 수 있다.(다중선택은 잘 안씀)
+    다중선택방법은 ctrl키를 누른 상태에서 여러 데이터를 선택하면 된다.
+    selected속성을 넣으면 맨 처음 보여질 옵션을 선택할 수 있다.
+
+    [기본형]
+    <select multiple>
+        <option selected>데이터1</option>
+        <option>데이터2</option>
+        <option>데이터3</option>
+    </select>
+
+    2. <textarea>태그
+
+    블로그나 게시판처럼 긴 글을 입력할 때 사용하는 태그.
+    textarea태그에는 cols, rows, name속성을 넣을 수 있고
+    cols속성으로 해당 태그의 넓이를 글자수 만큼 지정할 수 있다.
+    rows속성으로 해당 태그의 높이를 줄 수 만큼 지정할 수 있다.
+    name속성은 다른 폼 요소와 구분 구분하기 위해 사용한다.
+    textarea태그의 기본 기능은 pre태그처럼 동작한다. 즉, 줄바꿈이나
+    공백을 그대로 표현해준다.
+    그래서 textarea태그를 사용할 경우에는 태그사이에 공백을 포함한 
+    아무 내용도 넣지 않는다.
+
+    [기본형]
+    <textarea></textarea>
+
+    3. <button>태그
+
+    버튼을 만드는 태그로 세가지 기능을 사용할 수 있다.
+    기능은 type속성을 통해 지정할 수 있으며 뒤에 닫는 태그가 있는
+    일반태그로 태그 사이에 이미지를 넣거나 글자를 넣을 수 있어
+    활용도가 높은 태그이다.
+    type의 종류로는 submit, reset, button이 있으며
+    기본 기능은 전송버튼인 submit이다.
+    타입이 button일 경우 아무런 기능이 없는'깡통버튼'이다.
+    이러한 깡통버튼은 자바스크립트를 이용하여 특정 기능을 만들때
+    많이 사용된다.
+
+    [기본형]
+    <button type="기능결정"> 버튼이름이나 이미지</button>
+    -->
+    <!-- 기본선택상자 -->
+    <select>
+        <option value="0">[필수]옵션을 선택해주세요</option>
+        <option value="1" selected>블랙</option>
+        <option value="2">아이보리</option>
+    </select>
+    <!-- 다중선택상자 -->
+    <select multiple>
+        <option value="0">[필수]옵션을 선택해주세요</option>
+        <option value="1" selected>블랙</option>
+        <option value="2">아이보리</option>
+    </select>
+    <br>
+    <textarea>gdgdd  a weewew aq qq ewv\n\nDSDAFSDF</textarea>
+    <!-- 다양한 버튼 -->
+     <button>전송버튼</button>
+     <button type="reset">취소💚</button>
+     <button>
+        <img src="../image/top_ico.jpg" alt="버튼">
+     </button>
+</body>
+
+
+</html>

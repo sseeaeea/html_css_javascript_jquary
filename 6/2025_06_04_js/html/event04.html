@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>버블링&캡쳐링 실습</title>
+    <style>
+      body * {
+        margin: 10px;
+        padding: 0;
+        border: 1px solid red;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      form
+      <div>
+        div
+        <div>
+          <p>p</p>
+        </div>
+      </div>
+    </form>
+  </body>
+  <script>
+    for (let ele of document.querySelectorAll("*")) {
+      // 캡쳐링
+      ele.addEventListener(
+        "click",
+        (event) => alert(`캡쳐링 : ${ele.tagName}`),
+        true
+      );
+
+      // 버블링
+      ele.addEventListener("click", (e) => alert(`버블링 : ${ele.tagName}`));
+    }
+  </script>
+</html>

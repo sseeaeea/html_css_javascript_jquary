@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+</head>
+<body>
+    <!-- 
+    animation속성
+
+    브라우저가 로딩되는 순간 애니메이션을 재생시키는 속성으로, 사용자의
+    동작 없이 움직임을 만드는 속성이다. css3최신속성으로 animation속성으로
+    움직임에 대한 세팅값을 지정한 후 @keyframes모듈로 움직임을 만든다.
+
+    [속성종류]
+    - animation : 모든 animation하위 속성을 한꺼번에 선언할때 사용한다.
+    각 속성값은 공백으로 구분한다.
+    - animation-delay : 이벤트가 발생한 후 몇 초 후에 재생할지 지정한다.
+    - animation-direction : 애니메이션의 진행 방향을 지정한다.
+    
+    [속성값]
+    1. alternate : 정방향에서 시작하여 역방향으로 돌아오고, 이를 반복한다.
+    2. normal : 계속해서 정방향으로만 움직인다.
+    3. reverse : 역방향으로 움직인다.
+    4. alternate-reverse : 역방향에서 시작하여 정방향으로 이동한 후 다시 역방향으로 돌아간다.
+
+    - animation-duration : 애니메이션을 몇 초동안 진행시킬지 정한다.
+    단위는 s, ms를 사용한다.
+    - animation-iteration-count : 애니메이션의 반복 횟수를 지정한다. 단위없이
+    숫자로 입력하거나 infinite값을 사용하여 부한반복시킬 수 있다.
+    - animation-play-state : 애니메이션의 재생상태를 지정한다. :hover선택자와 함께 많이 사용된다.
+
+    [속성값]
+    1. running : 애니메이션을 계속 재생한다.
+    2. paused : 애니메이션을 멈춘다.
+    
+    -animation-timing-function : 수치변형함수(속도값)을 지정한다. 값은 transition과 같은값을 쓴다.
+
+    [속성값]
+    1. linear
+    2. ease(기본값)
+    3. ease-in
+    4. ease-out
+    5. ease-in-out
+
+    -animation-name : 애니메이션의 이름을 지정한다. class나 id이름짓듯이 지으면 된다.
+    애니메이션은 이름이 없으면 keyframes모듈을 사용할 수 없으므로 반드시
+    이름을 잘 지정해야 한다.
+    -animation-fill-mode : 애니메이션이 종료했을 때 모양과 위치를 유지할것인지를
+    지정한다. 기본값은 backwords이며, 애니메이션이 끝나면 from의 위치와 모습으로 돌아간다.
+    foward를 사용하면 애니메이션이 종료된 시점의 모습과 위치를 그대로 유지한다.
+
+    @keyframes모듈
+
+    animation속성으로 지정된 세팅값에 따라 실제 움직임을만들어내는 모듈이다.
+    @keyframes모듈은 시간에 흐름에 따라 애니메이션이 변경되는 지정을 설정할 수 있다.
+    @keyframes모듈에서는 '선택자'를 따로 지정할 수 있는데, 이때 0% 또는 from을 사용하고
+    애니메이션의 시작 지점의 모습을 의미한다. 애니메이션의 종료 시점은 100% 또는 to로 
+    표기할 수 있다. 만약 중간에 애니메이션의 움직임을 한번 더 제어하고 싶다면 50%라고 써서
+    중간을 제어할 수 있다. 물론 10%, 20%,...로 세세하게 나눌 수도 있으나 애니메이션이
+    진행될 duration초가 짧다면 오히려 움직임이 어색해질 수 있으므로 주의해야한다.
+
+    [기본형]
+    선택자{ animation : 이름 값1 값2 값3 값4...};
+
+    @keyframes 이름{
+       from또는0%{css style속성:값} <-시작할때의 위치나 모양을 지정한다.
+       1~99%{css style속성:값} <-애니메이션 중간에 태그의 위치나 모양을 제어한다.
+       to또는100%{css style속성:값} <-종료할때의 위치나 모양을 지정한다.
+    }
+    -->
+</body>
+</html>

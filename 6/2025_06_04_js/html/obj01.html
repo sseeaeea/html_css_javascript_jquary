@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트 객체</title>
+  </head>
+  <body>
+    <!-- 
+    이벤트 객체
+
+    이벤트 객체는 이벤트 핸들러 안에 포함된 객체로 이벤트가 발생하면 생성된다.
+    event객체에는 이벤트와 관련된 다양한 정보를 가지고 있다.
+    이벤트의 종류에따라 이벤트 객체의 프로퍼티와 메서드들을 골라서 사용할 수 있다.
+    예를들어 이벤트가 발생된 대상(태그)에 접근할때 this라는 키워드를 사용할 수 있다.
+
+    [이벤트 객체의 프로퍼티]
+    - altKey : 이벤트가 발생했을때 alt가 눌렸는지에 대한 여부를 boolean값으로 반환한다.
+    - ctrlKey : 이벤트가 발생했을때 ctrl가 눌렸는지에 대한 여부를 boolean값으로 반환한다.
+    - shiftKey : 이벤트가 발생했을때 shift가 눌렸는지에 대한 여부를 boolean값으로 반환한다.
+    - button : 마우스에서 눌린 키의 값을 반환한다. (왼쪽 : 0 휠 : 1 오른쪽 : 2)
+    - charCode : keypress이벤트가 발생했을때 어떤 키를 눌렀는지 유니코드값으로 키의 정보를 반환한다.
+    - clientX, clientY : 이벤트가 발생한 요소의 x좌표 위치와 y좌표 위치를 반환한다.
+    - pageX, pageY : 현재 문서를 기준으로 이벤트가 발생한 x좌표 위치와 y좌표 위치를 반환한다.
+    - screenX, screenY : 현재 화면을 기준으로 이벤트가 발생한 X좌표 위치와 Y좌표 위치를 반환한다.
+    - target : 이벤트가 최초로 발생한 대상을 반환한다.
+    - timeStamp : 이벤트가 발생한 시간을 반환한다.
+    - type : 발생한 이벤트 종류의 이름을 반환한다.
+    - which : 키보드와 관련된 이벤트가 발생했을때 키의 유니코드값을 반환한다.
+
+    [메서드]
+    - preventDefault();
+    : 기본 이벤트를 취소할때 사용한다.
+    - stopPropergation();
+    : 기본 이벤트를 취소할때 사용한다. 이벤트의 버블링을 막는다.
+
+    [기본형]
+    요소.on이벤트명 = function(event){ <- 매개변수 event안에 이벤트 객체가 할당된다.
+       event.프로퍼티명 = 값; <- 이벤트 객체의 현재 값을 다른 값으로 바꾸기.
+       let 변수 = event.프로퍼티명; <- 이벤트 객체의 현재값을 변수에 할당
+       event.매서드명(); <- 이벤트객체의 메서드 실행
+    }
+    -->
+    <img src="../image/bg_img2.png" alt="" id="image" />
+    <script>
+      const image = document.querySelector("#image");
+
+      //이벤트 핸들러의 매개변수 안에는 이벤트 객체가 들어있다.
+      //변수 이름은 상관없지만 통상적으로는 e또는 event를 사용한다.
+      image.onclick = function (event) {
+        //this : image(이벤트가 발생한 이미지 태그요소)
+        alert("클릭한 이미지 파일? : " + this.src);
+        console.log(event);
+
+        let positionX = event.clientX;
+        let positionY = event.clientX;
+      };
+    </script>
+  </body>
+</html>

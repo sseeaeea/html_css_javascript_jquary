@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swiper Navigation - 작은 화살표</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: #f4f4f4;
+    }
+
+    .swiper {
+      width: 600px;
+      height: 300px;
+      margin: auto;
+      position: relative;
+    }
+
+    .swiper-slide {
+      background-color: #007aff;
+      color: white;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 버튼 위치: 오른쪽 하단 */
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 30px;
+      height: 30px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      color: white;
+      top: auto;
+      bottom: 10px;
+      z-index: 10;
+    }
+
+    .swiper-button-prev {
+      right: 50px;
+      left: auto;
+    }
+
+    .swiper-button-next {
+      right: 10px;
+    }
+
+    /* 화살표 아이콘 크기 조절 */
+    .swiper-button-prev::after,
+    .swiper-button-next::after {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Swiper -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">슬라이드 1</div>
+      <div class="swiper-slide">슬라이드 2</div>
+      <div class="swiper-slide">슬라이드 3</div>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>
+</body>
+</html>

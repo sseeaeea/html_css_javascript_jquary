@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날짜 객체</title>
+</head>
+<body>
+    <!-- 
+    D-day계산기 만들기
+
+    디데이 계산기를 만들려면 특정 날짜에서 현재 날짜를 빼서 남은 일 수를
+    구해야한다.
+
+    [공식]
+    남은 일 수(밀리초) = 특정 날짜 객체 - 현재 날짜 객체
+
+    밀리초로 시간 계산하기
+
+    1초 = 1000밀리초
+    1분 = 60 * 1000
+    1시간 = 60 * 60 * 1000
+    하루 = 24 * 60 * 60 * 1000
+    -->
+</body>
+<script>
+    // 현재 날짜부터 연말까지 며칠이 남았는지 날짜정보객체로 구하기
+
+    function cal(){
+        let today = new Date(); // 오늘 날짜
+        let now_year = today.getFullYear(); // 올해 연도
+        let the_date = new Date(now_year, 11, 31) // 연말정보
+        let diff_date = the_date.getTime() - today.getTime(); // 연말 - 현재날짜
+        let result = Math.ceil(diff_date / (24 * 60 * 60 * 1000));
+        document.write("연말 D-day : " + result + "<br>"); // 남은 일수
+    }
+
+    cal();
+</script>
+</html>

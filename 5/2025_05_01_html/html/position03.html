@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>z-index</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            width: 300px;
+            border: 4px solid #000;
+            text-align: center;
+            font-size: 30px;
+            line-height: 300px;
+            /* 절대좌표. 브라우저의 0점을 기준으로 */
+            position: absolute;
+        }
+        div:nth-child(1){
+            background-color: salmon;
+            top: 100px;
+            left: 100px;
+            /* z-index숫자가 가장 높아서 제일 앞에 온다. */
+            z-index: 4;
+        }
+
+        div:nth-child(2){
+            background-color: sandybrown;
+            top: 200px;
+            left: 200px;
+            /* z-index숫자가 두번째로 높아서 두번째에 위치한다. */
+            z-index: 3;
+        }
+
+        div:nth-child(3){
+            background-color: green;
+            top: 300px;
+            left: 300px;
+            /* z-index숫자가 없어서 기본값인 0이므로 제일 뒤에 위치한다. */
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+    z-index 속성
+
+    position이 적용된 박스끼리 겹쳐있을 경우 어떤 태그가 더 앞에 나올지
+    결정하는 속성. z-index속성은 값으로 단위 없이 숫자를 사용하며
+    숫자가 클수록 앞으로 위치한다. 쓸 수 있는 값은 0~9999까지 사용할 수 있고
+    기본값은 0이다. 하지만 9999와 같은 너무 높은 숫자는 브라우저가 인식하지 못하고
+    오류를 이르킬때가 있어 100단위 숫자를 주로 많이 사용한다.
+    -->
+
+    <div>box-1</div>
+    <div>box-2</div>
+    <div>box-3</div>
+</body>
+</html>

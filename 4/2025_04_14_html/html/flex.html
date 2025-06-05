@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <link rel="stylesheet" href="../css/flex.css">
+</head>
+<body>
+    <!-- 
+    자식박스를 편리하게 정렬하는 flex속성
+
+    display: flex는 어플리케이션 형태로 페이지 또는 반응형 홈페이지에서
+    많이 쓰인다. 유동 레이아웃 구현 시 편리하게 사용할 수 있다.
+    flex속성은 익스10이상에서만 지원된다. 하지만 10버전 이상에도 종종 버그가 
+    발생하므로 익스환경에서는 float속성을 사용하기를 권장한다.
+
+    익스 11버전에서는 -ms-, -webkit-, -moz-등 브라우저 접두사(=밴더프리픽스)
+    함께 선언해야 하며 모바일 하위버전에서는 -webkit-flex;를 사용해야
+    정상적으로 작동된다.
+    
+    flex
+
+    부모 박스 '컨테이너'안에 있는 자식박스들을 단 방향으로 정렬하는 속성이다.
+    가로 또는 세로 방향으로 정렬할 수 있고, 기본 값은 가로 방향이다.
+    flex속성은 부모에 적용한다. 부모에 flex가 적용되면 그 안에 자식들은 
+    자동으로 가로로 정렬된다. 자식들을 여러 방법으로 정렬하고 싶다면
+    하위 정렬속성을 사용하는데, 이 속성들 모두 '부모박스'에 적용해야한다.
+
+
+
+    [기본형]
+    부모박스{
+      display : flex;
+    }
+
+    하위 정렬속성
+
+    flex속성은 부모 컨테이너의 넓이보다 자식박스들의 넓이 총합이 더 클경우
+    자식들에 적용된 width값을 무시하고무조건 한줄에 걸쳐 정렬하는것이 기본값이다.
+    만약 자식들의 넓이 높이를 그대로 유지하고 싶거나 또는 자식들 사이에 동일한
+    간격을 두어 배치하고 싶다면 하위 정렬 속성을 사용한다.
+    하위 정렬속성들은 반드시 부모박스에 display: flex가 걸려 있어야만 사용할 수 있다.
+
+    1. justify-content : 가로 정렬 속성
+    부모박스의 왼쪽, 중앙, 오른쪽과 같이 '가로방향'으로 자식박스들을 일괄 정렬하는 속성이다.
+
+    [속성값]
+    - flex-start : 기본값으로 부모박스의 왼쪽부터 정렬된다.
+    - flex-end : 자식박스들을 부모박스의 오른쪽으로 정렬한다.
+    - center : 자식박스들을 부모박스의 가로 중앙에 정렬한다.
+    - space-between : 부모박스의 자식박스를 양끝정렬하여 사이사이 동일한 여백을 만든다.
+    - space-around : 자식 요소들 양옆으로 동일한 간격을 주어 정렬한다.
+    - space-evenly : 자식 요소들을 부모박스안에서 좌우 동일한 간격으로 고르게 배치한다.
+
+    2. align-items : 세로정렬속성
+
+    부모박스의 top, middle, bottom위치에 자식박스들을 배치하는 속성이다.
+
+    [속성값]
+    - flex-start : 기본값으로 부모박스의 top위치에 정렬된다.
+    - flex-end : 자식박스들을 부모박스의 bottom위치에 정렬된다.
+    - center : 자식박스들을 부모박스의 middle위치에 정렬한다.
+    - baseline : 요소들을 컨테이너의 시작 위치에 정렬합니다.
+    - stretch : 요소들을 컨테이너에 맞도록 늘린다. 이때, 
+    컨텐츠의 정렬 방향이 row고 자식박스에 height속성이 없어야 한다.
+    자식박스의 정렬방향이 column이면 자식박스에 width속성이 없어야 한다.
+
+
+    -->
+
+      <div class="container">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+        <div class="box6">box6</div>
+        <div class="box7">box7</div>
+        <div class="box8">box8</div>
+        <div class="box9">box9</div>
+        <div class="boxA">boxA</div>
+      </div>
+</body>
+</html>

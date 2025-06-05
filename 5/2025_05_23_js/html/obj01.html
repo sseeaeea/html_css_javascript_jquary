@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    screen객체
+
+    screen객체는 사용자의 모니터 정보(속성)을 제공하는 객체이다.
+    예를들어 모니터의 넓이, 높이 또는 컬로 표현 bit를 반환한다.
+
+    [기본형]
+    screen속성
+
+    [프로퍼티 종류]
+    1. screen:width : 화면간의 넓이값을 반환한다.
+    2. screen:height : 화면간의 높이값ㅇ르 반환한다.
+    3. screen:availWidth : 작업표시줄을 제외한 화면의 넓이값을 반환한다.
+    4. screen:availHeight : 작업표시줄을 제외한 화면의 높이값을 반환한다.
+    5. screen.colorDepth : 사용자 모니터가 표현 가능한 컬러 bit를 반환한다.
+    -->
+</body>
+<script>
+    document.write('화면넓이 : ' +  screen.width + "<br>");
+    document.write('작업표시줄 제외 화면 넓이 : ' +  screen.availWidth + "<br>");
+    document.write('화면높이 : ' +  screen.height + "<br>");
+    document.write('작업표시줄 제외 화면 높이 : ' +  screen.availHeight + "<br>");
+    document.write('화면컬러 : ' +  screen.colorDepth + "<br>");
+</script>
+</html>

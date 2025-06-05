@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+
+body{
+    /* 배경이미지 불러오기 */
+    background-image: url(../image/rock.jpg);
+    background-image: url(../image/puppy.png), url(../image//rock.jpg);
+    background-repeat: no-repeat;
+}
+
+div{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: 5px solid black;
+}

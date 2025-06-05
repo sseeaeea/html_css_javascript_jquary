@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+span{
+    display: block; /*inline 속성에서 block속성으로 바꿈*/
+    background-color: lightpink;
+    /* display: block; */
+    width: 100px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+div{
+    background-color: aquamarine; /*block 속성에서 inline속성으로 바꿈*/
+    /* display: inline; */
+    width: 100px;
+    height: 40px;
+}
+
+b{
+    background-color: blue; /*inline 속성에서 inline-block속성으로 바꿈*/
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+}
+
+#box{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    background-color: brown;
+    text-align: center;
+    line-height: 200px;
+}
+
+.box2{
+    /* 요소 숨기기(공간유지x) */
+    display: none;
+    /* 숨긴요소 나타내기 */
+    display: block;
+}
+
+.box1{
+    /* 요소 숨기기(공간유지) */
+    visibility: hidden;
+    /* 숨긴 요소 나타내기 */
+    visibility: visible;
+}

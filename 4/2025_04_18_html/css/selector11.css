@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+:is(ul,li){
+    list-style: none;
+}
+
+ul{
+    width: 1000px;
+    height: 50px;
+    background-color: black;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+li{
+    color: white;
+    text-transform: uppercase;
+}
+
+/* li에 마우스를 올리면 해당 태그에 글자색을 바꿈 */
+li:hover{
+    color: aquamarine;
+}
+
+
+/* ul에 li:hover가 있다면 hover가 적용되어있지않은 li를 불러옴 */
+
+ul:has(li:hover) li:not(:hover){
+    color: rgb(156, 156, 156);
+}

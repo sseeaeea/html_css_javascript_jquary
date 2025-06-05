@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 꾸미기 속성</title>
+    <style>
+        table{
+            border: 3px solid darkturquoise;
+            /* border-collapse: collapse; */ /* 테두리 합치기 */ 
+            border-spacing: 10px 40px; /* 가로간격 세로간격 */
+            empty-cells: hide;
+        }
+
+        td{
+            border: 3px dotted darkturquoise;
+            text-align: center;
+        }
+
+        .table2{
+            border-collapse: collapse;
+            margin-top: 20px;
+            width: 300px;
+            table-layout: fixed; /* td에 지정된 넓이로 고정 */
+            /* 글자가 옆칸을 침범하지 않도록 글자를 끊어서 칸 안에 넣음 */
+            word-break: break-all; /* 글자를 끊어서 칸안에 넣음 */
+        }
+
+        .table2 td{
+            width: 150px;   
+        }
+
+        .cell1{
+            height: 200px;
+            /* 두개 결과 같음 */
+            vertical-align: baseline;
+            vertical-align: top;
+        }
+        .cell2{
+            vertical-align: middle;
+        }
+        .cell3{
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    1. border-collapse속성
+
+    표에 테두리를 적용하면 table태그와 td,th태그에 줄이 각각 생기며 분리되어 있는 것이
+    기본값이다.
+    만약 표의 테두리를 하나로 합치고 싶다면 border-collapse속성을 사용할 수 있다.
+    해당속성은 table태그에 적용해야 한다.
+
+    [속성값]
+    - collapse : 테두리를 하나로 합쳐 표현한다.
+    - separate : 기본값으로 테두리를 분리하여 표현한다.
+
+    2. border-spacing속성
+
+    table태그에 border속성을 사용했을때 기본값인 
+    테두리와 칸들의 테두리 간격을 설정하는 속성이다.
+    border-collapse : collapse; 상태일때에는 사용할 수 없다.
+    해당 속성은 table태그에 적용해야 한다.
+
+    3. empty-cells속성
+
+    표에 빈 칸이 있을경우 테두리를 보여줄 지 안보여줄지 
+    지정하는 속성. 
+    border-collapse : collapse; 상태일때에는 사용할 수 없다.
+    해당 속성은 table태그에 적용해야 한다.
+
+    [속성값]
+    - show : 빈칸의 테두리를 보여준다. 기본값
+    - hide : 빈칸의 테두리를 보여주지 않는다.
+
+    4. table-layout속성
+
+    width를 이용하면 칸에 원하는 사이즈를 지정할 수 있다.
+    하지만 영문일 경우 길게 입력하면 셀의 width값은 무시되고 영문내용은
+    한 줄로 표시된다. 그러면서 옆칸을 내용이 침범하게 된다.
+    이런경우 table-layout속성을 이용할 수 있다. table태그에 적용해야 한다.
+    table-layout속성을 사용하면 지정한 크기를 유지하며, 내용은 옆칸을 침범하게 된다.
+    옆칸을 침범한 내용을 아랫줄로 내리고 싶다면 word-break속성을 사용하여 내용을 
+    아랫줄로 내릴 수 있다.
+
+    [속성값]
+    - fix : 칸의 넓이를 고정하며 셀의 내용에 따라 넓이가 달라지지 않는다.
+    - auto : 기본값이며 셀의 내용에 따라 넓이가 달라진다.
+
+    5. vertical-align
+
+    칸 안에서 글자를 세로정렬하고 싶을때 사용하는 속성.
+    vertical-align속성은 표에서만 사용할 수 있고
+    적용하고자 하는 해당 칸에 직접 적용한다.
+
+    [속성값]
+    - baseline : 셀의 기준선에 내용의 기준선을 맞춤
+    - top : 패딩영역을 제외한 칸의 top부분을 글자를 맞춤
+    - middle : 기본값으로, 셀의 중앙에 글자를 맞춤
+    - bottom : 패딩영역을 제외한 칸의 bottom부분에 글자를 맞춤
+    -->
+
+    <table>
+        <tr>
+            <td>마블 어벤져스</td>
+            <td></td>
+            <td>미키 17</td>
+        </tr>
+        <tr>
+            <td>11:25 ~ 13:10</td>
+            <td>17:50 ~ 20:50</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <table class="table2">
+        <tr>
+            <td>ddsafdsfasdbwprojwpaovwpaeqweqhbcbxzcbxzasz vwopvwawnpvnpvnwenpvnpanvwp</td>
+            <td>미키미키미키미키미키미키미키미키미키미키미키미키</td>
+            <td>미키미키미키미키미키미키미키미키미키미키미키미키</td>
+        </tr>
+        <tr>
+            <td class="cell1">11:25 ~ 13:10</td>
+            <td class="cell2">17:50 ~ 20:50</td>
+            <td class="cell3">17:50 ~ 20:50</td>
+        </tr>
+    </table>
+</body>
+</html>

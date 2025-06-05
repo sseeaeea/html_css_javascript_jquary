@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position.stickey</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      section {
+        width: 100%;
+        height: 1000px;
+        /* stickey가 적용될 요소는 반드시 height속성이 있어야한다. */
+        /* overflow속성이 있어서는 안된다. */
+      }
+      .sec1 {
+        background-color: aquamarine;
+      }
+      .sec2 {
+        background-color: darksalmon;
+      }
+      .sec3 {
+        background-color: tomato;
+      }
+      /* stickey가 적용될 요소 */
+      h2 {
+        width: fit-content;
+        height: fit-content;
+        color: blueviolet;
+        top: 100px;
+        font: 40px;
+        position: sticky;
+        margin-bottom: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    position.stickey
+
+    position.stickey는 최신 속성중 하나로 처음에는 relative처럼 동작하다가
+    특정 부모영역에 스크롤이 닿으면 그때부터 fixed처럼 동작하는 속성이다.
+    즉, 특정 지점에서 요소가 고정되며 따라오게 만드는 속성이다.
+
+    position.stickey를 적용하기 위해서는 아래 세가지 규칙을 꼭 지켜주어야 한다.
+    1. stickey속성을 갖는 요소들은 자식의 부모 요소에서만 적용된다.
+    2. 부모요소에 반드시 height속성이 있어야한다. 부모의 height만큼 stickey가 고정된다.
+    3. 부모요소에는 overflow속성이 있어서는 안된다.
+    4. stickey속성을 가지는 요소는 반드시 top, right, left ,bottom 값이 있어야 한다.
+    -->
+    <section class="sec1"></section>
+    <section class="sec2">
+      <h2>stickey</h2>
+    </section>
+    <section class="sec3"></section>
+  </body>
+</html>

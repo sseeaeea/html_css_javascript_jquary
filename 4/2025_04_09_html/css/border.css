@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+.box1{
+    border: none;
+}
+.box2{
+    border: hidden;
+}
+.box3{
+    border: 8px dashed orange;
+}
+.box4{
+    border: 10px dotted red;
+}
+.box5{
+    border: 10px double darkmagenta;
+}
+.box6{
+    border: 15px groove blueviolet;
+}
+.box7{
+    border: 15px inset wheat;
+}
+.box8{
+    border: 15px outset lawngreen;
+}
+.box9{
+    border: 15px ridge blanchedalmond;
+}
+.boxA{
+    border: 5px solid firebrick;
+}
+
+/* 테두리 사방에 각각 적용하기 */
+.boxB{
+    border-top: 10px solid darkblue;
+    border-bottom: 20px ridge firebrick;
+    border-left: 15px double blueviolet;
+    border-right: 30px inset lawngreen;
+}
+
+
+div{
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    margin: 10px;
+    font-size: 40px;
+    text-align: center;
+    line-height: 200px;
+
+    /* 
+    line-height : 줄간격. 행간이라고 한다.
+    박스안에 글이 1줄이고 짧을경우, height값과 line-height의 값이 
+    똑같으면 글자가 세로 중앙으로 간다
+    */
+}

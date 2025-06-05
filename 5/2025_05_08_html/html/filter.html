@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter 속성</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+
+        .blur{
+            filter: blur(10px);
+        }
+        .brighness{
+            filter: brightness(1.5)
+        }
+        .contrast{
+            filter: contrast(150%);
+        }
+        .drop_shadow{
+            /* x축 y축 흐림정도 색상 */
+            filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.5));
+            /* box-shadow는 이미지의 박스 테두리에 생긴다 */
+            box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+        }
+        .gray_scale{
+            filter: grayscale(100%);
+        }
+        .invert{
+            filter: invert(100%);
+        }
+        .sepia{
+            filter: sepia(100%);
+        }
+        .opacity{
+            filter: opacity(50%);
+        }
+        .hue-rotate{
+            filter: hue-rotate(45deg);
+        }
+        .saturate{
+            filter: saturate(500%);
+        }
+        .content{
+            width: 640px;
+            height: 300px;
+            background: url(../image/bg.jpg) no-repeat;
+            color: #fff;
+        }
+        .content > div{
+            width: 500px;
+            height: 200px;
+            margin: 0 auto;
+            backdrop-filter: blur(2px);
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    filter 속성
+
+    다양한 시각 효과를 추가할 때 filter속성을 사용할 수 있다.
+    마치 포토샵으로 필터효과를 적용한 것처럼 나타난다.
+
+    [속성값]
+    - blur() : 선택한 이미지나 컨텐츠에 블러 효과를 적용한다. 값은 소괄호안에 
+    px값을 적으면 된다.
+    - brightness() : 선택한 이미지나 컨텐츠를 더 밝게 만든다. 값은 %나 숫자를 사용한다.
+    기본값은 1로 컨텐츠의 현재 밝기를 뜻하고 0을 입력하면 검정색으로 변한다. 2는 200%와 동일하고
+    두배 더 밝은 밝기가 적용된다.
+    - contrast() : 대비효과를 말한다. 값은 %를 이용한다. 0%는 대비가 전혀 없어 회색으로 표현된다.
+    100%는 아무런 변화가없다(기본값) 200%는 대비를 두배로 증가시켜 색상간의 차이를 더 뚜렷하게 만든다.
+    - drop-shadow(x축 y축 흐림정도 번짐정도 그림자색) : 이미지나 컨텐츠의 윤곽을 따라 그림자를 적용한다.
+    box-shadow와 마찬가지로 5개의 속성값으로 선언한다.
+    - gray-scale() : 이미지를 흑백 이미지로 바꾼다. 값은 0% ~ 100%사이의 값을 넣으면 된다.
+    100%로 가까워질수록 완전 흑백사진에 가까워진다.
+    - inverte() : 이미지나 컨텐츠의 색상을 보색으로 반전시킨다. 값은 %를 사용한다.
+    - sepia() : 오래된 사진처럼 황토색을 첨가한다. 이러한 색상을 세피아톤이라고 한다.
+    빈티지하거나 고풍스러운 느낌을 줄 수 있다. 값은%를 사용한다.
+    - oppacity() : 이미지나 컨텐츠의 투명도를 조절한다. 0% ~ 100%사이의 값을 입력할 수 있고 
+    100%가 기본값이다. 0%는 완전 투명한 상태가 된다.
+    - hue-rotate() : hsl색상환에서 색상을 각도로 표시하여 변경할 수 있다.
+    - saturate() : 이미지의 채도를 변경한다. 값은 %로 지정하고 0%로 지정하면 채도가 아예 없어서 흑백사진처럼 변하고 
+    100%가 기본값으로 원본사진을 유지한다. 200%는 색상 채도가 두배가 되어 더 선명하고 강렬한 색상으로 표시된다.
+
+    backdrop-filter속성
+
+    backdrop-filter는 filter속성과 달리 컨텐츠 자체에 영향을 주지 않고 뒤에 겹쳐여있는 배경에 해당 효과를 적용한다.
+    속성값은 filter속성에 있는 속성값을 동일하게 사용할 수 있다.
+    -->
+
+    <img src="../image/Cherry_Blossom.jpg" alt="blossom">
+    <img src="../image/Cherry_Blossom.jpg" alt="blossom" class="blur">
+    <img src="../image/Cherry_Blossom.jpg" alt="blossom" class="brightness">
+    <img src="../image/Cherry_Blossom.jpg" alt="blossom" class="contrast">
+    <img src="../image/Cherry_Blossom.jpg" alt="blossom" class="drop-shadow">
+    <img src="../image/Cherry_Blossom.jpg" alt="blossom" class="box-shadow">
+    <img src="../image/Cherry_Blossom.jpg" alt="blossom" class="gray-scale">
+    <img src="../image/Cherry_Blossom.jpg" alt="blossom" class="inverte">
+    <img src="../image/Cherry_Blossom.jpg" alt="blossom" class="sepia">
+    <img src="../image/Cherry_Blossom.jpg" alt="blossom" class="oppacity">
+    <img src="../image/Cherry_Blossom.jpg" alt="blossom" class="hue-rotate">
+    <img src="../image/Cherry_Blossom.jpg" alt="blossom" class="saturate">
+    <div class="content">
+        <div>
+            <h2>제목</h2>
+            <p>내용입니다.내용입니다.내용입니다.내용입니다.</p>
+        </div>
+    </div>
+</body>
+</html>

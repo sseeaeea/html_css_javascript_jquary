@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미디어쿼리</title>
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- 
+    미디어쿼리 구문
+
+    css모듈인 미디어 쿼리는 사이트에 접속하는 장치에 따라 특정한 css스타일을 보여주는 방법이다.
+    미디어 쿼리는 다양한 기기와 화면 크기에 대응하여 웹사이트를 효과적으로 표현할 수 있게 해준다.
+
+    [기본형]
+    @media only 또는 not 미디어유형 and (조건) and (조건){ 
+    선택자(속성 : 값)
+    }
+
+    - only : 미디어쿼리를 지원하지 않는 브라우저에서는 미디어쿼리를 무시하고 실행하지 않는다.
+    - not : 다음에 지정하는 미디어 유형을 제외한다. 예를들어 not tv 라고 적으면 tv유형은 제외한다.
+    - and : 조건을 여러 개 연결하여 추가하는 키워드이다. and 앞 뒤에는 반드시 공백으로 구분되어 
+    있어야 한다.(안되어있으면 오류남)
+
+    - (조건) : 보여줄 해상도를 뜻한다.()안에는 min-width와 max-width가 들어갈 수 있다.
+    min-width는 최소해상도를 뜻하고 ~사이즈부터 라고 해석한다.
+    max-width는 최대해상도를 뜻하고 ~사이즈까지 라고 해석한다.
+    ex) and(min-width:320px) and(max-width:480px){} : 화면사이즈 320px 부터 480p까지
+    ex) and(max-width:480px){} : 화면사이즈 0px 부터 480px 까지
+    ex) and(mis-width:320px){} : 320px부터 모든 큰 사이즈
+
+    [미디어 유형]
+    1. all : 모든 미디어 유형에서사용할 css를 정의한다. 기본값
+    2. print : 인쇄장치에서 사용할 css를 정의한다.
+    3. screen : 컴퓨터 스크린에서 사용할 css를 정의한다. 스마트폰의 스크린도 포함한다.
+    4. tv : 음성과 영상이 동시에 출력되는 tv에서 사용할 css를 정의한다.
+    5. aural : 음성합성장치(주로 화면을 읽어 소리로 출력해주는 장치)에서 사용할 css를 정의한다.
+    6. braille : 점자표시장치에서 사용할 css를 정의한다.
+    7. handheld : 패드처럼 손에 들고다닐 수 있는 장치를 위한 css를 정의한다.
+    8. projection : 프로젝터를 위한 css를 정의한다.
+    9. tty : 디스플레이 기능이 제한된 장치에 맞는 css를 정의한다. 이런 장치에서는 px단위는 사용할 수 없다.
+    (카드, 포스기같은 단말기에서 사용)
+    10. embossed : 점자 프린터에서 사용할 css를 정의한다.
+
+    화면 회전 속성
+
+    스마트폰이나 태블릿에서는 화면을 세로로 보거나 가로로 돌려서 볼 수 있다.
+    미디어쿼리에서 orientation속성을 사용하면 기기의 방향을 확인할 수 있고 그에 따라
+    웹사이트의 레이아웃을 바꿀 수 있다.
+
+    [속성값]
+    - orientation : portait 단말기의 세로 모드를 지원한다.
+    - orientation : landscape 단말기의 가로 모드를 지원한다.기본값
+    -->
+
+    <h1>lorep ipsum</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, vero impedit consequuntur similique magnam ratione voluptatibus beatae corporis minima, praesentium suscipit ab eligendi recusandae expedita, ullam adipisci temporibus sapiente itaque!</p>
+</body>
+</html>

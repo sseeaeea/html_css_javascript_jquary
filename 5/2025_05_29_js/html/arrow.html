@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표함수</title>
+</head>
+<body>
+    <!-- 
+    화살표함수
+
+    ES6버전부터는 => 표기법(화살표 표기법)을 사용하여 함수선언을
+    좀더 간단하게 작성할 수 있다. 보통 '화살표 함수'라고 부르고 익명함수에서만 
+    쓸 수 있다.
+
+    [기본형]
+    1. 매개변수가 없을 경우 
+    let 변수명 = () => {자바스크립트 코드;}
+
+    2. 매개변수가 1개인 경우 매개변수 자리에 ()를 생략할 수 있다.
+    let 변수명 = 매개변수 => {자바스크립트 코드;}
+
+    3. 매개변수가 2개 이상인 경우 () 생략 불가능
+
+    let 변수명 = (매개변수1,매개변수2) => {자바스크립트 코드;}
+
+    4. 실행할 자바스크립트가 1줄일경우 {}생략가능. 이때 return도 생략된걸로 간주함.
+    let 변수명 = () => 자바스크립트 코드;
+    -->
+</body>
+<script>
+    // 일반 익명함수
+    let name1 = function(){
+        document.write("안녕하세요 제 이름은 김땡땡 입니다 <br>")
+    }
+    name1();
+
+    let name2 = () => {
+        document.write("안녕하세요 제 이름은 이땡땡 입니다 <br>")
+    }
+    name2();
+
+    //화살표 함수(매개변수 1개)
+    let name3 = name => {
+        document.write("안녕하세요 제 이름은  " + name + "입니다 <br>")
+    }
+    name3("최땡땡");
+    //화살표 함수(매개변수 2개이상)
+    let name4 = (name, area) => {
+        document.write("안녕하세요 제 이름은  " + name + "입니다 <br>")
+        document.write("안녕하세요 제가 사는곳은 " + area + "입니다 <br>")
+    }
+    name4("김땡땡", "서울");
+
+    // 실행시킬 코드가 한줄일경우
+    let sum = (a,b) => a+b;
+    sum = sum(10,20);
+    document.writeln(sum)
+</script>
+</html>

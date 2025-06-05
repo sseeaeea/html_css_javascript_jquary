@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시멘틱 태그</title>
+    <link rel="stylesheet" href="../css/cimentictag.css">
+</head>
+<body>
+    <!-- 
+    시멘틱 태그
+
+    웹 페이지의 구조를 담당하는 태그로, html5의 복잡한 구조를 직관적으로 나타내기 위한
+    웹 표준 태그이다. 시멘틱 태그가 등장하기 이전에는 모든 구조를 div를 이용하여
+    작업하였고 각 div마다 id속성이나 class속성을 이용해 해당 구조를 네이밍했다.
+    하지만 이러한 구조는 코드를 수정하거나 구조를 파악하기 불편하고, 시각장애인들이
+    구조를 파악 원하는 내용을 찾기 매우 어려웠다.
+    하지만 시멘틱 태그를 사용하면 코드가 훨씬 직관적이며, 시각 장애인이 화면 낭독기를
+    이용해 검색엔진에서 웹 소스를 읽을 때 어느 부분이 메뉴이고 어느 부분이 본문인지 쉡게 파악할 수 있다.
+
+
+    1. <header>
+
+    페이지 맨 위쪽에 로고와 검색창, GNB및 로그인 영역을 포함하는 영역이다.
+
+    2. <nav>
+    
+    해당 태그를 사용하면 어느 부분이 메뉴인지 쉽게 파악할 수 있고 사이트 내의 
+    네비게이션 메뉴를 묶거나 독립적으로 구성할 수 있다.
+    문서안에 nav태그가 여러개 필요한경우, id선택자로 구분하여 스타일링 할 수 있다.
+
+    3. <section>
+    
+    컨텐츠 영역을 포함하는 태그로 메인영역안에서 주제별로 묶인 큰 컨텐츠 영역을 말한다.
+    <section>태그 내부에는 h1~h6 제목 태그가 함께 사용된다.
+    section 태그 안에는 다른 section태그를 넣을 수 없다.
+
+    4. <article>
+
+    article의 사전적 의미는 신문이나 잡지의 '기사'를 뜻하는 것으로 웹 상의 실제 내용을
+    실제 내용을 작성하는 공간이다. 예를 들면 블로그의 포스트나 웹 사이트 내용과 같이
+    독립적인 웹 컨텐츠가 이에 해당된다. section태그와 article태그의 차이점은 
+    section태그의 경우 어떤 주제나 내용의 흐름을 한번에 묶을때 사용하고, article태그는
+    기사와 같이 독립적인 컨텐츠로 웨부에 공유가 가능한 내용을 묶을때 사용한다.
+
+    5. <aside>
+
+    웹 문서에서 왼쪽이나 오른쪽 또는 하단에 사이드바가 표시되는 것을 볼 수 있는데
+    이런 사이드바를 만드는 태그가 aside태그이다.
+    aside태그는 필수 태그가 아니며 광고나 일반적인 링크 모음처럼 문서의 메인 내용에는
+    영향을 미치지 않는 내용을 넣을때 사용하는 태그이다.
+
+    6. <main>
+
+    <header>, <footer>영역을 제외한 section들을 하나로 크게 묶어주는 컨텐츠 영역을 나타낼때
+    사용한다. 태그명으로는 main이라고 하며, 경우에 따라 '컨텐츠영역', '컨테이너영역',
+    '컨텐츠라인'등 다양한 이름으로 불린다.
+
+    7. <footer>
+
+    웹페이지 최하단의 저작권 표시와 같은 내용과 회사의 소재지, 고객센터 번호, 사업자 등록번호와
+    통신판매고유번호 등 웹 사이트 내용과 큰 관련은 없지만 회사의 중요한 내용을 포함하는
+    영역을 말한다. 때에 따라 '사이트맵'이라고 부르는 메뉴영역이 포함되기도 한다.
+    -->
+
+    <div class="container">
+        <header>
+            <!-- 로고 -->
+             <h1><a href="#">LOGO</a></h1>
+             <!-- 메뉴 -->
+              <nav id="gnb">
+                <ul>
+                    <li>menu1</li>
+                    <li>menu2</li>
+                    <li>menu3</li>
+                    <li>menu4</li>
+                </ul>
+              </nav>
+        </header>
+        <main>
+            <!-- 컨텐츠 영역 -->
+            <section>
+                <!-- 기사1 -->
+                <article>
+                    <h2>main article</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit assumenda, excepturi est repellat, reprehenderit quidem quas adipisci maiores molestiae voluptates veritatis voluptatibus nostrum aspernatur temporibus aliquid numquam beatae eveniet quam?</p>
+                </article>
+                <!-- 기사2 -->
+                <article>
+                    <h2>main article</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit assumenda, excepturi est repellat, reprehenderit quidem quas adipisci maiores molestiae voluptates veritatis voluptatibus nostrum aspernatur temporibus aliquid numquam beatae eveniet quam?</p>
+                </article>
+                <!-- 기사3 -->
+                <article>
+                    <h2>main article</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit assumenda, excepturi est repellat, reprehenderit quidem quas adipisci maiores molestiae voluptates veritatis voluptatibus nostrum aspernatur temporibus aliquid numquam beatae eveniet quam?</p>
+                </article>
+            </section>
+            <!-- 광고 영역 -->
+             <aside>
+                <h2>right aside</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <!-- 링크 -->
+                <nav id="adver_link">
+                    <ul>
+                        <li>네이버</li>
+                        <li>다음</li>
+                        <li>구글</li>
+                    </ul>
+                </nav>
+                <!-- 광고배너 -->
+                 
+                 <div class="banner">
+                    <h2>text</h2>
+                    <p>banner</p>
+                 </div>
+             </aside>
+        </main>
+        <footer>
+            <p>&copy; HTML5 COPYRIGHT</p>
+        </footer>
+    </div>
+</body>
+</html>

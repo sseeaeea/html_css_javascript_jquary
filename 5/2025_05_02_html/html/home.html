@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: #87cefa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      transition: all 0.5s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box .text-home {
+      opacity: 1;
+      transition: opacity 0.3s ease;
+      position: absolute;
+    }
+
+    .box .text-want {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      position: absolute;
+    }
+
+    .box:hover {
+      width: 500px;
+      height: 500px;
+    }
+
+    .box:hover .text-home {
+      opacity: 0;
+    }
+
+    .box:hover .text-want {
+      opacity: 1;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="text-home">집에</div>
+        <div class="text-want">가고싶다</div>
+      </div>
+</body>
+</html>

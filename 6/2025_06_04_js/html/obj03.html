@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>버블링과 캡쳐링</title>
+  </head>
+  <body>
+    <!-- 
+    버블링과 캡쳐링
+
+    버블링이란 DOM의 자식노드에서 부모노드로 이벤트를 전달하는것을
+    말하며, 이벤트에 기본값으로 내장된 기능이다. 단, 모든 이벤트가 전부
+    버블링 되는 것은 아니다.(포커스이벤트는 버블링이 없음)
+
+    캡쳐링은 반대로 부모노드에서 자식노드로 이벤트를 전달하는 것을 
+    말하며 기본값은 false로 캡쳐링이 되지 않고, addEventListener의
+    마지막 인자값 자리에 true를 넣었을 경우에만 발생한다.
+
+    버블링
+
+    버블링의 원리는 간단하다. 한 요소에 이벤트가 발생하면, 이 요소에 할당된
+    이벤트 핸들러가 동작하고, 이어서 부모요소의 핸들러가 동작한다.
+    가장 최상위에 있는 조상요소를 만날때까지 이 과정이 반복되면서 요소 각각에
+    할당된 핸들러가 동작한다.
+
+    event.target
+
+    부모요소의 핸들러는 이벤트가 정확히 어디서 발생했는지에 대한
+    정보를 얻을 수 있다. 이벤트가 발생한 가장 안쪽 요소는 
+    target요소라고 부르고 event.target프로퍼티를 이용하여 접근할 수 있다.
+    
+    event.target은 this(=event.currentTarget)와 이러한 차이점이 있다.
+    1. event.target은 실제 이벤트가 시작된 '타겟'요소를 말한다.
+    버블링이 진행되더라도 바뀌지 않는다.
+    2. this는 '현재 요소'로, 현재 실행중인 핸들러가 할당된 요소를 가리킨다.
+
+    버블링 중단하기
+
+    이벤트 버블링은 타겟 이벤트에서 시작하여 html요소를 거쳐
+    document객체를 만날때까지 각 노드에서 모두 발생한다.
+    몇몇 이벤트는 window객체까지 거슬러 올라가기도 한다.
+    이때 모든 이벤트핸들러가 실행된다.
+
+    그런데 만약 핸들러에게 이벤트를 완전히 처리한 후 
+    버블링을 중단하도록 명령하고 싶다면 event.stopPropergation()메서드를 사용하면 된다.
+
+    캡쳐링
+
+    이벤트에는 버블링 현상 외에도 캡쳐링(capturing)이라는 흐름이 존재한다.
+    실제 코드에서는 자주 쓰이지는 않지만 종종 유용하게 쓰일때도 있다.
+
+    표준 DOM이벤트 흐름에는 3단계가 있다.
+    1. 캡쳐링단계 : 이벤트가 하위요소로 전파되는 단계
+    2. target단계 : 이벤트가 실제 타겟요소에 전파되는 단계
+    3. 버블링단계 : 이벤트가 상위 요소로 전파되는 단계
+
+    [기본형]
+    요소.addEventListener("이벤트명", 이벤트핸들러, {capture = true})
+    요소.addEventListener("이벤트명", 이벤트핸들러, {true})
+
+    -->
+    <!-- span을 클릭했지만 div에 있는 alert이 실행됨 : 버블링때문 -->
+    <!-- 버블링 확인하기 -->
+    <div onclick="alert('div에 할당된 이벤트 핸들러')" class="first_div">
+      <span>span태그를 클릭해도 div에 할당된 이벤트가 동작합니다.</span>
+    </div>
+    <form onclick="alert('form')">
+      form
+      <div onclick="alert('div')">
+        div
+        <div>
+          <p onclick="alert('p')">p</p>
+        </div>
+      </div>
+    </form>
+
+    <!-- 버블링 막기 -->
+    <div onclick="alert('버블링은 여기까지 도달할 수 없습니다.')">
+      <button type="button" onclick="event.stopPropagation()">
+        클릭해주세요
+      </button>
+    </div>
+  </body>
+</html>

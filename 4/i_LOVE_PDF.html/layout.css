@@ -1,0 +1,207 @@
+@charset "utf-8";
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  background: #f5f5fa;
+  color: #47474f;
+}
+header {
+  width: 100%;
+  height: 60px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  padding: 0 24px;
+  display: flex;
+  gap: 24px;
+  /* 헤더는 상단에 고정 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* 헤더를 맨 앞으로 위치시킴 */
+  z-index: 999;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.3);
+}
+/* 로고 */
+h1 {
+  height: 30px;
+  width: auto;
+  margin: 15px 0;
+}
+h1 img {
+  height: 100%;
+}
+/* GNB */
+#gnb {
+  font-size: 14px;
+  height: 100%;
+}
+#gnb > ul {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  text-transform: uppercase;
+}
+/* 1차메뉴 */
+#gnb > ul > li {
+  margin: 0 12px;
+  position: relative;
+  height: 100%;
+  line-height: 60px;
+  padding-bottom: 10px;
+}
+#gnb > ul > li > a {
+  font-weight: 700;
+}
+#gnb > ul > li:hover > a {
+  color: #e5322d;
+}
+/* 2차메뉴 */
+.submenu_wrap {
+  min-width: 500px;
+  background-color: #ffffff;
+  position: absolute;
+  /* 부모의 반만큼 오른쪽으로 보냄 */
+  left: 50%;
+  /* 요소 넓이의 반만큼 왼쪽으로 끌어당김 */
+  transform: translateX(-50%);
+  top: 70px;
+  border-radius: 16px;
+  padding-top: 10px;
+  box-shadow: 0px 5px 45px rgba(0, 0, 0, 0.1);
+  display: none;
+  justify-content: center;
+}
+.submenu_wrap::before {
+  content: 'arrow';
+  font-size: 0px;
+  width: 24px;
+  height: 10px;
+  border-left: 12px solid #fff;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #fff;
+  border-bottom: 12px solid transparent;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+.submenu_wrap .submenu {
+  box-sizing: border-box;
+  line-height: 40px;
+  padding: 10px;
+}
+.submenu > h3 {
+  font-size: 14px;
+  line-height: 18px;
+  color: #707078;
+  font-weight: 700;
+  margin: 20px 0 16px 16px;
+}
+.submenu > li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  padding: 4px 16px;
+  border-radius: 8px;
+}
+.submenu > li:hover {
+  background-color: #eee;
+}
+.submenu > li:hover > a {
+  color: #e5322d;
+}
+/* 메뉴앞 아이콘 공통속성 */
+.submenu > li::before {
+  content: 'icon';
+  font-size: 0;
+  display: block;
+  width: 24px;
+  height: 20px;
+  background: url(../img/sprite.svg) no-repeat;
+  background-position-x: -5px;
+}
+/* convert to pdf아이콘들 */
+.submenu:first-of-type > li:first-of-type::before {
+  background-position-y: -180px;
+}
+.submenu:first-of-type > li:nth-of-type(2)::before {
+  background-position-y: -205px;
+}
+.submenu:first-of-type > li:nth-of-type(3)::before {
+  background-position-y: -230px;
+}
+.submenu:first-of-type > li:nth-of-type(4)::before {
+  background-position-y: -255px;
+}
+.submenu:first-of-type > li:nth-of-type(5)::before {
+  background-position-y: -530px;
+}
+/* convert from pdf아이콘들 */
+.submenu:last-of-type > li:nth-of-type(1)::before {
+  background-position-y: -280px;
+}
+.submenu:last-of-type > li:nth-of-type(2)::before {
+  background-position-y: -305px;
+}
+.submenu:last-of-type > li:nth-of-type(3)::before {
+  background-position-y: -330px;
+}
+.submenu:last-of-type > li:nth-of-type(4)::before {
+  background-position-y: -355px;
+}
+.submenu:last-of-type > li:nth-of-type(5)::before {
+  background-position-y: -505px;
+}
+/* 4번째 1차메뉴 li에 마우스를 올리면 숨겨둔 submenu_wrap이 나옴*/
+#gnb > ul > li:nth-child(4):hover .submenu_wrap {
+  display: flex;
+}
+/* icons */
+.icons {
+  /* 왼쪽으로 여백을 쭉밀어 정렬한다 */
+  margin-left: auto;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.icons a {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+  margin: 0 4px;
+  font-size: 15px;
+  font-weight: 500;
+}
+.icons a:first-child:hover {
+  color: #e5322d;
+}
+.icons a:nth-child(2) {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #e5322d;
+  color: #fff;
+}
+.icons a:nth-child(2):hover {
+  background-color: #bd060a;
+}
+.icons a:nth-child(2):active {
+  /* 클릭하면 */
+  background-color: #33333b;
+}
+.icons .all_menu {
+  width: 32px;
+  height: 32px;
+  background: url(../img/sprite.svg) no-repeat;
+  background-position: -51px 3px;
+}
+/* 컨텐츠 영역 */

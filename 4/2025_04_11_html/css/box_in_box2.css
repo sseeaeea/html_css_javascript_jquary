@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 1800px;
+    height: 700px;
+    margin: 0px auto;
+    /* 컨테이너를 브라우저 중앙에 배치 */
+}
+
+.left_banner{
+    width: 600px;
+    height: 100%;
+    background-color: aquamarine;
+    float: left;
+}
+
+.right_banner{
+    width: 380px;
+    height: 100%;
+    float: left;
+    background-color: blue;
+    margin-left: 20px;
+}
+
+.left_box{
+    width: 200px;
+    height: 200px;
+    background-color: sandybrown;
+    float: left;
+    text-align: center;
+    line-height: 200px;
+    margin-top: 250px;
+    margin-left: 200px;
+}
+
+.right_box{
+    width: 100px;
+    height: 100px;
+    background-color: rebeccapurple;
+    float: left;
+    text-align: center;
+    line-height: 100px;
+    margin-top: 300px;
+    margin-left: 140px;
+}

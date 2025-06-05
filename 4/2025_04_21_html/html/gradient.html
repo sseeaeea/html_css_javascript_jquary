@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그라디언트</title>
+    <link rel="stylesheet" href="../css/gradient.css">
+</head>
+<body>
+    <!-- 
+    브라우저 접두사(=벤더프리픽스)
+
+    css3에서 사용되는 최신 속성들은 다른 브라우저끼리 서로 호환되지 않는 경우가 생긴다.
+    특히 그라디언트와 같이 최신속성들은 브라우저별 호환되는 방식이 다르기 때문에 
+    브라우저 접두사를 이용해 호환성을 높여줄 수 있다.
+
+    모던 브라우저 초기 버전에서는 그라디언트 효과를 내기 위해 -webkit-이나 
+    -moz-, -o-와같이 브라우저 제조 업체를 표시하는 접두사를 앞에 붙여야
+    사용할 수 있다.
+
+    [기본형]
+    선택자{
+      background : blue; // 그라디언트를 지원하지 않는 브라우저용
+      background : -webkit-linear-gradient(~코드)
+      background : -moz-linear-gradient(~코드)
+      background : -o-linear-gradient(~코드)
+      background : linear-gradient(~코드)
+
+      -webkit- : 크롭, 사파리, 새 버전의 오페라 브라우저에 대한 접두사. ios환경의 모든 브라우저도 해당
+      -moz- : 파이어폭스 브라우저에서 쓰이는 접두사
+      -o- : 오래된 오페라버전에서 쓰이는 접두사
+      -ms_ : 마이크로소프트의 브라우저에서 쓰이는 접두사, 인터넷 익스플로러, 오래된버전의
+      엣지에 해당. 
+    }
+
+      선형그라디언트
+
+      색상이 수직 또는 수평 또는 대각선 방향으로 일정하게 변하는 그라디언트를 말한다.
+
+      [기본형]
+      background : linear-gradient(각도 to 방향, 색상1, 색상2...)
+      background-image : linear-gradient(각도 to 방향, 색상1, 색상2...)
+
+      [각도]
+      deg단위를 사용하며, top부분이 0도에서 시작하여 시계방향으로 돌면서 
+      각도가 적용된다.
+
+      [방향]
+      - to top : 아래에서 위로 색상이 변한다.
+      - to left : 오른쪽에서 왼쪽으로 색상이 변한다.
+      - to right : 오른쪽에서 왼쪽으로 색상이 변한다.
+      - to bottom : 위에서 아래로 색상이 변한다. 
+
+      원형그라디언트
+
+      원이나 타원의 중심부터 동그란 원을 그리며 바깥쪽 방향으로 색상이
+      바뀌는 것을 말한다.
+
+      [기본형]
+
+      background : radial-gradient(최종모양 크기 at 위치, 색상1, 색상2)
+      background-image : radial-gradient(최종모양 크기 at 위치, 색상1, 색상2)
+
+      [최종모양]
+      -circle : 박스의 크기와는 관게없이 정원 모양의 그라디언트를 만든다.
+      -ellipse : 기본값으로 박스의 크기에 따라 타원을 그린다.
+    -->
+
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

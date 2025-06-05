@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택문</title>
+</head>
+<body>
+    <!-- 
+    switch문
+
+    선택문인 switch문은 변수에 저장된 값과 switch문에 있는 
+    경우의 값(=case)을 검사하여 변수와 경우의 값이 일치하면
+    그에 해당하는 코드를 실행시킨다.
+    if문과 용도는 비슷하지만 if문은 만족하는 데이터가 여러 개일 경우에
+    주로 사용하고, switch문은 여러 경우의 값 중 하나로 일치하는
+    데이터를 찾아 그에 해당하는 코드를 실행할때 주로 사용한다.
+
+    변수에 저장된 값은 switch문을 만나면 case값을 하나씩 검사한다.
+    일치하는 데이터가 있으면 그에 해당하는 코드를 실행하고 break문을 
+    만나 코드를 종료한다. 만일 경우의 값(case)중 일치하는 값이 없다면
+    마지막에 있는 default문을 실행하고 switch문을 종료한다.
+
+    [기본형]
+    let 변수 = 값;
+    switch(변수){
+      case "헬로우" : 코드1
+      break;
+      case "헬로우2" : 코드2
+      break;
+      case "헬로우3" : 코드3
+      break;
+      case "헬로우4" : 코드4
+      break;
+      default : 코드5
+    }
+    -->
+</body>
+<script>
+    // 사용자한테 자주 사용하는 포털사이트가 뭔지 묻고 
+    // 일치하는 사이트가 있다면 그에 해당하는 사이트로 이동시킨다.
+    var site = prompt("네이버,다음,네이트,구글중에서 자주 사용하는 사이트가 무엇입니까?")
+    var url;
+    switch(site){
+        case"네이버" : url = "www.naver.com";
+        break;
+        case"다음" : url = "www.daum.net";
+        break;
+        case"네이트" : url = "www.nate.com";
+        break;
+        case"구글" : url = "www.google.com";
+        break;
+        default : alert(site + "라는 특이한 사이트를 쓰고계시네요!")
+    }
+    // url이 undefined가 아니라 어떤 url값을 가지고 있다면
+    // location.href를 실행한다.
+    // if문은 조건식이 무조건 만족하고, 실행할 코드가 한줄이면 {}는 생략 가능하다.
+    // location은 주소창, href은 연결경로
+    if(url) location.href = "http://" + url;
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 객체 실습</title>
+</head>
+<body>
+    <!-- 
+    email 유효성 검사
+
+    asdfsadf@naver.com
+    사용자의 이메일이 유효한 이메일인지 아닌지 판단하는 검사
+    이메일이 유효한지 검사하려면 
+    1. @가 있는지 확인해야한다
+    2. 유효한 url을 포함하고 있는지를 판단한다.(.com, .net,...)
+    -->
+</body>
+<script>
+    function email(){
+        let mail = prompt("이메일 주소를 입력해주세요.")
+        let len = mail.length;
+        if(mail.indexOf("@")===-1){
+            document.write("@가 빠졌습니다 다시 작성해주세요<br>");
+        }
+        else if(mail.substring(len-4 , len) !== ".com" && mail.substring(len-4, len) !== ".net"){
+            document.write("올바른 url주소가 아닙니다 다시 작성해주세요")
+        }
+        document.write("올바른 이메일주소입니다!<br>당신의 이메일주소는: " + mail + " 입니다! <br>")
+    }
+    email();
+</script>
+</html>

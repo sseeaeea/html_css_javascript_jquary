@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열의 고차원 함수</title>
+</head>
+<body>
+    <!-- 
+    3. filter()
+
+    배열의 요소를 순화하면서 콜백함수를 이용하여 원하는 조건에 따라
+    필터링하는 함수이다. 필터링된 배열을 반환한다.
+    원하는 조건에 맞는 요소들만으로 필터링된 배여을 생성하기위해 사용한다.
+    filter()메서드의 콜백함수는 각 요소에 대해 조건을 평가한다.
+    요소를 필터링 하려면 true를, 필터링하지 않으려면 false값을 
+    return으로 반환해야 한다. filter()함수는 true를 반환한 요소들을 모아서 새로운
+    배열로 반환해준다.
+
+    [기본형]
+    배열.filter(function(element, index, array){코드;})
+    배열.filter((element, index, array) => {코드;})
+
+
+    - element : 배열에서 현재 처리중인 요소. 첫번째 요소부터 순차적으로 대입
+    - index(생략가능) : 현재 처리중인 요소의 인덱스번호
+    - array(생략가능) : filter()함수를 호출한 배열자체
+    
+    4. find()
+
+    배열에서 특정 조건을 만족하는 요소를 찾아 첫번째 요소를 반환하는 함수이다.
+    배열의 각 요소에 대해 콜백 함수를 사용하여 원하는 조건의 요소를 찾는다.
+    배열에서 특정 요소를 찾을때 유용한 함수이다.
+
+    배열의 요소를 순환하면서 매개변수 element에 각 요소가 대입된다.
+    콜백함수가 실행될때 콜백함수 내에서 정의한 조건을 확인한후에
+    조건이 true로 평가되면 해당 요소를 찾은것으로 간주한다.
+    find()함수는 조건을 만족하는 첫번째 요소를 찾으면 배열 순회를 중단하고
+    해당 요소를 반환한후 종료한다.
+
+    [기본형]
+    배열.find(function(element, index, array){코드;})
+    배열.find((element, index, array) => {코드;})
+    -->
+</body>
+<script>
+    const num = [1,2,3,4,5,6,7,8,9,10];
+
+    function is_even(value){
+        return value % 2 === 0; // 짝수면 true를 반환한다.
+    }
+    //filter의 인수로 미리 정의해둔 is_even함수 전달.
+    const result = num.filter(is_even);
+    console.log(result);
+
+    const num2 = [1,2,2,3,4,4,5,8];
+
+    const filter_number = num2.filter((element, index, arr) => {
+        // 현재 요소가 이전에 등장하지 않은경우 true반환.
+        return arr.indexOf(element) === index;
+    });
+
+    console.log(filter_number);
+
+    const num3 = ["tomato", "skyblue", "orange"];
+
+    let color_value = num3.find((num3) => num3 === "skyblue");
+
+    console.log(color_value);
+</script>
+</html>

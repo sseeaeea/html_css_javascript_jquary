@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box-sizing</title>
+    <link rel="stylesheet" href="../css/box-sizing.css"/>
+</head>
+<body>
+    <!-- 
+    box-sizing속성
+
+    box-sizing속성은 width, padding, border영역을 매번 계산하는 번거로운
+    과정을 줄여주는 속성으로, border-box와 content-box값을 사용할 수 있다.
+    border-box값을 사용할경우 미리 지정된 width, height안쪽으로 
+    padding, border까지의 영역을 밀어넣어주는 속성이다.
+    즉, 미리 선언한 width값과 margin영역만 고려하여 계산하면 되기때문에
+    굉장히 유용한 속성이다.
+
+    content-box는 box-sizing속성을 사용하지 않은것과 같은 '기본값'으로
+    width, height, padding, border, margin을 각각 계산해야하는 기본값이다.
+    -->
+
+    <div class="box1">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, voluptate incidunt! Animi tenetur ipsam qui id temporibus, ratione nostrum nulla eius reprehenderit voluptate culpa dolorem? Dicta natus numquam maxime autem!
+        </p>
+    </div>
+    <div class="box2">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, voluptate incidunt! Animi tenetur ipsam qui id temporibus, ratione nostrum nulla eius reprehenderit voluptate culpa dolorem? Dicta natus numquam maxime autem!
+        </p>
+    </div>
+
+</body>
+</html>

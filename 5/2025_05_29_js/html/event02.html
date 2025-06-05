@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 실습</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+            margin: 200px auto;
+            position: relative;
+        }
+        .box > img{
+            width: 100%;
+            object-fit: cover;
+            transform: translateY(-100px);
+        }
+        #open{
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+            width: 100px;
+            height: 30px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px solid #fff;
+            cursor: pointer;
+        }
+        #detail{
+            position: absolute;
+            width: 100%;
+            height: fit-content;
+            background-color: rgba(255, 255, 255, 0.7);
+            left: 0;
+            bottom: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            display: none;
+        }
+        #detail h4{
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        #detail p{
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        #close{
+            width: 100px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: 1px solid #000;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../image/피그마 예제.PNG" alt="example">
+        <button type="button" id="open" onclick="show_detail()">상세 설명</button>
+        <div id="detail">
+            <h4>이걸로 과제 해오세요</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nesciunt repellendus explicabo architecto delectus nulla! Debitis, laborum nam sit, voluptatum itaque rerum dolore similique error iure, deserunt dolorum dignissimos hic?</p>
+            <button type="button" id="close" onclick="hide_detail()">설명 닫기</button>
+        </div>
+    </div>
+</body>
+<script>
+    //showDetail함수를 만들기 - open버튼을 누르면 #open 버튼이 사라지고 #detail이 나타나야한다.
+    //hideDetail함수 만들기 - close버튼을 누르면 #detail이 사라지고 open버튼이 나타나야함
+    
+    function show_detail(){
+        let hide = document.getElementById("open")
+        hide.style.display = "none"
+        let show = document.getElementById("detail")
+        show.style.display = "block"
+    }
+    function hide_detail(){
+        let hide = document.getElementById("detail")
+        hide.style.display = "none";
+        let show = document.getElementById("open")
+        show.style.display = "block"
+    }
+</script>
+</html>

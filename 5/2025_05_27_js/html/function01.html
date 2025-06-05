@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수가 있는 함수</title>
+</head>
+<body>
+    <!-- 
+    매개변수가 있는 함수
+
+    매개변수란 함수가 호출될때 전달된 값을 받아오는 변수를 말한다.
+    함수를 호출할때 값을 전달하려면 함수의 호출문의()안에다가 값을
+    ,(콤마)를 이용하여 나열하면 된다.
+
+    함수호출문 안에 있는 값을'인수'라고 부르며,
+    이 값을 받아오는 변수를 '매개변수'라고 한다.
+    매개변수는 함수의 function키워드 옆에 있는()자리가
+    매개변수의 자리이다.
+
+    함수를 호출할때 인수를 넣어 전달하면 매개변수에는 인수값이
+    매개변수에 순차적으로 대입된다.
+
+    [기본형]
+    1. 일반함수
+    function 함수명(매개변수1, 매개변수2,...){
+       코드
+    }
+
+    함수명(인수1, 인수2,...)
+
+    2. 익명함수
+    let 변수명 = function(매개변수1, 매개변수2,...){ 코드 }
+
+    변수명(인수1, 인수2,...)
+    -->
+</body>
+<script>
+    function add_num(num1, num2){
+        console.log(num1 + num2);
+    }
+
+    add_num(10, 20);
+
+    // 자기소개를 하는 함수
+    function my_fnc(name, area){
+        document.write("안녕하세요 제 이름은 " + name + "이고,<br>");
+        document.write("사는곳은 " + area + "입니다.<br>");
+
+    }
+
+    my_fnc("김땡땡", "안양");
+
+    // 질의 응답창으로 방문자의 아이디와 비밀번호를 입력받아
+    // 만약 잘못된 아이디가 입력되었다면 "존재하지 않는 아이디입니다."를
+    // 잘못된 비밀번호가 입력되었다면 "잘못된 비밀번호입니다."를
+    // 아이디와 비밀번호가 일치하면 환영문구를 출력해주세요.
+
+    // function id_pw(){
+    //     let id = prompt("아이디를 입력해주세요");
+    //     let pw = prompt("비밀번호를 입력해주세요");
+
+    //     let user_id = "id1234";
+    //     let user_pw = "pw1234";
+
+    //     if(id !== user_id && pw !== user_pw){
+    //         document.write("아이디와 비밀번호 둘 다 틀렸습니다.")
+    //     }
+    //     else if(id === user_id && pw !== user_pw){
+    //         document.write("비밀번호가 틀렸습니다.")
+    //     }
+    //     else if(id !== user_id && pw === user_pw){
+    //         document.write("아이디가 틀렸습니다.")
+    //     }
+    //     else if(id === user_id && pw === user_pw){
+    //         document.write("축하합니다! 아이디와 비밀번호가 둘 다 일치합니다.")
+    //     }
+    // }
+    // id_pw();
+
+    let user_id1 = "id1234"
+    let user_pw1 = "pw1234"
+
+    function login(id,pw){
+        if(id !== user_id1 && pw !== user_pw1){
+            document.write("아이디와 비밀번호 둘 다 틀렸습니다.")
+        }
+        else if(id === user_id1 && pw !== user_pw1){
+            document.write("비밀번호가 틀렸습니다.")
+        }
+        else if(id !== user_id1 && pw === user_pw1){
+            document.write("아이디가 틀렸습니다.")
+        }
+        else if(id === user_id1 && pw === user_pw1){
+            document.write("축하합니다! 아이디와 비밀번호가 둘 다 일치합니다.")
+        }
+    }
+
+    let askid = prompt("아이디 입력");
+    let askpw = prompt("비밀번호 입력");
+
+    login(askid, askpw);
+</script>
+</html>

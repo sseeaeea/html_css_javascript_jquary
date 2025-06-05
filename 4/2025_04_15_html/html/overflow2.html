@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow scroll속성</title>
+    <link rel="stylesheet" href="./../css/overflow2.css">
+</head>
+<body>
+    <!-- 
+    스크롤 만들기 속성
+    overflow:scroll : 속성을 사용하면 지정한 부모박스의 넓이 높이에서 자식컨텐츠가 넘치는
+    만큼 가로 세로 스크롤을 만들어 보여준다.
+
+    이때 박스 내부에 가로 또는 세로 스크롤을 만들어 보여주고 싶다면 overflow-x 또는
+    overflow-y속성을 사용할 수 있다.
+
+    스크롤은 기본적으로 가로, 세로, 스크롤을 함께 나타내는 것이 기본값이다.
+    그래서 특정 스크롤만 보여주고 싶다면 어떤 스크롤은 숨기고 어떤 스크롤은 나타낼지
+    정확하게 지정해야한다.
+
+    [기본형]
+    - overflow : hidden또는 scroll;
+    : 영역을 벗어나는 가로 또는 세로 부분 스크롤을 숨기거나 나타나게 한다.
+
+    - overflow-x : hidden 또는 scroll;
+    : 가로 스크롤을 숨기거나 보여준다.
+
+    - overflow-y : hidden또는 scroll;
+    : 세로스크롤을 수믹거나 보여준다.
+    -->
+
+    <!-- 스크롤바를 가로, 세로 모두 표시 -->
+     <div class="scroll_box1">
+        <h4>scroll x, y</h4>
+        <img src="../image/night.jpg" alt="night">        
+     </div>
+     <!-- 가로 스크롤만 표사 -->
+     <div class="scroll_box2">
+        <h4>scroll x</h4>
+        <img src="../image/night.jpg" alt="night">        
+     </div>
+     <!-- 세로 스크롤만 표시 -->
+     <div class="scroll_box3">
+        <h4>scroll y</h4>
+        <img src="../image/night.jpg" alt="night">        
+     </div>
+</body>
+</html>

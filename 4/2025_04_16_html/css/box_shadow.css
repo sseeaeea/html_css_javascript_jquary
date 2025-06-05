@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    width: 400px;
+    height: 300px;
+    background-color: aquamarine;
+
+    /* 그림자 효과 */
+
+    box-shadow: 5px 5px 2px 3px #83838336 inset;
+    border-radius: 40px;
+}
+
+h1{
+    font-size: 150px;
+    color: aquamarine;
+    text-shadow: 13px 13px 7px #83838336;
+}

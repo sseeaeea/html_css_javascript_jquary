@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        :is(.static_box, .relative_box){
+            width: 300px;
+            height: 900px;
+            background-color: aquamarine;
+            float: left;
+            margin-left: 30px;
+        }
+
+        :is(.static_box, .relative_box) > div{
+            width: 300px;
+            height: 300px;
+            border: 3px solid black;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 300px;
+            font-size: 30px;
+        }
+
+        .static_box{
+            /* 좌표인식 불가능. 기본값 */
+            position: static;
+        }
+
+        .relative_box{
+            /* 좌표인식이 가능. 그중에서 상대위치로 좌표를 움직인다. */
+            position: relative;
+            top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+    position : 위치속성
+
+    웹페이지를 작업할 때 각 요소의 위치를 2가지 방법으로 설정한다.
+    위치에는 '절대위치'와 '상대위치'가 있다.
+
+    - 상대위치 : 태그요소를 입력한 순서대로 상대적인 위치를 지정한다.
+    - 절대위치 : 부모의 0점을 기준으로 움직일 위치를 지정한다.
+    
+    position속성의 다양한 값
+
+    1. static : 태그가 위에서 아래로 순서대로 배치되며 position속성을 사용하지 않은 것과 같은
+    기본값이다. 좌표를 인식할 수 없는 상태이다. 
+
+    2. relative : 상대위치를 의미하며 태그가 출력된 해당 위치에서 좌표를 통해 
+    상하 좌우로 이동할 수 있다. 즉, 좌표를 인식핳 수 있다. 보통 부모박스에 지정한다.
+
+    3. absolute : 절대위치를 의미하며, 부모박스의 0점을 찾아간다. 절대 변하지 않는 0점을
+    기준으로 좌표를 통해 상하좌우로 움직일 수 있다.
+
+    4. fixed : 절대위치를 의미하며 브라우저 화면을 기준으로 절대 위치 좌표를 설정한다.
+    0점을 기준으로 움직인다.
+
+    좌표속성
+
+    position속성을 적용하게 되면 좌표를 인식할지 안할지를 결정할 수 있다.
+    즉, 좌표를 인식가능한 상태로 만드는것 뿐이지, 실제로 움직이지는 않는다.
+    좌표가 인식가능한 해당 태그를 좌표에 따라 움직이게 하려면 아래 좌표 속성을 이용한다.
+
+    [속성]
+    - top : 양수일 경우 0점을 기준으로 위에서 아래로, 음수일경우 반대로 움직인다.
+
+    - left : 양수일 경우 0점을 기준으로 왼쪽에서 오른쪽으로, 음수일경우 반대로 움직인다.
+
+    - right : 양수일 경우 0점을 기준으로 오른쪽에서 왼쪽으로, 음수일 경우 반대로 움직인다.
+
+    - bottom : 양수일 경우 0점을 기준으로 밑에서 위로, 음수일 경우 반대로 움직인다.
+
+    position:static의 경우 좌표를 인식할 수 없으므로 좌표속성을 쓰더라도 움직이지 않는다.
+
+    position:relative의 경우 좌표를 상대좌표로 인식하며, 현위치에서 top, left좌표를 이용할 수 있다.
+
+    position : absolute의 경우 좌표를 절대 좌표로 인식하며, 상위요소의 0점으로 부터 top, left, right, bottom
+    좌표를 모두 이용할 수 있다.
+
+    position : absolute의 경우 좌표를 절대 좌표로 인식하며, 브라우저의 0점으로 부터 top, left, right, bottom
+    좌표를 모두 이용할 수 있다.
+    -->
+
+    <div class="static_box">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+    </div>
+    <div class="relative_box">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+    </div>
+</body>
+</html>

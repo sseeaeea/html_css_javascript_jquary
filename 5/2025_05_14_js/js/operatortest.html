@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연산자 실습</title>
+</head>
+<body>
+    <!-- 
+    땡땡이의 하루 지출 내역이 다음과 같다고 할때, 하루 지출 비용의 합계를 구하고
+    적정 지출 비용의 초과여부를 출력해라.
+
+    땡땡이의 하루 지출내역
+    교통비 : 3000원
+    식비 : 6000원
+    음료수 : 3000원교통비
+    
+
+    하루 용돈 10000원
+
+    땡땡이가 하루 용돈 만원을 초과했다면 '~원 초과', 아닐경우에는 '용돈 관리 굿'을
+    화면에 출력해주세요
+    -->
+</body>
+<script>
+    function expense_details(){
+        let transportation = Number(prompt("교통비"));
+        let food = Number(prompt("식비"));
+        let drink = Number(prompt("음료수"));
+        let cal;
+        let over;
+        let pin_money = 10000;
+
+        cal = transportation + food + drink;
+
+        over = cal - pin_money;
+        if(pin_money > cal){
+            document.write("용돈 관리 굿<br>")
+        }
+        else if(pin_money < cal){
+            document.write(over + "원 초과<br>")
+        }
+    }
+    expense_details()
+</script>
+</html>

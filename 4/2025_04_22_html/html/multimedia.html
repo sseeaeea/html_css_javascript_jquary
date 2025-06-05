@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>멀티미디어 태그</title>
+</head>
+<body>
+    <!-- 
+    멀티미디어 태그
+
+    인터넷 초기에는 웹 사이트에서 동영상을 보거나 음원을 듣기 위해서 pc를 통해서만 멀티미디어
+    파일들을 재생할 수 있었다. 그래서 여러 가지 미디어 파일을 확인하려면
+    Activex를 설치해야만 했고, 이 과정에서 악성 프로그램이 달려오는 경우가 많아 이 문제를 해결하기 위해 만들어진 태그가 바로 멀티미디어 태그이다.
+
+    멀티미디어 태그의 종류로는 <video>, <img>, <audio>태그가 있다.
+
+    <audio>태그
+
+    소리만 재생되는 음원파일을 말한다. 현재 브라우저에서는 .mp3, .wav, .ogg확장자를 지원한다.
+
+    [기본형]
+
+    1. 오디오 파일을 1개만 연결하는 경우
+    <audio src="파일경로" 속성...>이 음원은 해당 브라우저에서 지원되지 않습니다.</audio>
+
+    2. 오디오 파일을 확장자별로 여려개 연결하는 경우
+
+    <audio 속성...>
+        <source src="파일경로" type="audio.ogg" />
+        <source src="파일경로" type="audio.mp3" />
+        <source src="파일경로" type="audio.wav" />
+        이 음원은 해당 브라우저에서 지원되지 않습니다.
+    </audio>
+
+    [속성]
+    - autoplay : 오디오를 자동 재생한다. 속성값은 autioplay로, 속성명과 속성값이 같다.
+    이렇게 속성명과 속성값이 같을경우에는 속성명만 적어도 된다(속성값을 생략).
+    - controls : 플레이 버튼이나 정지 버튼과 같이 오디오 의 실행을 제어할 수 있는 막대바.
+    이 속성도 속성명과 속성값이 같으므로 속성명만 써도 된다.
+    - loop : 오디오를 무한재생한다. 마찬가지로 속성명만 적는다.
+    -muted : 음소거. 속성명만 적는다.
+    -preload : 페이지가 로드될때 오디오 파일이 같이 로드되어야 하는지 여부와 그 방법을 지정한다.
+    1. auto : 페이지가 로드될때 오디오 파일을 전부 로딩시킴.
+    2. metadata : 페이지가 로드될때 메타데이터만 미리 로드시킴.
+    3. none : 페이지가 로드될때 오디오 파일을 로딩시키지 않는다.
+    재생버튼을 누르면 그때 로딩이 시작된다.
+
+    <video>태그
+
+    동영상을 출력해주는 태그 현재 브라우저에서는 .mp4, .webm, .ogg확장자를 지원한다.
+
+    [기본형]
+    1. 비디오 파일을 1개만 연결할경우
+
+    <video src="파일경로" 속성...>
+        이 동영상은 해당 브라우저를 지원하지 않습니다.
+    </video>
+
+    2. 비디오 파일을 확장자별로 여러개 연결할경우
+
+    <video 속성...>
+        <source src="파일경로" type='video/ogg'/>
+        <source src="파일경로" type='video/mp4'/>
+        <source src="파일경로" type='video/webm'/>
+        이 동영상은 해당 브라우저를 지원하지 않습니다.
+    </video>
+
+    [속성]
+    - autoplay : 비디오를 자동재생한다. muted속성이 함께 있어야만 자동재생이 가능함.
+    - controls : 플레이 버튼이나 정지버튼과 같은 비디오 실행을 제어해주는 막대바가 표시된다.
+    - width : 동영상의 넓이를 지정한다. 보통 css에서 처리하는 경우가 많다.
+    - height : 동영상의 높이를 지정한다. 보통 css에서 처리하는 경우가 많다.
+    - loop : 무한재생
+    - muted : 음소거
+    - poster : 비디오를 재생하기 전 보여줄 미리보기 이미지(썸네일) 값은 상대경로를 사용한다.
+    - preload : 페이지가 로드될때 비디오 파일이 같이 로드되어야 하는지의 여부와 그 방법을 명시함.
+    속성값과 뜻은 audio태그와 완전히 동일하다.
+
+    -->
+
+    <audio src="../image/mp3/coffee.mp4" controls autoplay muted loop preload="metadata" width="500" height="500">이 음원은 해당 브라우저에서 지원되지 않습니다.</audio>
+
+    <audio controls>
+        <source src="../image/mp3/coffee.mp4" type="audio/mp4"/>
+        <source src="../image/mp3/coffee.wav" type="audio/wav"/>
+        <source src="../image/mp3/coffee.ogg" type="audio/ogg"/>
+        이 음원은 해당 브라우저에서 지원되지 않습니다.
+    </audio>
+
+    <!-- 동영상 파일 -->
+     <video src="../image/mp3/coffee.mp4" autoplay muted>
+        이 동영상은 해당 브라우저에서 지원되지 않습니다.
+     </video>
+
+     <!-- 동영상 파일 여러개 연결하기 -->
+      <video controls>
+        <source src="../image/mp3/coffee.mp4" type="video/mp4">
+        <source src="../image/mp3/coffee.webm" type="video/webm">
+        <source src="../image/mp3/coffee.ogg" type="video/ogg">
+        이 동영상은 해당 브라우저에서 지원되지 않습니다.
+      </video>
+      <br>
+      <!-- 유튜브 동영상 퍼오기 -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/o3ixE6EZcJU?si=nStAfF28i0GQi6Me" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe src="https://kakao.com" frameborder="0" width="500" height="700"></iframe>
+      
+</body>
+</html>

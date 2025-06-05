@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex 하위 정렬 속성</title>
+    <link rel="stylesheet" href="../css/flex.css">
+</head>
+<body>
+    <!-- 
+    flex속성은 자손요소까지만 적용된다
+
+    3. flex-direction : 나열방향 속성
+
+    부모박스안의 자식박스들의 나열 방향을 정하는 속성이다.
+    기본값은 가로로 정렬되고 상황에 따라 세로방향으로 바꿀 수 있다.
+
+    row-reverse, column-reserse를 사용하면 자식요소들의 순서도 바뀐다. (start->end)
+    flex의 방향이 column일경우 justify-content의 방향이 세로로 바뀌고 
+    align-items의 방향이 가로로 바뀐다.
+
+    [속성값]
+    - row : 기본값으로 자식 요소들을 부모박스 안에서 가로로 정렬한다.
+    - column : 자식 요소들을 부모박스안에서 세로로(block방향)정렬 한다.
+    - row-reverse : 자식요소를 부모박스에서 가로로 정렬하는데 반대로 정렬한다.
+    - column-reverse : 자식요소를 부모박스에서 세로로 정렬하는데 반대로 정렬한다.
+
+    4. flex-wrap : 감싸기 속성
+
+    부모박스의 넓이보다 자식박스의 넓이 총 합이 더 넓은경우 flex를 사용하면
+    자식박스에 선언된 넓이를 무시하고 자식박스의 넓이를 물리적으로 줄여서
+    한 줄에 정렬한다, 이때 자식요소에 선언된 넓이를 무시하지않고 그대로 유지시키기
+    위해서 사용하는 속성으로 '감싸기 속성'이라고 부르지만 실제로는 자식요소 넓이높이
+    유지속성으로 생각하는게 편하다.
+
+    [속성값]
+    - nowrap : 요소의 크기와 상관없이 모든 자식요소를 한 줄에 정렬함(넓이유지x)
+    - wrap : 자식요소에 선언된 넓이 높이를 유지하고, 부모박스에 자리가 부족한경우
+    여러줄에 걸쳐 정렬한다.
+    - wrap-reverse : 요소들을 여러 줄에 걸쳐 반대로 정렬한다. 
+
+    5. flex-flow : 나열방향 + 감싸기 속성
+
+    flex-direction과 flex-wrap은 함께 자주 사용되는 조합이다.
+    그래서 flex-flow를 사용하면 두 속성을 한꺼번에 선언할 수 있다.
+    각 속성값을 공백으로 구분하여 한꺼번에 선언한다.
+
+    [기본형]
+    flex-flow : 나열방향 감싸기;
+
+    - flex-flow : row wrap;
+    - flex-flow : column wrap0reverse;
+
+    6. align-content : 컨텐츠 세로 정렬속성
+
+    flex된 컨테이너 안에 자식들이 매우 많을경우 flex-wrap을 사용하면
+    여러줄이 형성된다. 이때 한줄을 하나의 content라고 본다.
+    그래서 속성 이름이 align-content이다.
+    컨텐츠들을 각각 세로로 정렬하고 요소 사이에(between), 요소 주위에(around),
+    요소를 고르게(evenly) 동일 간격을 주어 배치할 수도 있다.
+    속성값은 align-items와 justify-content속성값을 함께 사용한다.
+
+    7. gap : 컨텐츠 사이 간격(gutter)을 만들어주는 속성
+
+    컨텐츠 사이 간격을 만드는 속성으로 row-gap과 column-gap으로 나눠진다.
+    gap은 상하좌우에 동일한 간격을 만드며, 단위는 px이나 %, vw, vh와같은 단위를 사용가능하다.
+    
+
+
+    [속성값]
+    - flex-start : 여러 줄들을 컨테이너의 top위치에 정렬한다.
+    - flex-end : 여러 줄들을 컨테이너의 bottom위치에 정렬한다.
+    - center : 여러 줄들을 컨테이너의 middle위치에 정렬한다.
+    - space-between : 여러 줄들을 top, bottom으로 양끝 정렬하여 사이에 동일한 간격을 만든다.
+    - space-around : 여러 줄들 주위에 동일한 간격을 둔다.
+    - space-evenly : 여러 줄들의 사이에 동일한 간격을 둔다.
+    - strecth : 여러 줄들을 컨테이너에 맞도록 늘린다.
+
+    -->
+
+    <div class="container2">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+    </div>
+</body>
+</html>

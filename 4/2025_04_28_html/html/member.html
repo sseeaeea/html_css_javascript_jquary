@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>네이버 : 회원가입</title>
+    <link rel="stylesheet" href="../css/member.css" />
+  </head>
+  <body>
+    <!-- 전체영역 -->
+    <div class="container">
+      <!-- 폼영역(500px) -->
+      <div class="inner_wrap">
+        <header>
+          <!-- 로고 -->
+          <h1>
+            <a href="https://www.naver.com">로고</a>
+          </h1>
+        </header>
+        <section class="inner_con">
+          <!-- 실명인증 -->
+          <div class="text_top">
+            <span>실명 인증된 아이디로 가입하기</span>
+          </div>
+
+          <form
+            action="#"
+            method="post"
+            id="member_form"
+            class="member"
+            autocomplete="on"
+          >
+            <!-- 아이디+비번+이메일 -->
+            <div class="user_list">
+              <!-- 아이디 -->
+              <div class="user_info">
+                <label for="user_id" class="user_icon1">
+                  <input
+                    type="text"
+                    name="user_id"
+                    id="user_id"
+                    placeholder="아이디"
+                    required
+                  />
+                  <span>@naver.com</span>
+                </label>
+              </div>
+              <!-- 비밀번호 -->
+              <div class="user_info">
+                <label for="user_pw" class="user_icon2">
+                  <input
+                    type="password"
+                    name="user_pw"
+                    id="user_pw"
+                    placeholder="비밀번호"
+                    required
+                  />
+                </label>
+              </div>
+              <!-- 이메일주소 -->
+              <div class="user_info">
+                <label for="user_mail" class="user_icon3">
+                  <input
+                    type="email"
+                    name="user_mail"
+                    id="user_mail"
+                    placeholder="[선택] 이메일주소 (비밀번호 찾기 등 본인 확인용)"
+                  />
+                </label>
+              </div>
+            </div>
+
+            <!-- 이름+생년월일+통신사+성별 -->
+            <div class="user_list">
+              <!-- 이름 -->
+              <div class="user_info">
+                <label for="user_name" class="user_icon1">
+                  <input
+                    type="text"
+                    name="user_name"
+                    id="user_name"
+                    placeholder="이름"
+                    required
+                  />
+                </label>
+              </div>
+              <!-- 생년월일 -->
+              <div class="user_info">
+                <label for="birth" class="user_icon4">
+                  <input
+                    type="datetime"
+                    name="birth"
+                    id="birth"
+                    placeholder="생년월일 8자리"
+                    required
+                  />
+                </label>
+              </div>
+              <!-- 통신사 선택 -->
+              <div class="user_info">
+                <label for="agency" class="user_icon5">
+                  <select name="agency" id="agency" required>
+                    <option>통신사 선택</option>
+                    <option>SKT</option>
+                    <option>KT</option>
+                    <option>LG U+</option>
+                    <option>SKT 알뜰폰</option>
+                    <option>KT 알뜰폰</option>
+                    <option>LG U+ 알뜰폰</option>
+                  </select>
+                </label>
+              </div>
+              <!-- 성별/국적 -->
+              <div class="user_info info_btn">
+                <!-- 성별 -->
+                <div class="btn_group">
+                  <label for="gender">
+                    <button type="button" value="male">남자</button>
+                    <button type="button" value="female">여자</button>
+                  </label>
+                </div>
+                <!-- 국적 -->
+                <div class="btn_group">
+                  <label for="foreigner">
+                    <button type="button" value="0">내국인</button>
+                    <button type="button" value="1">외국인</button>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- 휴대전화번호 -->
+            <div class="user_list">
+              <div class="user_info">
+                <label for="phone" class="user_icon6">
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    placeholder="휴대전화번호"
+                    required
+                    maxlength="11"
+                  />
+                </label>
+              </div>
+            </div>
+            <!-- 인증약관 -->
+            <div class="user_list">
+              <div class="user_info">
+                <label for="user_check" class="user_icon7">
+                  <input
+                    type="checkbox"
+                    name="user_check"
+                    id="user_check"
+                    required
+                  />
+                  <span class="green">[필수]</span>
+                  <strong>인증 약관 전체동의</strong>
+                </label>
+              </div>
+            </div>
+            <!-- 인증요청 버튼 -->
+            <button class="submit_btn">인증요청</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

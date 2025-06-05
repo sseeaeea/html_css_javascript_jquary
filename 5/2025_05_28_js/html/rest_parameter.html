@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest parameter</title>
+</head>
+<body>
+    <!-- 
+    Rest parameter : 나머지 매개변수
+
+    Rest parameter는 매개변수 앞에 세개의 점(...)을 붙여서 정의한
+    매개변수를 말한다.
+
+    [기본형]
+    function 함수명(...변수명){
+       
+    }
+
+    함수명(인수1,인수2,인수3,인수4...)
+
+    rest파라미터로 고정된 인수와 가변인수 함께 받아오기
+
+    함수에 전달된 인수들은 파라미터와 rest파라미터에 순차적으로
+    할당된다. 예를들어 함수를 실행할때마다 어떤값은 고정으로 받아와야하고
+    어떤 값들은 가변 인수로 받아올 수도 있고 안받아 올수도 있을때 
+    rest파라미터를 사용하면 편리하게 쓸 수 있다.
+
+    rest파라미터는 이름 그대로 먼저 선언된 매개변수에 할당된 인수를
+    제외한 나머지 인수들이 모두 배열에 담긴다. 그래서 rest파라미터는
+    반드시 마지막 파라미터여야 한다.
+
+    또 rest파라미터는 함수를 정의했을 때 선언한 매개변수의 개수를 나타내는
+    함수객체의 length 프로퍼티에 영향을 주지 않는다.
+
+    [기본형]
+    function 함수명(매개변수1, ...rest){
+       매개변수; // [인수1,인수2,인수3,인수4...]
+    }
+
+    함수명(인수1,인수2,인수3,인수4...)
+    -->
+</body>
+<script>
+    //rest파라미터로 인수값 배열로 받아오기
+    function my_fnc(...rest){
+        console.log(rest);
+    }
+    my_fnc(1,2,3,4,5,6,7);
+
+    //고정된 인수와 나머지 인수를 rest파라미터로 받기
+
+    function my_fnc2(param, ...rest){
+        console.log("고정된인수" + param)
+        console.log("나머지인수" + rest)
+    }
+    my_fnc2(1);
+    my_fnc2(1,2);
+    my_fnc2(1,2,3,4,5,6,7);
+</script>
+</html>

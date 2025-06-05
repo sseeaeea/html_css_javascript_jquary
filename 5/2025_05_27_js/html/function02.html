@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>매개변수</title>
+</head>
+<body>
+    <!-- 
+    매개변수에 기본값 지정하기
+
+    ES6버전부터는 매개변수에 기본값을 지정하는 기능이 추가되었다.
+
+    [기본형]
+    function 함수명(매개변수1, 매개변수2 = 값2...){
+       자바스크립트 코드;
+    }
+
+    함수명(인수1, 인수2...)
+
+    return문
+
+    함수를 실행한 이후의 결과값을 반환받고 싶을 때 사용하는 문장이다
+    return뜻 그대로 반환한다 라는 의미이며 함수의 호출문 자리로
+    결과값을 반환해준다.
+    바나환된 값은 함수의 호출문 자리로 반환되고 함수는 return문을
+    만나면 바로 강제종료된다.
+
+    반환된 결과를 다른곳에서도 사용하고 싶다면 함수 호출문을
+    변수에 담아두어야 한다.
+
+    [기본형]
+    function 함수명(){
+      코드;
+      return 코드;
+    }
+    -->
+</body>
+<script>
+    function multiple(a, b = 5, c = 10){ // 매개변수 b,c에 각각 5,10으로 기본값 넣기
+        return a * b + c;
+    }
+
+    let result1 = multiple(5,10,20);
+    console.log(result1);
+    let result2 = multiple(10,20);
+    console.log(result2);
+    let result3 = multiple(30);
+    console.log(result3);
+
+    /*
+    사용자한테 얼마까지 더할지 묻고 1부터 사용자가 입력한 숫자까지 더하는 함수를
+    만들기
+    */
+
+    function reduce_num(n){
+
+        let n1 = Number(n);
+        let sum = 0;
+        for(let i = 1; i <= n1; i++){
+            sum = sum + i;
+        }
+        document.write("1부터" + n1 + "까지 다 더한값은" + sum + "입니다.")
+    }
+    let plus = prompt("얼마나 더하시겠어요?");
+    reduce_num(plus);
+
+
+</script>
+</html>

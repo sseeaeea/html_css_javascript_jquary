@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+div{
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+    background-color: aquamarine;
+}
+
+input:checked[type="checkbox"] + div {
+    display: none;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일반함수 실습</title>
+</head>
+<body id="the_body">
+    <script>
+    // 배경색 바꾸기 버튼을 누를때마다 배경색이 바뀌는 함수 만들기
+    let i = 0;
+    function bgcolor_change(){
+        let color = ["white", "pink", "skyblue", "tomato"]
+         // color인덱스 번호를 카운트해줄 카운트변수
+         i++;
+        if(i >= color.length){
+            i = 0;
+        }
+        //id값이 the_body인 태그요소를 찾아서 변수 thebody안에 할당
+        let thebody = document.getElementById("the_body");
+        console.log(thebody);
+        // thebody에 css style를 적용할껀데 background-color를 적용하고 그 값은 color배열에서 가져올꺼야
+        thebody.style.backgroundColor = color[i];
+    }
+</script>
+    <button type="button" onclick="bgcolor_change();">배경색 바꾸기</button>
+</body>
+
+</html>

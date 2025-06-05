@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변형속성</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            height: 300px;
+            margin: 200px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 30px;
+        }
+        .box1{
+            background-color: aqua;
+            /* x축으로 300px y축으로 200px이동 */
+            transform: translate(300px,200px);
+            /* x축으로 -100px이동 */
+            transform: translateX(-100px);
+            /* y축으로 -100px이동 */
+            transform: translateY(-100px);
+        }
+        .box2{
+            background-color: rgb(68, 40, 146);
+            /* x축으로 2배, y축으로 1.2배 확대한다 */
+            transform: scale(2, 1.2);
+            /* x축으로 0.5배 확대한다. */
+            transform: scaleX(0.5);
+            /* y축으로 2배 확대한다 */
+            transform: scaleY(2);
+        }
+        .box3{
+            margin-top: 500px;
+            background-color: rgb(86, 32, 85);
+            /* x축으로 45도 y축으로 15도 기울인다. */
+            transform: skew(45deg, 15deg);
+            /* x축으로 80도 기울인다. */
+            transform: skewX(80deg);
+            /* y축으로 160도 기울인다. */
+            transform: skewY(160deg);
+        }
+        .box4{
+            background-color: rgb(185, 179, 67);
+            color: white;
+            /* z축으로 180도 회전시킴 */
+            transform: rotate(180deg);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+    transform : 변형속성
+
+    프로그램에서 화면의 좌표는 x축과 y축을 사용한다. x좌표와 y좌표가 있는 화면을
+    우리는 2차원 화면 좌표라고 하고 여기에 z축을 추가하면 3차원 좌표가 된다.
+    z축은 브라우저에서 사용자 쪽으로 가까워질수록 z축의 양수이며, 멀어질수록 음수이다.
+
+    2차원 변환 함수
+
+    2차원 변환 함수는 2d상태로, x축과 y축을 이용한다. trasnform속성의 속성값으로 사용된다.
+
+    [종류]
+    1. translate(x, y) : 특정 크기만큼 이동한다.
+    - translate(x) : x축으로 특정 크기만큼 이동한다.
+    - translate(y) : y축으로 특정 크기만큼 이동한다.
+
+    2. scale(x, y) : 특정 크기만큼 확대/축소한다. 이때 값은 배율을 사용하기 때문에 단위는 따로 없다.
+    1 : 100%, 1.2 : 120%
+    -scaleX : X축으로 특정 크기만큼 확대/축소 한다.
+    -scaleY : Y축으로 특정 크기만큼 확대/축소 한다.
+
+    3. skew(angleX, angleY) : 특정 각도만큼 기울인다. 단위는 각도를 뜻하는 deg를 사용한다.
+    skew는 2차원 변형밖에없고, 3차원엔 존재하지 않는다.
+    - skewX : x축으로 특정 각도만큼 기울인다.
+    - skewY : y축으로 특정 각도만큼 기울인다.
+
+    4. rotate(angleZ) : 특정 각도만큼 회전한다. 마찬가지로 deg단위를 사용한다.
+    2차원 변형함수에서는 z축이 회전축으로 사용된다.
+    -->
+    <div class="box1">translate</div>
+    <div class="box2">scale</div>
+    <div class="box3">skew</div>
+    <div class="box4">rotate</div>
+</body>
+</html>

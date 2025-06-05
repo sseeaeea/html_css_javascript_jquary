@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM으로 태그 가져오기</title>
+</head>
+<body>
+    <!-- 
+    2. getElementByClassName()메서드
+
+    getElementByClassName()메서드는 지정한 class선택자 이름이 있는
+    html요소에 접근한다. 메서드 이름에 클래스 이름을 가지고 오겠다고 명시되어
+    있으므로 .은 붙이지 않는다. 또한 반드시 클래스명은 문자열 형태로 가져와야 한다.
+    getElementByClassName()메서드로 태그를 불러오면 클래스명이 같은 DOM요소들을
+    HTMLCollection객체에 저장한다. HTMLCollection객체는 배열과 비슷한 형태로
+    태그를 저장하는 '유사배열'이며 배열처럼 인덱스 번호도 부여된다.
+    그리고 배열형태를 가지고 있기 때문에 배열처럼 사용하고 메서드도 이용할 수 있다.
+    (단, 배열이 아닌 유사 배열이므로 모든 메서드를 그냥 사용할 순 없음)
+    배열로 사용하려면 배열로 변환하여 사용해야한다.
+
+    [기본형]
+    document.getElementByClassName("클래스명")
+
+    3. getElementByTagName()메서드
+
+    class나 id로 이름이 지정되지 않은 일반 태그들을 불러올때 사용하는 메서드이다.
+    특정 태그들을 한꺼번에 불러올때 주로 사용하며 HTMLCollection객체에 저장된다.
+
+    [기본형]
+    getElementByTagName("태그명")
+
+    4. qurrySelector, qurrySelectorAll 메서드
+
+    위에있는 getElementBy~메서드의 반환값(저장장소)은 HTMLCollection객체이다.
+    여기에는 html요소("p"나"a"같은 형태)만 저장된다,.
+    DOM트리의 텍스트나 속성 노드까지 자유롭게 접근하고 제어하려면
+    qurrySelector, qurrySelectorAll 메서드를 사용해야한다.
+
+    id선택자처럼 반환값이 1개라면 querrySelector메서드를 사용하고
+    class선택자나 태그명 선택자처럼 반환값이 여러개라면 qurrySelectorAll메서드를 사용한다.
+
+    qurrySelector, qurrySelectorAll메서드로 선택자를 표현할때에는
+    #또는 .을 붙여 사용해야하고 반드시 문자열로 태그를 가져와야한다.
+    태그는 기호없이 불러오면 태그명으로 가져온다.
+    qurrySelector, qurrySelectorAll메서드의 반환값(태그)은 NodeList라는 공간 안에
+    저장되고 노드 리스트는 노드를 한꺼번에 저장한 것으로 배열과 비슷한 
+    유사배열이다.
+
+    [기본형]
+    - qurrySelector는 제일먼저 등장하는 태그 1개를 가져온다.
+    document.qurrySelector("#아이디명")
+    document.qurrySelector(".클래스명")
+    document.qurrySelector("태그명")
+
+    - 해당 클래스명이나 태그를 모두 가져올때
+
+    document.quertSelectorAll("클래스명")
+    document.quertSelectorAll("태그명")
+    -->
+    <h2 class="heading" id="title" alt="제목입니다.">제목1</h2>
+    <h3 class="heading">제목2</h3>
+    <h3 class="heading">제목2</h3>
+    <h3 class="heading">제목2</h3>
+    <h3 class="heading">제목2</h3>
+    <h3 class="heading">제목2</h3>
+    <h3 class="heading">제목2</h3>
+    <h3 class="heading">제목2</h3>
+    <h3 class="heading">제목2</h3>
+    <h4 class="heading">제목3</h3>
+    <h5 class="heading">제목4</h3>
+    <h6 class="heading">제목5</h3>
+</body>
+<script>
+    //요소를 클래스명으로 가져오기
+    const heading = document.getElementsByClassName("heading");
+    console.log(heading);
+    //요소를 태그명으로 가져오기
+    const h2Tag = document.getElementsByTagName("h2");
+    console.log(h2Tag);
+    //h4태그에 배경색을 원하는 색으로 지정하기
+    const h4Tag = document.getElementsByTagName("h4");
+    console.log(h4Tag);
+    //heading에 있는 모든 요소에 반복문을 이용하여 배경색 지정하기
+    for(let i = 0; i < heading.length; i++){
+        heading[i].style.backgroundColor = "yellow";
+    }
+
+    heading[2].style.backgroundColor = "red";
+    h4Tag[0].style.backgroundColor = "skyblue";
+    h2Tag[0].style.color = "red";
+    // 노드를 이용하여 아이디명으로 데려오기
+    const headingid = document.querySelector("#title");
+    console.log(headingid);
+    // class이름이 여러개더라도 quertselector로 가져오면 제일 첫번째 태그 1개aks rkwudhkwla
+    const headingOne = document.querySelector(".heading");
+    console.log(headingOne);
+    // 노드를 이용해서 클래스명으로 heading 모두 데려오기
+    const headingAll = document.querySelectorAll(".heading");
+    console.log(headingAll);
+
+    // 노드를 이용해 태그명으로 요소가져오기
+    const heading_tag_name = document.querySelectorAll("h3")
+    console.log(heading_tag_name);
+</script>
+</html>

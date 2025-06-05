@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css의 다양한 선택자</title>
+    <link rel="stylesheet" href="../css/selector01.css">
+</head>
+<body>
+    <!-- 
+    1. 후손 선택자와 자손 선택자
+
+    후손 선택자는 부모 태그안에 있는 모든 자식태그를 말한다.
+    후손 선택자의 표기법은 공백으로 표현한다.
+    자손 선택자는 부모선택자의 바로 아랫계층에 있는 태그들을 말하며
+    표기할때에는 '>'로 표기한다
+
+    [기본형]
+    - 후손선택자 : 선택자A 선택자B 선택자A 안에있는 자식 선택자 B를 선택한다.
+    - 자손선택자 : 선택자A > 선택자B 선택자A의 바로 아랫계층의 자식선택자 B를선택한다.
+    -->
+
+    <div>
+        <h1>제목1</h1>
+        <h2>제목2</h2>
+        <div>
+            <ul>
+                <h2>제목4</h2>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>
+                    <span>메뉴3</span>
+                </li>
+            </ul>
+        </div>
+        <h2>제목3</h2>
+        <span>span</span>
+    </div>
+</body>
+</html>

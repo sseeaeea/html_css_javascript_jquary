@@ -1,0 +1,6 @@
+@charset "utf-8";
+
+:is(h1, h2, h3):hover{
+    font-size: 24px;
+    color: red;
+}

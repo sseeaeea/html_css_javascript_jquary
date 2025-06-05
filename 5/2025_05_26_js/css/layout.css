@@ -1,0 +1,397 @@
+@charset "utf-8";
+@import url('./reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+  color: #3f3d56;
+}
+.container {
+  width: 100%;
+  height: auto;
+}
+header {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+/* 공통영역 */
+.con {
+  width: 1600px;
+  height: auto;
+  margin: 0 auto;
+  padding: 200px 0;
+}
+header .con {
+  display: flex;
+  gap: 40px;
+  padding: 0;
+}
+/* 로고 */
+h1 {
+  width: fit-content;
+  height: fit-content;
+  margin: 36px 0;
+}
+/*  메뉴 */
+#gnb {
+  width: 630px;
+  height: 100%;
+  margin-left: auto;
+}
+#gnb > ul {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  line-height: 100px;
+  font-size: 20px;
+  text-transform: uppercase;
+  position: relative;
+}
+#gnb > ul > li:hover > a {
+  color: #f50057;
+}
+/* 2차메뉴 */
+.submenu {
+  height: 0;
+  overflow: hidden;
+  line-height: 50px;
+  font-weight: 300;
+  text-transform: capitalize;
+  transition: 0.5s;
+}
+.submenu > li:hover a {
+  color: #f50057;
+}
+#gnb > ul:hover .submenu {
+  height: 200px;
+}
+/* 아이콘 */
+.icons {
+  width: fit-content;
+  height: 40px;
+  display: flex;
+  gap: 20px;
+}
+.icons > div {
+  width: 40px;
+  height: 40px;
+  margin: 30px 0;
+}
+.icons > div a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icons > div:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main,
+section {
+  width: 100%;
+  height: auto;
+}
+.main_visual {
+  height: 980px;
+  background-color: #19163c;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  /* 나중에 이미지가 애니메이션 동작이 있을때 
+  화면밖으로 넘어가는 부분을 숨기기 위해  */
+  overflow: hidden;
+}
+.main_title {
+  position: absolute;
+  width: 600px;
+  height: fit-content;
+  /* 부모의 0점으로 부터 50%위치 */
+  left: 50%;
+  top: 50%;
+  /* 해당 요소(main_title)의 넓이 높이를 기준으로 50%*/
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+.main_title h2 {
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  color: #f50057;
+  text-transform: uppercase;
+  font-size: 47px;
+  border-bottom: 2px solid #fff;
+  font-weight: 500;
+}
+.main_title p {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 2;
+}
+.man,
+.woman {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+}
+.man {
+  top: 150px;
+  animation: moving1 1s infinite linear alternate;
+}
+.woman {
+  right: 0;
+  top: 80px;
+  animation: moving2 1s infinite 0.5s linear alternate;
+}
+/* 위아래로 둥실 움직이는 모션 */
+@keyframes moving1 {
+  0% {
+    top: 150px;
+  }
+  100% {
+    top: 170px;
+  }
+}
+/* 대각선 방향으로 둥실 움직이는 모션 */
+@keyframes moving2 {
+  0% {
+    right: 0;
+    top: 80px;
+  }
+  100% {
+    right: -20px;
+    top: 100px;
+  }
+}
+/* 두번째 섹션 */
+.sec2 {
+  background: url(../img/bg_02.png), url(../img/bg_01.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+.sec2 .con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left_con {
+  text-align: center;
+  color: #3f3d56;
+}
+.left_con h4 {
+  font-size: 24px;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.left_con h4::after {
+  content: 'line';
+  font-size: 0;
+  display: block;
+  width: 20px;
+  height: 1px;
+  background-color: #f50057;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.left_con p {
+  font-size: 32px;
+  margin-bottom: 80px;
+}
+.left_con a {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  background-color: #19163c;
+  font-size: 24px;
+  padding: 20px 80px;
+  border-radius: 100px;
+  transition: 0.3s;
+}
+.left_con a:hover {
+  background-color: #f50057;
+}
+.right_con {
+  width: fit-content;
+  height: fit-content;
+}
+.right_con img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 세번째 섹션 */
+.sec_title {
+  text-align: center;
+  color: #3f3d56;
+  margin-bottom: 100px;
+}
+section h2 {
+  font-size: 47px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+section p {
+  font-size: 22px;
+  font-weight: 300;
+}
+/* 컨텐츠영역 */
+.con_wrap {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.img_top {
+  width: 371px;
+  height: 250px;
+  position: relative;
+}
+.img_top .floor {
+  position: absolute;
+  bottom: 0;
+}
+.img_top > img:first-child {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 10;
+}
+.service:hover .img_top > img:first-child {
+  opacity: 1;
+  top: 30px;
+}
+.text_box {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+  color: #3f3d56;
+}
+.text_box h3 {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.text_box p {
+  font-size: 20px;
+  font-weight: 300;
+}
+/* 네번째 섹션 */
+.sec4 {
+  background-color: #f5f5f5;
+  text-align: center;
+}
+.btn_box {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+
+  margin: 0 auto;
+  margin-top: 100px;
+  gap: 40px;
+}
+.btn_box > a {
+  width: fit-content;
+  height: fit-content;
+  background-color: #19163c;
+  padding: 12px 80px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 100px;
+  transition: background-color 0.3s;
+}
+.btn_box > a:hover {
+  background-color: #f50057;
+}
+/* 다섯번째 섹션 */
+.sec5 > .con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.left_title {
+  width: 40%;
+}
+.left_title p {
+  font-size: 28px;
+  line-height: 1.6;
+}
+.sec5 form {
+  width: 60%;
+  border-top: 1px solid #19163c;
+  border-bottom: 1px solid #19163c;
+  padding: 60px;
+  box-sizing: border-box;
+}
+.input_box {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.input_box > label {
+  font-size: 18px;
+}
+.input_box > input,
+.input_box > textarea {
+  width: 80%;
+  border: none;
+  background-color: #f5f5f5;
+  font-size: 18px;
+  line-height: 40px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  font-family: 'Roboto', sans-serif;
+}
+.input_box > textarea {
+  line-height: 1.4;
+  padding: 10px 16px;
+  height: 300px;
+  resize: none; /* 창 크기 고정 */
+}
+.input_box > button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #19163c;
+  color: #fff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 16px;
+  border-radius: 50px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+.input_box > button:hover {
+  background-color: #f50057;
+}
+.input_box > input:focus,
+.input_box > textarea:focus {
+  background-color: #d5eaf3;
+}
+footer {
+  width: 100%;
+  height: 50px;
+  background-color: #eee;
+}
+footer .con {
+  padding: 0;
+  text-align: center;
+  line-height: 50px;
+  color: #aaa;
+}

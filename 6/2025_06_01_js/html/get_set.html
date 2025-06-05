@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성을 가져오거나 수정하는 메서드</title>
+    <style>
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+    getAttribute(), setAttribute()메서드
+
+    웹 요소를 문서에 삽입할때 태그 속성을 함께 사용하면 DOM트리에 속성노드가 추가되면서
+    속성값이 저장된다. 이때 속성에 접근하려면 getAttribute()메서드를 사용하고
+    속성값을 수정하려면 setAttribute() 메서드를 사용한다.
+
+    [기본형]
+    요소.getAttribute("속성명")
+    요소.setAttribute("속성명", "바꿀값")
+    -->
+    <div id="pic">
+        <img src="../image/coders.png"
+        alt="사람"
+        id="corder"
+        width="200px"
+        height="200px"
+        >
+    </div>
+</body>
+<script>
+    function displaysrc(){
+        let human = document.querySelector("#corder");
+
+        alert("이미지 경로: " + human.getAttribute("src")); // 요소의 src속성에 접근 
+    }
+
+    document.getElementById("pic").onclick = displaysrc;
+
+    //id가 pic인 요소를 가져와서 마우스를 오버하면 옆에있는 이벤트 핸들러 실행
+    //이때 src속성값을 다른 이미지로 바꿈
+    document.getElementById("pic").onmouseover = function(){
+        document.querySelector("img").setAttribute("src", "../image/bg_img2.png");
+    }
+    //id가 pic인 요소에서 마우스가 벗어나면 원래 이미지로 바꾸기
+    document.getElementById("pic").onmouseout = function(){
+        document.querySelector("img").setAttribute("src", "../image/coders.png");
+    }
+</script>
+</html>

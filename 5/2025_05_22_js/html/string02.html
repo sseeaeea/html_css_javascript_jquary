@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 객체 실습</title>
+</head>
+<body>
+    <!-- 
+    1. 방문자로부터 사용자의 이름을 영문으로 입력받아 소문자로 작성되었을경우
+    대문자로 바꿔서 화면에 출력
+    
+    2. 사용자에게 전화번호를 입력받아 뒤에 네자리를 노출되지 않도록
+    ****로 표현하기
+    ex) 0101234****
+    -->
+</body>
+<script>
+    // 1
+function upper(){
+    let name = prompt("당신의 이름을 영어로 입력해주세요")
+
+    document.write(name.toLocaleUpperCase() + "<br>");
+}
+upper();
+// 2
+function number_star(){
+    let num = prompt("당신의 전화번호를 입력해주세요 -는 넣지 말아주세요")
+    let len = num.length - 4;
+    document.write(num.substring(0,len)+ "****" + "<br>")
+    document.write(num);
+}
+number_star();
+</script>
+</html>

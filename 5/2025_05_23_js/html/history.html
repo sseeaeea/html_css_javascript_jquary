@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history객체</title>
+</head>
+<body>
+    <!-- 
+    histroy객체
+
+    histroy객체는 사용자가 방문한 사이트의 기록을 남기고
+    이전 방문 사이트와 다음 방문 사이트로 다시 돌아갈 수 있는
+    속성과 메서드를 제공한다.
+
+    [기본형]
+    1. history.속성;
+    2. history.메서드();
+    3. history.메서드(값);
+
+    [속성, 메서드 종류]
+    1. 2. history.back();
+    : 페이지 뒤로가기 
+    2. history.forward();
+    : 페이지 앞으로가기
+    3. history.go(숫자);
+    : 음수면 페이지 뒤로가기, 양수면 앞으로가기
+    -2라고하면 2페이지 이전으로 이동한다.
+    4. history.lenght 
+    : 총 방문기록의 갯수를 반환한다.
+    -->
+    <button type="button" onclick="history.go(-2)">페이지 뒤로가기</button>
+</body>
+<script></script>
+</html>

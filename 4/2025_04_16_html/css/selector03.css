@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+div{
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+.box1{
+    background-color: aquamarine;
+}
+
+.box2{
+    background-color: blue;
+}
+
+/* box1에 마우스를 올리면 */
+
+.box1:hover{
+    background-color: rgb(182, 78, 78);
+    border-radius: 100%;
+}
+
+/* box2를 클릭하면 */
+
+.box2:active{
+    border:5px solid red;
+}
+
+h3{
+    font-size: 40px;
+    text-align: center;
+    line-height: 200px;
+    display: none;
+    margin: 0;
+}
+/* box1에 마우스를 올리면 그 안에있는 h3이  */
+.box1:hover h3{
+    display:block;
+}
+
+.box2:active h3{
+    display:block
+}

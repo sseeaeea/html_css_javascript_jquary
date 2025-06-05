@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+
+body{
+    /* 스크롤을 만들기 위한 물리적인 높이 */
+    height: 5000px;
+}
+div:first-child{
+    width: 50%;
+    height: 300px;
+    border: 5px solid black;
+    /* 배경속성 한번에 적용 */
+    background: url(../image/rock.jpg) no-repeat;
+    /* width에 맞춰 정비율로 100%채움 */
+    background-size: 100% ;
+    /* 넓이에 맞춰 정비율로 채움 빈 공간이 남지않도록 한다. 만약 공간이 부족하다면 이미지를 일부 잘라서라도 정비율로 채운다.*/
+    background-size: cover;
+    /* 높이에 맞춰 영역에 배경이미지를 채운다. 이때 정비율을 항상 유지하며, 박스의 크기에 따라 빈 공간이 생긴다. */
+    background-size: contain;
+}
+
+div:nth-child(2){
+    width: 500px;
+    height: 300px;
+    margin-top: 50px;
+    border: 5px solid black;
+    background: url(../image/rock.jpg) no-repeat;
+    background-size: 200px;
+    /* 배경위치 */
+    background-position: 50px -50px; /*가로위치 세로위치*/
+    background-position: center;
+    background-position: right top;
+}
+
+div:nth-child(3){
+    width: 500px;
+    height: 500px;
+    margin-top: 50px;
+    color: white;
+    border: 5px solid black;
+    background: url(../image/rock.jpg) no-repeat;
+    background-size: cover;
+    /* 스크롤에 따른 고정여부 */
+    background-attachment: scroll;
+    background-attachment: fixed;
+}
+
+h2{
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 200px;
+}
+p{
+    text-align: center;
+}
+
+div:last-of-type{
+    margin-top: 50px;
+    width: 300px;
+    height: 300px;
+    padding: 40px;
+    border: 10px solid rgba(141, 141, 141, 0.64);
+
+    background: url(../image/rock.jpg) no-repeat;
+    /* 기본값 : 패딩영역까지 이미지를 채움 */
+    background-origin: padding-box;
+    /* width height만큼만 채움 */
+    background-origin: content-box;
+    /* border영역까지 채움 */
+    background-origin: border-box;
+}

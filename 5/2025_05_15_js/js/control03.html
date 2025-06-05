@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문-조건</title>
+</head>
+<body>
+    <!-- 
+    중첩 if문
+
+    조건문 안에 조건문이 있으면 이것을 중첩if문이라고 한다.
+    중첩 if문은 바깥쪽에 있는 조건문인 조건식1을 만족해야만 안쪽에 잇는
+    조건식 2를 검사한다.
+    만약 안쪽의 조건식2를 만족하지 않으면 바깥쪽 조건식1의 {}안에 있는
+    자바스크립트 코드만 실행시키고 종료한다.
+
+    [기본형]
+    if(조건식1){
+       if(조건식2){
+       
+       }
+    }
+    -->
+</body>
+<script>
+    function login(){
+        let id = "j123";
+        let pw = "j456";
+
+        //사용자의 아이디 비밀번호 입력받기
+        let userid = prompt("아이디 입력");
+        let userpw = prompt("비밀번호 입력");
+
+        if(id === userid){
+            if(pw === userpw){
+                document.write("아이디와 비밀번호 모두 일치합니다.<br>")
+            }
+
+            else{
+                document.write("아이디는 맞으나 비밀번호가 틀렸습니다.<br>")
+            }
+        }
+        else if(id !== userid){
+            if(pw === userpw){
+                document.write("아이디는 틀렸으나 비밀번호는 일치합니다.<br>")
+            }
+            else{
+                document.write("아이디와 비밀번호 둘 다 틀렸습니다.<br>")
+            }
+        }
+    }
+    login();
+</script>
+</html>
