@@ -40,6 +40,10 @@ h1 {
   margin: 36px 0;
 }
 
+h1 > a > img {
+  filter: invert(1);
+}
+
 #gnb {
   width: 630px;
   height: 100px;
@@ -59,6 +63,7 @@ h1 {
 #gnb > ul > li:hover > a {
   color: #f50057;
 }
+
 /* 2차메뉴 */
 .submenu {
   height: 0;
@@ -78,11 +83,18 @@ h1 {
   color: #fff;
 }
 /* 아이콘 */
+#none {
+  display: none;
+}
+#icons {
+  font-size: 2em;
+}
+
 .icons {
   width: fit-content;
   height: 40px;
   display: flex;
-  gap: 20px;
+  gap: 50px;
   margin-left: 100px;
 }
 
@@ -131,12 +143,43 @@ main {
   color: #fff;
 }
 
+.text_sec h2 {
+  font-size: 100px;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.text_sec span {
+  color: black;
+  text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff,
+    0.5px -1.5px 0 #fff;
+  font-size: 100px;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.text_sec p {
+  font-size: 24px;
+  line-height: 44px;
+}
+
 .video_sec {
   width: 50%;
   height: 100vh;
   overflow: hidden;
 }
 
+.arrow {
+  position: absolute;
+  transform: translate(920px, 950px);
+  color: white;
+}
+#arrow {
+  font-size: 4em;
+}
 /* sec2 */
 .sec2 {
   display: flex;
@@ -155,6 +198,17 @@ main {
   color: #fff;
 }
 
+.text_sec2 h2 {
+  font-size: 100px;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.text_sec2 p {
+  font-size: 24px;
+  line-height: 44px;
+}
 .video_sec2 {
   width: 50%;
   height: auto;
@@ -169,10 +223,42 @@ main {
   align-items: center;
   background-color: black;
   color: #fff;
+  padding: 200px 0;
+  box-sizing: border-box;
+}
+
+.sec3 h2 {
+  font-size: 48px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+.sec3 > h3 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 200;
+  margin-bottom: 100px;
 }
 .modules {
+  margin: 0 auto;
+  width: 1600px;
+  height: auto;
   display: flex;
   text-align: center;
-  justify-content: center;
   align-items: center;
+  justify-content: space-evenly;
+}
+.modules h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modules p {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.module_img {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #4f4f4f;
+  padding: 30px;
 }

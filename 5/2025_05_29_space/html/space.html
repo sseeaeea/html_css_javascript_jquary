@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>space</title>
     <link rel="stylesheet" href="../css/space.css" />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+    <link rel="stylesheet" href="../XEIcon-2.2.0/XEIcon-2.2.0/xeicon.min.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
   </head>
   <body>
     <div class="container">
@@ -70,12 +78,12 @@
           <div class="icons">
             <div>
               <a href="#">
-                <img src="../image/person.svg" alt="" />
+                <i class="xi-user-o" id="icons"></i>
               </a>
             </div>
             <div>
-              <a href="#">
-                <img src="../image/menu.svg" alt="" id="none" />
+              <a href="#" id="none">
+                <i class="xi-bars" id="icons"></i>
               </a>
             </div>
           </div>
@@ -85,7 +93,8 @@
         <!-- sec1 -->
         <section class="sec1">
           <div class="text_sec">
-            <h2>Journey<br />to a Great<br />Voyage</h2>
+            <h2>Journey to a</h2>
+            <span>Great Voyage</span>
             <p>
               We provide a variety of libraries to provide<br />
               users with a better experience.
@@ -94,7 +103,11 @@
           <div class="video_sec">
             <video src="../image/video/space-2.mp4" autoplay muted loop></video>
           </div>
+          <div class="arrow">
+            <i class="xi-angle-down-thin xi-4x" id="arrow"></i>
+          </div>
         </section>
+        <!-- sec2 -->
         <section class="sec2">
           <div class="video_sec2">
             <video src="../image/video/space-1.mp4" autoplay muted loop></video>
@@ -106,6 +119,7 @@
             </p>
           </div>
         </section>
+        <!-- sec3 -->
         <div class="sec3">
           <h2>learn moudles</h2>
           <h3>
@@ -113,28 +127,44 @@
             page via the menu below.
           </h3>
           <div class="modules">
-            <div class="module1">
-              <div class="module_img"></div>
-              <div class="module_txt">
-                <h2>module1</h2>
-                <p>Simply test module 1.</p>
+            <a href="#">
+              <div class="module1">
+                <div class="module_img">
+                  <i class="xi-code xi-5x"></i>
+                </div>
+                <div class="module_txt">
+                  <h3>module1</h3>
+                  <p>Simply test module 1.</p>
+                </div>
               </div>
-            </div>
-            <div class="module2">
-              <div class="module_img"></div>
-              <div class="module_txt">
-                <h2>module2</h2>
-                <p>Simply test module 2.</p>
+            </a>
+            <a href="#">
+              <div class="module2">
+                <div class="module_img">
+                  <i class="xi-text-type xi-5x"></i>
+                </div>
+                <div class="module_txt">
+                  <h3>module2</h3>
+                  <p>Simply test module 2.</p>
+                </div>
               </div>
-            </div>
-            <div class="module3">
-              <div class="module_img"></div>
-              <div class="module_txt">
-                <h2>module3</h2>
-                <p>Simply test module 3.</p>
+            </a>
+            <a href="#">
+              <div class="module3">
+                <div class="module_img">
+                  <i class="xi-at xi-5x"></i>
+                </div>
+                <div class="module_txt">
+                  <h3>module3</h3>
+                  <p>Simply test module 3.</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
+        </div>
+        <!-- sec4 -->
+        <div class="sec4">
+          <div class="con"></div>
         </div>
       </main>
       <footer></footer>
