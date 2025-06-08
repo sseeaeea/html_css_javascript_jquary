@@ -1,0 +1,68 @@
+@charset "utf-8";
+
+/* 모바일 */
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+  .con {
+    width: 90%;
+  }
+
+  #gnb {
+    display: none;
+  }
+
+  .text_sec {
+    width: 0;
+  }
+
+  .video_sec {
+    width: 100%;
+  }
+
+  .text_sec2 {
+    width: 0;
+  }
+
+  .video_sec2 {
+    width: 100%;
+  }
+
+  #none {
+    display: block;
+  }
+
+  header .con {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .modules {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .right_con::after {
+    display: none;
+  }
+
+  .sec4::before {
+    display: none;
+  }
+
+  .text_box {
+    overflow: hidden;
+  }
+
+  .con_box {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left_con {
+    height: 500px;
+  }
+
+  .text_box h2 {
+    top: 0;
+  }
+}
