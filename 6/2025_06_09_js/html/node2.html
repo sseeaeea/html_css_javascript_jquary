@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>클릭이벤트 + 노드추가</title>
+  </head>
+  <body>
+    <div id="container">
+      <h2>DOM을 공부합시다</h2>
+      <button type="button" onclick="addP()">더보기</button>
+      <div id="info"></div>
+    </div>
+  </body>
+  <script>
+    //addP함수를 만들어서 더보기 버튼을 클릭하면 설명글을 담은 p태그가 추가되게 하기
+    //설명글 : "DOM은 Document Object Model의 약자입니다."
+    function addP() {
+      let ptag = document.createElement("p");
+      let text_node = document.createTextNode(
+        "DOM은 Document Object Model의 약자입니다."
+      );
+      ptag.appendChild(text_node);
+      document.getElementById("info").appendChild(ptag);
+    }
+  </script>
+</html>

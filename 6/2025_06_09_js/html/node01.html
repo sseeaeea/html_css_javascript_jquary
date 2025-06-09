@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM에서 노드 추가, 삭제</title>
+  </head>
+  <body>
+    <!-- 
+    노드리스트
+
+    DOM에서 새로운 노드를 만들어 추가하거나 삭제하려면 Node list를 사용해야한다.
+    노드 리스트란 DOM에 접근할때 querySelectorAll()이나, querySelector를 사용하면
+    원하는 노드를 한꺼번에 가져오거나 특정 노드를 가져올 수 있다.
+    이때 노드의 정보를 여러개 저장한 것이 바로 노드 리스트이다.
+    배열과 비슷하게 생겼으며, 비슷하게 동작한다.(=유사배열, array-like)
+    노드리스트에는 인덱스와 요소값이 저장되고 length속성에 몇 개의 노드가 저장되어 있는지
+    표시된다. 노드리스트는 배열처럼 생겼기 때문에 배열 문법이나 메서드를 사용하여
+    특정 순번째에 있는 태그를 가져올 수 있다.
+
+    [기본형]
+    document.querySelectorAll('요소')[index]
+
+    새로운 노드 추가 과정
+
+    1. 요소노드 만들기
+    DOM에서 새로운 요소를 추가할때 가장 먼저 해야할 일은 요소노드를 만드는 것이다.
+    이때 사용하는 메서드는 .createElement()메서드이다.
+
+    [기본형]
+    document.createElement('노드명') 노드명은 태그의 이름이다. 문자열로 적어야한다.
+
+    2. 텍스트 노드 만들기(자식노드)
+    새로운 요소노드를 만들었다면 그 다음은 내용을 담는 텍스트노드를 '자식노드'로 만들어
+    연결해야한다. 텍스트노드를 만드는 메서드는 .createTextNode()이다.
+
+    [기본형]
+    document.createTextNode('텍스트')
+
+    3. 자식노드 연결하기
+    1번에서 만들었던 요소노드와 2번에서 만들었던 텍스트 노드는 노드가 만들어진 상태일 뿐이며
+    부모노드와 자식노드로 결합되지 않은 상태이다. .appendChild()메서드를 사용하면 텍스트 노드나
+    속성노드를 만든 후 요소노드에 연결할 수 있다. 이때 .appendChild()메서드를 사용해서 연결하는
+    자식노드는 자식노드중에서 맨 끝에 추가된다.
+
+    [기본형]
+    부모노드.appendChild(자식노드)
+    -->
+    <h1>노드리스트</h1>
+    <ul id="item_list">
+      <li>html</li>
+      <li>css</li>
+      <li>js</li>
+    </ul>
+  </body>
+  <script>
+    const $li = document.querySelectorAll("li")[1];
+    console.log($li);
+    // 텍스트 노드를 사용하는 요소노드 만들기
+    // 1. 요소 노드 만들기
+    let addLi = document.createElement("li"); // <li></li>
+    // 2. 텍스트 노드 만들기
+    let text_node = document.createTextNode("DOM"); // "DOM"
+    // 3. 부모노드(요소노드)에 자식노드(텍스트노드) 연결하기
+    addLi.appendChild(text_node); // <li>DOM</li>
+    // 4. ul(부모노드)에 자식노드(addLi)연결하기
+    document.getElementById("item_list").appendChild(addLi);
+  </script>
+</html>
