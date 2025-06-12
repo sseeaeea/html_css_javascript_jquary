@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>속성이 있는 요소노드 추가하기</title>
+  </head>
+  <body>
+    <!-- 
+    속성이 있는 요소노드 추가하기
+
+    html태그에서는 여러 속성을 사용해서 웹 요소를 제어한다. 따라서 
+    새로운 요소를 만들면 그와 관련된 속성 노드도 만들어서 자식노드로
+    연결해주어야한다.
+
+    1. 요소노드 만들기 - .createElement('노드명')
+    2. 속성노드 만들기
+    예를들어 img태그의 src나 alt와 같은 속성을 추가하고 싶다면
+    .createAttribute()메서드를 사용하여 속성을 추가할 수 있다.
+    속성노드를 만들면 그자리에는 '속성명'만 생성된다.
+    그래서 속성값을 추가하려면 value프로퍼티를 사용하여 값을 지정한다.
+
+    [기본형]
+    let 변수명 = document.createAttribute('속성명') => 해당 속성명만 추가됨.
+    변수명.value = '값' => 해당 속성에 값을 추가함.
+
+    3. 부모노드(요소노드)와 자식노드(속성노드)를 연결
+    속성노드는 요소노드의 자식으로 연결해야 한다. 
+    새로만든 속성노드를 요소노드에 추가하려면 .setAttributeNode()메서드를 이용한다.
+
+    [기본형]
+    요소노드.setAttributeNode(속성노드)
+
+    4. 미리 정의된 위치에 자식노드로 연결하기 - 부모노드.appendChild(자식노드)
+    -->
+
+    <div class="container">
+      <h2>속성노드 추가하기</h2>
+      <a href="#" onclick="add_con(); this.onclick='';">더보기</a>
+      <div id="info"></div>
+      <p id="text"></p>
+    </div>
+  </body>
+  <script>
+    function add_con() {
+      // 새로운 요소노드 만들기(태그 형태 만들기)
+      let newimg = document.createElement("img"); // <img></img>
+      // 속성노드를 추가
+      let src_node = document.createAttribute("src");
+      let alt_node = document.createAttribute("alt");
+      // 속성값을 추가
+      src_node.value = "../image/bg.png";
+      alt_node.value = "background image";
+      // 부모노드(img태그)에 자식노드(src, alt)합치기
+      newimg.setAttributeNode(src_node);
+      newimg.setAttributeNode(alt_node);
+      // 미리 정의된 위치에 자식노드로 연결하기
+      document.getElementById("info").appendChild(newimg);
+
+      let new_text = document.createTextNode(
+        "새로운 요소노드를 만들때는 .createElement()메서드를 이용합니다."
+      );
+      document.getElementById("text").appendChild(new_text);
+    }
+  </script>
+</html>

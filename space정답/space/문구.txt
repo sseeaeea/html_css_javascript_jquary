@@ -1,0 +1,115 @@
+[메뉴]
+about
+company
+CI/BI
+history
+
+docs
+
+data lab
+function
+modules
+framework
+
+contact
+location
+customer center
+news
+
+[메인비주얼]
+Journey to a Great Voyage
+
+We provide a variety of libraries to provide users with a better experience.
+
+[sec2]
+Various functions
+
+You can create a great website using recently added features.
+
+[sec3]
+learn modules
+If you want to test and learn a simple module, you can visit the page via the menu below.
+
+module1
+Simply test module 1.
+
+module2
+Simply test module 2.
+
+module3
+Simply test module 3.
+
+[sec4]
+(왼쪽)
+Data lab
+You can download the necessary materials from
+the data library.
+
+more view
+
+(오른쪽)
+heading text
+statistics
+This feature allows you to easily calculate statistics on your data.
+
+connect
+heading text
+connect
+You can easily manage and protect your user list.
+
+graphic
+
+heading text
+graphic
+Add dynamic graphics and features in a simple way.
+
+deep learning
+heading text
+deep learning
+We continuously update the resources required for services through deep learning.
+
+[sec5]
+
+Voyager's Journey
+(카드 문구)
+Directions
+cooperation
+If you want to collaborate with us, come here.
+
+
+Find a Teammate
+Are you looking for a companion to join you on your journey?
+
+
+Official Document
+Find various features and options in the official documentation..
+
+Directions
+The first step in the journey.
+How to come to our company.
+
+[footer]
+© 2024 Explorer Corp. All rights reserved.
+
+
+사용한 아이콘 폰트(class명)
+====================
+로그인 : xi-user-o
+메뉴 : xi-bars
+메인비주얼에 아래 화살표 : xi-angle-down-thin xi-4x
+
+세번째 섹션
+아이콘1 : xi-code xi-5x
+아이콘2 : xi-text-type xi-5x
+아이콘3 : xi-at xi-5x
+
+버튼에 있는 + : xi-plus
+
+푸터 아이콘1 : xi-stack-overflow
+푸터 아이콘2 :xi-youtube-play
+푸터 아이콘3 :xi-github
+푸터 아이콘4 :xi-instagram
+
+
+메인컬러 : rgba(49, 107, 255, 1);
+서브컬러 : rgba(61, 244, 85, 1);

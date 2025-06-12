@@ -4,7 +4,7 @@
 
 @media screen and (min-width: 320px) and (max-width: 1024px) {
   .con {
-    width: 90%;
+    width: 50%;
   }
 
   #gnb {

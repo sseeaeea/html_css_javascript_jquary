@@ -165,7 +165,8 @@ main {
 
 .text_sec span {
   color: black;
-  text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff, 0.5px -1.5px 0 #fff;
+  text-shadow: -0.5px -0.5px 0 #fff, 0.5px -0.5px 0 #fff, -0.5px 0.5px 0 #fff,
+    0.5px -1.5px 0 #fff;
   font-size: 100px;
   line-height: 1.2;
   margin-bottom: 40px;
@@ -594,8 +595,9 @@ main {
 
 #blank {
   color: black;
-  text-shadow: -0.5px -0.5px 0 rgba(49, 107, 255, 1), 0.5px -0.5px 0 rgba(49, 107, 255, 1),
-    -0.5px 0.5px 0 rgba(49, 107, 255, 1), 0.5px -1.5px 0 rgba(49, 107, 255, 1);
+  text-shadow: -0.5px -0.5px 0 rgba(49, 107, 255, 1),
+    0.5px -0.5px 0 rgba(49, 107, 255, 1), -0.5px 0.5px 0 rgba(49, 107, 255, 1),
+    0.5px -1.5px 0 rgba(49, 107, 255, 1);
 }
 /* footer */
 footer {
