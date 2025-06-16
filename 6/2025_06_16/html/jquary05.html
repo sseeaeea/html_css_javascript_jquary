@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    4. first-of-type / last-of-type선택자
+
+    first-of-type선택자는 선택한 요소의 무리 중 첫번째 요소만 선택할때 사용하고
+    last-of-type선택자는 마지막 요소만 선택할때 사용한다.
+
+    [기본형]
+    $("요소:first-of-type")
+    $("요소:last-of-type")
+
+    5. nth-child(숫자) / nth-last-of-type(숫자) 선택자
+
+    nth-child는 선택한 요소 무리 중 지정한 숫자번째에 위치한 태그를 선택하거나
+    배수번째 위치에 있는 태그들을 선택할때 사용한다.
+    -->
+    <ul>
+      <li>내용1-1</li>
+      <li>내용1-2</li>
+      <li>내용1-3</li>
+    </ul>
+    <ul>
+      <li>내용2-1</li>
+      <li>내용2-2</li>
+      <li>내용2-3</li>
+    </ul>
+    <div>
+      <p>내용1</p>
+      <p>내용2</p>
+      <p>내용3</p>
+      <p>내용4</p>
+      <p>내용5</p>
+      <p>내용6</p>
+      <p>내용7</p>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      $("li:first-of-type").css({ backgroundColor: "red" });
+      $("li:last-of-type").css({ backgroundColor: "blue" });
+      $("li:nth-of-type(2)").css({ backgroundColor: "green" });
+
+      //p태그중 3번째에 위치한 태그를 선택해 배경색 지정하기
+      $("p:nth-child(3)").css({ backgroundColor: "yellow" });
+      //p태그중 3의 배수번째에 위치한 태그에만 글자색 바꾸기
+      $("p:nth-child(3n)").css({ color: "orange" });
+    });
+  </script>
+</html>

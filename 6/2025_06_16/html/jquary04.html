@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>제이쿼리 탐색 선택자</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    제이쿼리 탐색 선택자
+
+    탐색 선택자를 사용하면 기본 선택자로 선택한 요소 중에서
+    원하는 요소를 한번 더 탐색해서 정확하게 태그 요소를 선택할 수 있다.
+    대표적인 탐색 선택자에는 배열의 index번호를 사용해 선택하는 
+    '위치 탐색 선택자' 와 배열에 담겨진 요소 중 지정된 속성과 값으로 선택하는
+    '속성 탐색 선택자' 가 있다.
+
+    위치 탐색 선택자
+
+    한꺼번에 불러온 여러 요소 중 특정 요소만 필터링하여 선택하고
+    싶을때 사용하는 선택자이다. 이때 배열의 인덱스 번호를 사용할 수 있다.
+
+    1. :first / :last
+
+    first선택자는 선택된 요소 중 첫 번째 요소만 선택하고 
+    last선택자는 선택된 요소 중 마지막 요소만 선택한다.
+
+    [기본형]
+    $("요소:first");
+    $("요소").first();
+
+    $("요소:last");
+    $("요소").last();
+
+    2. :even / :odd
+
+    :even 선택자는 선택한 요소 중 홀수(인덱스 번호로는 짝수번째)요소만 선택하고
+    :odd 선택자는 선택한 요소 중 짝수(인덱스번호로는 홀수번째)요소만 선택한다.
+    $("요소:even");
+    $("요소").even();
+
+    $("요소:odd");
+    $("요소").odd();
+    
+    3. eq() / lt() / gt()
+
+    eq()선택자는 선택한 요소 중 지정한 인덱스 번호와 일치하는 요소를 선택한다.
+    lt()선택자는 선택한 요소 중 지정한 인덱스 번호보다 작은 인덱스 번호를 참조
+    하는 요소들만 선택한다(less than)
+    gt()선택자는 선택한 요소 중 지정한 인덱스 번호보다 큰 인덱스 번호를 참조
+    한느 요소들만 선택한다(greater than)
+
+    [기본형]
+    1. $("요소:eq(인덱스번호)")또는 $("요소").eq(인덱스번호)
+    1. $("요소:lt(인덱스번호)")
+    1. $("요소:gt(인덱스번호)")
+    -->
+    <ul id="menu">
+      <li>내용1</li>
+      <li>내용2</li>
+      <li>내용3</li>
+      <li>내용4</li>
+    </ul>
+    <ul id="menu2">
+      <li>내용1</li>
+      <li>내용2</li>
+      <li>내용3</li>
+      <li>내용4</li>
+      <li>내용5</li>
+    </ul>
+  </body>
+  <script>
+    // menu의 li중 첫번째 요소의 글자색을 변경한다
+    $("#menu li:first").css("color", "blue");
+    // menu의 li중 마지막 요소의 글자색을 변경한다
+    $("#menu li:last").css("color", "red");
+    // menu의 li중 홀수 요소의 글자색을 변경한다
+    $("#menu li:even").css("background-color", "skyblue");
+    // menu의 li중 짝수 요소의 글자색을 변경한다
+    $("#menu li:odd").css("background-color", "tomato");
+
+    //menu의 li중 인덱스 번호로 1번에 해당하는 요소에 배경색 지정하기
+    //이때 메서드 형태로 선택하기!
+    $("#menu2 li").eq(1).css("background-color", "orange");
+  </script>
+</html>

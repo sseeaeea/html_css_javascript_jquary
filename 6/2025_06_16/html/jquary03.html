@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>상위요소 선택자</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    상위요소 선택자
+
+    상위요소 선택자는 선택한 요소를 기준으로 모든 상위 요소를 선택하거나
+    상위 요소 중 특정 부모요소를 선택할때 사용한다.
+    parent()메서드는 선택한 요소를 감싸고 있는 부모 요소를 선택할때 사용하고
+    parents()메서드는 부모요소 중 특정 요소를 선택하고 싶을때 사용한다.
+    s가 붙는지 안붙는지에 따라 의미가 달라지므로 주의해야한다.
+
+    [기본형]
+    1. $("요소").parents() -> 선택한 요소의 모든 부모요소를 불러온다.
+    (body, html까지 포함)
+
+    2. $("요소").parents("부모요소")
+    -> 선택한 요소의 부모 요소 중 특정 부모태그를 선택한다.
+    -->
+    <h1 class="title">상위요소 선택자</h1>
+    <section>
+      <div>
+        <p class="txt1">내용1</p>
+      </div>
+    </section>
+    <section>
+      <div>
+        <p class="txt2">내용2</p>
+      </div>
+    </section>
+    <section>
+      <div>
+        <p class="txt3">내용3</p>
+      </div>
+    </section>
+  </body>
+  <script>
+    $(function () {
+      //.txt1을 감싸고있는 부모 요소에 css를 적용한다.
+      $(".txt1").parent().css({
+        color: "red",
+        backgroundColor: "skyblue",
+        border: "1px solid tomato",
+      });
+      $(".txt2").parents().css({
+        color: "yellow",
+        backgroundColor: "green",
+        border: "1px dotted black",
+      });
+      $(".txt2").parents("section").css({
+        backgroundColor: "white",
+      });
+      $(".txt3").closet("div").css({
+        color: "yellow",
+        border: "1px dotted black",
+      });
+    });
+  </script>
+</html>
