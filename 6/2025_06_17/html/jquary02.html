@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"
+      integrity="sha512-jKxp7JHEN6peEmzmg6a7XJBORNTB0ITD2Pi+6FUkc16PCaNAJX2ahZ1ejn1p1uY37Pxyirn/0OMNZbITbEg3jw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    속성 상태에 따른 탐색 선택자
+
+    선택한 요소 중 속성 상태에 따라 요소를 선택한다.
+    예를들면 해당 태그가 보이는지 안보이는지의 상태나 
+    체크상태인지 선택된 상태인지에 따라 요소를 선택하는 선택자이다.
+
+    [기본형]
+    $("요소:visible") : 선택한 요소 중 화면에 나타나있는 (보이는 상태)요소만 선택한다.
+    $("요소:hidden") : 선택한 요소 중 화면에 숨겨진 (안보이는 상태)요소만 선택한다.
+    $(":selected") : select태그에서 현재 선택된 옵션 요소만 선택한다.
+    $(":checked") : checkbox, radio버튼 요소 중 체크된 요소만 선택한다.
+    
+    input요소에 지정된 value값 받아오기
+
+    폼 요소에는 자바스크립트에서 데이터를 처리하기 위해 value속성을
+    사용하는 경우가 많다. 제이쿼리에서 value값을 받아올때에는 
+    .val()메서드를 사용한다.
+
+    [기본형]
+    $("요소").val();
+    -->
+    <div id="wrap">
+      <p>내용1</p>
+      <p class="hide">내용2</p>
+      <p>내용3</p>
+    </div>
+    <form action="#">
+      <p id="zone1">
+        <select name="course" id="course">
+          <option value="opt1">옵션1</option>
+          <option value="opt2" selected>옵션2</option>
+          <option value="opt3">옵션3</option>
+        </select>
+      </p>
+      <p id="zone2">
+        <input type="checkbox" name="hobby1" id="hobby1" value="독서" />독서
+        <input
+          type="checkbox"
+          name="hobby2"
+          id="hobby2"
+          value="러닝"
+          checked
+        />러닝
+        <input type="checkbox" name="hobby3" id="hobby3" value="수영" />수영
+      </p>
+      <p id="zone3">
+        <input type="radio" name="gender" value="male" />남성
+        <input type="radio" name="gender" value="female" checked />여성
+      </p>
+    </form>
+  </body>
+  <script>
+    $(function () {
+      //#wrap안에 있는 p태그중 보이는 요소 선택하기
+      $("#wrap p:visible").css({ color: "green" });
+      //#wrap안에 있는 p태그중 안보이는 요소 선택해서 보이게 만든 후 배경색 지정
+      $("#wrap p:hidden").css({
+        display: "block",
+        backgroundColor: "yellow",
+      });
+
+      // #zone1,2,3에서 selected되거나 checked되어있는 요소의 value값 받아오기
+      // #zone1안에 있는 후손 요소 중:selected속성이 있는 요소 가져오기
+      let s1 = $("#zone1 :selected").val();
+      let s2 = $("#zone2 :selected").val();
+      let s3 = $("#zone3 :selected").val();
+      let c1 = $("#zone1 :checked").val();
+      let c2 = $("#zone2 :checked").val();
+      let c3 = $("#zone3 :checked").val();
+      console.log(s1);
+      console.log(s2);
+      console.log(s3);
+      console.log(c1);
+      console.log(c2);
+      console.log(c3);
+    });
+  </script>
+</html>

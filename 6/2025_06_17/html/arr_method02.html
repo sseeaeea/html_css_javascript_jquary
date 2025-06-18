@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"
+      integrity="sha512-jKxp7JHEN6peEmzmg6a7XJBORNTB0ITD2Pi+6FUkc16PCaNAJX2ahZ1ejn1p1uY37Pxyirn/0OMNZbITbEg3jw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    2. $.map() / $.grep()메서드
+
+    $.map() / $.grep() 메서드는 배열에 저장된 데이터 수 만큼 메서드를 반복
+    실행한다. 그리고 메서드에서 반환된 데이터는 새 배열에 저장되고 그 배열 
+    객체를 반환한다. $.map()메서드는 메서드를 반복실행하며 인덱스 오름차순으로
+    배열의 데이터를 불러온다.
+    $.grep()메서드는 반환값이 true면 새 배열에 반환값을 저장하고
+    그 배열을 반환한다.
+
+    [기본형]
+    $.map(Array, function(매개변수1, 매개변수2){
+      return 데이터;
+    })
+
+    배열에 저장된 요소만큼 메서드를 반복실행하여 매개변수1,2에는
+    배열의 데이터와 인덱스값이 오름차순으로 대입된다. 반환된 데이터는
+    새 배열에 저장되고 새롭게 가공된 배열객체를 반환한다.
+
+    $.grep(Array, function(매개변수1, 매개변수2){
+      return true 또는 false;
+    })
+
+    배열에 저장된 요소만큼 메서드를 반복실행하며 매개변수 1,2에는
+    배열의 데이터와 인덱스값이 오름차순으로 대입된다. 반환된 데이터가
+    true면 인덱스 오름차순으로 데이터를 새 배열에 저장하고 새롭게 가공된
+    배열객체를 반환한다.
+    -->
+  </body>
+  <script>
+    $(function () {
+      let arr1 = [
+        {
+          area: "서울",
+          name: "김땡땡",
+        },
+        {
+          area: "부산",
+          name: "최땡땡",
+        },
+        {
+          area: "전주",
+          name: "이땡땡",
+        },
+      ];
+
+      let arr2 = $.map(arr1, function (a, b) {
+        console.log("a : " + a, +"b : " + b);
+
+        if (a.area === "서울") {
+          return a;
+        }
+      });
+    });
+  </script>
+</html>
