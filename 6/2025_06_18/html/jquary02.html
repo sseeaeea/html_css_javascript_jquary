@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>컨텐츠 탐색 선택자</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    2. find() / fillter() 선택자
+
+    find()선택자는 선택한 하위 요소 중에서 find()로 필터링한 요소만 선택한다.
+    fillter()선택자 선택한 요소 중에서 fillter()로 필터링한 요소만 선택한다.
+    즉, 두 선택자의 차이점은 필터링 대상이 선택 요소를 기준으로 '하위요소'인지
+    '선택한 요소'인지로 구분하는 점이다.
+
+    [기본형]
+
+    - $("요소").find("하위 요소중 필터링할 요소")
+    - $("요소").filter("선택한 요소중 필터링할 요소")
+    - $("요소").find(function(){ 코드 })
+    - $("요소").filter(function(){ 코드 })
+    -->
+    <div id="outer_con">
+      <h2>필터링 선택자</h2>
+      <section id="inner_1">
+        <h3>find() / filter()</h3>
+        <p class="text1">내용1</p>
+        <p class="text2">내용2</p>
+      </section>
+      <section id="inner_2">
+        <h3>filter(function(){})</h3>
+        <p>index 0</p>
+        <p>index 1</p>
+        <p>index 2</p>
+        <p>index 3</p>
+      </section>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      $("#inner_1").find(".text1").css({
+        color: "blue",
+        backgroundColor: "yellow",
+      });
+
+      $("#inner_1 p").filter(".text2").css({
+        color: "blue",
+        backgroundColor: "skyblue",
+      });
+
+      $("#inner_2 p")
+        .filter(function (idx, ele) {
+          return idx % 2 == 0;
+        })
+        .css("color", "red");
+    });
+  </script>
+</html>

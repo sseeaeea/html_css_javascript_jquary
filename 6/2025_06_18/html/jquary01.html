@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>컨텐츠 탐색 선택자</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    컨텐츠 탐색 선택자
+
+    컨텐츠 탐색 선택자는 요소 또는 속성의 포함 여부에 따라 특정 요소를
+    선택하는 선택자이다.
+
+    1. contains() / contents() / has() / not() / end()선택자
+
+    contains()선택자는 선택한 요소중 지정한 텍스트를 포함하는 요소를 선택한다.
+    contents()선택자는 선택한 요소의 하위요소 중 자손깊이의 텍스트와 태그 노드를 선택한다.
+    has()선택한 요소중 지정한 태그를 포함하는 요소만 선택한다.
+
+    [기본형]
+
+    - $("요소:contains(텍스트)");
+    - $("요소").contents();
+    - $("요소:has('자식요소')") 또는 $("요소").has("자식요소")
+    - $("요소:not('제외할요소')") 또는 $("요소").not("제외할 요소")
+    - $("요소").필터링선택자().end();
+    -->
+    <div id="outer_wrap">
+      <section id="inner_1">
+        <h3>contains, content, has</h3>
+        <p>
+          <span>내용1</span>
+        </p>
+        <p>
+          <span>내용2</span>
+        </p>
+        <p>
+          <strong>내용3</strong>
+        </p>
+      </section>
+      <section id="inner_2">
+        <h3>not, end</h3>
+        <p>내용4</p>
+        <p>내용5</p>
+        <p>내용6</p>
+      </section>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      // inner_1 p태그 중 내용2라는 텍스트를 포함하는 요소만 선택
+      $("#inner_1 p:contains(내용2)").css("color", "orange");
+      // #outer_wrap의 자손요소에 배경색을 지정한다
+      $("#outer_wrap").contents().css("background-color", "pink");
+      // #inner_1 p태그중 strong태그를 포함하는 요소만 선택
+      $("#inner_1 p:has(strong)").css("color", "blue");
+      // #inner_2 p태그중 첫번째 요소만 제외하고 css를 적용한다.
+      $("#inner_2 p").not(":first").css("border", "1px solid yellow");
+      // #inner_2 p태그중 마지막 요소를 선택 후 end선택자로 취소한다
+      // 결국 last()선택자가 취소되면서 더 앞에 있는 $("#inner_2 p")가 선택된다.
+      $("#inner_2 p").last().end().css("background-color", "orange");
+
+      // #inner_2 p태그중 인덱스번호 2번 요소를 선택후 end선택자로 취소한다.
+      // css는 글자컬러 변경하기
+      $("inner_2 p").eq(2).end().css("color", "green");
+    });
+  </script>
+</html>

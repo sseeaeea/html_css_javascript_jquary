@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      .red {
+        background-color: red;
+      }
+      .green {
+        background-color: green;
+      }
+      .yellow {
+        background-color: yellow;
+      }
+      .orange {
+        background-color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    3. addClass() / removeClass() / toggleClass() / hasClass() 
+
+    addClass()메서드는 선택한 요소에 새로운 클래스를 추가하거나 생성하고
+    removeClass()메서드는 선택한 요소의 지정한 클래스명을 삭제한다.
+    toggleClass()메서드는 선택한 요소에 지정한 클래스가 없으면 생성하고
+    있으면 삭제한다.
+    hasClass()메서드는 선택한 요소에 지정한 클래스명이 있으면 true를 
+    반환하고 없으면 false를 반환한다.
+
+    [기본형]
+    - $("요소").addClass("추가할 클래스명")
+    - $("요소").removeClass("지우려는 클래스명")
+    - $("요소").toggleClass("클래스명")
+    - $("요소").hasClass("클래스명")
+
+    4. val()메서드
+
+    선택한 폼 요소에 value속성값을 가져오거나 새 값을 적용할때 사용한다.
+
+    [기본형]
+    $("요소").val();
+    해당 폼요소의 value값을 가져온다.
+
+    $("요소").val("새값");
+    해당 폼요소의 value값을 새 값으로 적용한다.
+    -->
+    <p id="p1">내용1</p>
+    <p id="p2" class="red">내용2</p>
+    <p id="p3">내용3</p>
+    <p id="p4" class="green">내용4</p>
+    <p id="p5" class="yellow">내용5</p>
+    <p id="p6"></p>
+
+    <h3>val()</h3>
+    <form action="#" id="form1">
+      <div>
+        <label for="user_name">이름</label>
+        <input type="text" name="user_name" id="user_name" value="김땡땡" />
+      </div>
+      <div>
+        <label for="user_id">아이디</label>
+        <input type="text" name="user_id" id="user_id" value="hello" />
+      </div>
+    </form>
+  </body>
+  <script>
+    $(function () {
+      $("#p1").addClass("orange");
+
+      $("#p2").removeClass("red");
+
+      $("#p3").toggleClass("green");
+
+      $("#p4").toggleClass("green");
+      //#p5에 "yellow"라는 클래스명이 있는지 없는지 결과값을
+      //#p6에 텍스트로 표시하기
+
+      let result = $("#p5").hasClass("yellow");
+      console.log(result);
+
+      if (result === true) {
+        $("#p6").text("yellow 클래스명 있음");
+      } else if (result === false) {
+        $("#p6").text("yellow 클래스 없음");
+      }
+
+      // val();
+      let name = $("#user_name").val();
+      console.log(name);
+
+      $("#user_name").val("최땡땡");
+
+      // 아이디값을 받아와서 변수 user_id에  넣고 콘솔창으로 확인
+      // #user_id를 다른 아이디로 바꾸기
+
+      let user_id = $("#user_id").val();
+      console.log(user_id);
+
+      $("#user_id").val("장인호");
+
+      // #user_id의 기존에 설정했던 value값을 받아오기
+      let result1 = $("#user_id").prop("defaultValue");
+      console.log(result1);
+    });
+  </script>
+</html>
