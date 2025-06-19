@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        width: 100px;
+        height: 50px;
+        padding: 20px;
+        border: 5px solid blue;
+        margin-bottom: 20px;
+        background-color: aqua;
+        /* box-sizing: border-box; */
+        /* box-sizing여부에 따라 요소 넓이 높이 메서드의 값이 달라질수 있으므로
+        예상하는 값이 나오게 하려면 box-sizing에 유의해야 한다. */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    수치 조작 메서드
+
+    요소의 넓이, 높이, 위치 등의 수치를 조작하는 메서드이다
+
+    1. 요소 넓이 / 높이 메서드
+
+    요소 넓이 / 높이 메서드는 width(), height()메서드와
+    innerWidth(), innerHeight()메서드, outerWidth(), outerHeight()로
+    이루어져있다.
+
+    [기본형]
+    -$("요소").width() 또는 $("요소").height()
+    요소의 패딩이나 border영역을 제외한 순수한 넓이, 높이값을 반환한다.
+
+    -$("요소").innerWidth() 또는 $("요소").innerHeight()
+    요소의 padding영역까지를 포함한 넓이 높이값을 반환한다.
+
+    -$("요소").innerWidth(값) 또는 $("요소").innerHeight(값)
+    요소의 padding영역까지를 포함한 넓이 높이값을 새 값으로 적용한다.
+
+    -$("요소").outerWidth() 또는 $("요소").outerHegith()
+    요소의 border영역까지를 포함한 넓이 높이값을 반환한다.
+
+    -$("요소").outerWidth(값) 또는 $("요소").outerHegith(값)
+    요소의 border영역까지를 포함한 넓이 높이값을 새 값으로 적용한다.
+    -->
+    <div id="box1">박스1</div>
+    <div id="box2">박스2</div>
+  </body>
+  <script>
+    $(function () {
+      let w1 = $("#box1").width(); // 순수한 넓이
+      let w2 = $("#box1").innerWidth(); // padding까지의 넓이
+      let w3 = $("#box1").outerWidth(); // border까지의 넓이
+
+      console.log("box1의 순수한 넓이" + w1);
+      console.log("box1의 padding까지의 넓이" + w2);
+      console.log("box1의 border까지의 넓이" + w3);
+
+      //#box의 border까지의 넓이 높이를 100으로 변경
+      //수치는 숫자형 데이터로 표기해야한다. 문자형x
+      $("#box2").outerWidth(100).outerHeight(100);
+    });
+  </script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #box_wrap {
+        width: 300px;
+        height: 200px;
+        margin: 50px auto;
+        position: relative;
+        background-color: aqua;
+      }
+      .box {
+        width: 200px;
+        height: 100px;
+        background-color: black;
+        position: absolute;
+        top: 50px;
+        left: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    2. 요소 위치 메서드
+
+    요소 위치 메서드는 position(), offset()메서드가 있다.
+    position()메서드는 기준이 되는 요소에서 가로 세로로 떨어진 위치의
+    좌표값을 반환하거나 변경할때 사용한다.
+    offset()메서드는 문서(Document)를 기준으로 선택한 요소의 가로 세로로
+    떨어진 위치 좌표값을 반환하거나 변경할 때 사용한다.
+
+    [기본형]
+    $("요소").position().left / right / bottom
+    포지션 기준이 되는 요소를 기준으로 선택한 위치 좌표값을 반환함
+
+    $("요소").offset().left / top
+    문서를 기준으로 선택한 요소의 위치 좌표값을 반환한다.
+
+    요소 위치 메서드는 메서드 뒤에 좌표 프로퍼티를 붙여 사용한다.
+    프로퍼티는 뒤에 소괄호가 붙지 않는다.
+    -->
+    <div id="box_wrap">
+      <p class="box">box</p>
+    </div>
+    <p class="txt1">절대 top 위치값 : <span></span></p>
+    <p class="txt2">상대 top 위치값 : <span></span></p>
+    <p class="txt1">절대 left 위치값 : <span></span></p>
+    <p class="txt2">상대 left 위치값 : <span></span></p>
+  </body>
+  <script>
+    $(function () {
+      let txt1 = $(".txt1 span");
+      let txt2 = $(".txt2 span");
+      let box = $(".box");
+
+      let off_top = box.offset().top;
+      let pos_top = box.position().top;
+      let off_left = box.offset().left;
+      let pos_left = box.position.left;
+      $(".txt1 span").text(off_top);
+      $(".txt2 span").text(pos_top);
+      $(".txt1 span").text(off_left);
+      $(".txt2 span").text(pos_left);
+    });
+  </script>
+</html>

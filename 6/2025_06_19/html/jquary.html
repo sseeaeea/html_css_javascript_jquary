@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    4. prop()메서드
+
+    prop메서드는 선택한 폼 요소(select, checkbox, radio)의 상태 속성값을 가져오거나 
+    새롭게 설정할때 사용한다 그리고 선택한 요소의 태그명이나 노드타입 셀렉트박스의
+    선택된 옵션의 인덱스값을 받아올 수 있다.
+
+    [기본형]
+    -$("요소").prop("checked") 또는$("요소").prop("selected")
+    선택한 폼 요소가 체크상태인지 선택된 상태인지 알 수 있다. true또는 false값을 반환한다.
+
+    -$("요소").prop("checked", true 또는 false)
+    -$("요소").prop("selected", true 또는 false)
+    선택한 폼 요소의 체크상태나 선택된 상태를 true 또는 false로 바꿈
+    true면 체크또는 선택된 상태로 바꿔준다.
+
+    -$("요소").prop("tagName")
+    선택한 요소의 태그명을 가져온다.
+
+    -$("요소").prop("nodeType")
+    선택한 요소의 노드 타입을 가져온다.
+
+    -$("요소").prop("selectedIndex")
+    선택한 select태그의 option태그 중 선택된 옵션의 인덱스값을 가져옴.
+
+    -$("요소").prop("defaultValue")
+    폼 요소에 지정되어 있던 초기 value값을 받아온다.
+    -->
+    <h2>prop()메서드</h2>
+    <form action="#" id="form1">
+      <div>
+        <input type="checkbox" name="chk1" id="chk1" />
+        <label for="chk1">체크1</label>
+        <input type="checkbox" name="chk2" id="chk2" checked />
+        <label for="chk2">체크2</label>
+        <input type="checkbox" name="chk3" id="chk3" />
+        <label for="chk3">체크3</label>
+      </div>
+      <div>
+        <select name="se_1" id="se_1">
+          <option value="opt1">옵션1</option>
+          <option value="opt2">옵션2</option>
+          <option value="opt3">옵션3</option>
+        </select>
+      </div>
+    </form>
+  </body>
+  <script>
+    $(function () {
+      // #chk1이 checked상태인지 확인
+      let result1 = $("#chk1").prop("checked");
+      console.log(result1); // 체크된 상태가 아니므로 false
+
+      let result2 = $("#chk2").prop("checked");
+      console.log(result2);
+      //#chk3의 체크 상태를 체크된 상태로 바꿈
+      $("#chk3").prop("checked", true);
+      //#chk2의 체크 상태를 체크되지 않은 상태로 바꿈
+      $("#chk2").prop("checked", false);
+    });
+  </script>
+</html>

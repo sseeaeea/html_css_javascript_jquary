@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    2. append() / appendTo() / prepend() / prependTo()메서드
+
+    append() / appendTo()메서드는 선택한 요소의 마지막 자식 위치에 새 요소를 생성하고
+    prepend() / prependTo()메서드는 선택한 요소의 첫번째 자식 위치에 새 요소를 생성한다.
+    두 메서드들 모두 문법만 다르고 기능은 같으므로 편한 기본형을 사용하면 된다.
+
+    [기본형]
+    -$("요소").append("새요소")
+    -$("새요소").appendTo("요소")
+    선택한 요소 내의 마지막 위치에 자식 요소를 새로 생성하여 넣는다.
+    -$("요소").prepend("새요소")
+    -$("새요소").prependTo("요소")
+    선택한 요소 내의 첫번째 위치에 자식 요소를 새로 생성하여 넣는다.
+    -->
+    <ul id="list">
+      <li>리스트1</li>
+      <li>리스트2</li>
+    </ul>
+  </body>
+  <script>
+    $(function () {
+      //#list의 막내 위치에 자식으로 새로운 li를 추가 한다.
+      $("<li>appendTo</li>").appendTo("#list");
+      //#list의 첫번째 위치에 자식으로 새로운 li를 추가한다.
+      $("<li>prependTo</li>").prependTo("#list");
+    });
+  </script>
+</html>

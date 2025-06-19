@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    객체 편집 메서드
+
+    객체 편집 메서드는 선택한 요소를 복제하거나 새 요소를 생성하는 등
+    태그를 편집하는 메서드들로 이루어져 있다.
+
+    1. before() / insertBefore() / insert / insertAfter()
+
+    before() / insertBefore()메서드는 선택한 요소의 이전 위치에 새 요소를 생성하고
+    after() / insertAfter()메서드는 선택한 요소의 다음 위치에 새 요소를 생성할때 사용한다.
+
+    [기본형]
+    -$("요소").before("새 요소");
+    -$("새요소").insertBefore("요소");
+    선택한 요소에 이전 위치에 새 요소를 생성한다.
+
+    -$("요소").after("새 요소");
+    -$("새요소").insertAfter("요소");
+    선택한 요소의 다음 위치에 새 요소를 생성한다.
+    -->
+
+    <div id="wrap">
+      <p>내용1</p>
+      <p>내용2</p>
+      <p>내용3</p>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      //wrap안의 p태그중 인덱스번호 2번위치에 있는 p태그의 뒤에 새 요소를 생성한다.
+      $("#wrap p:eq(2)").after("<p>After</p>");
+      //wrap안의 p태그중 인덱스번호 1번위치에 있는 p태그의 뒤에 새 요소를 생성한다.
+      $("<p>insert</p>").insertAfter("#wrap p:eq(1)");
+      //before메서드로 p태그중 인덱스 1번 앞에 <p>Before</p>를 생성하기
+      $("#wrap p:eq(1)").before("<p>Before</p>");
+      //insertBefore메서드로 p태그중 인덱스 0번 앞에 <p>insertBefore</p>를 생성하기
+      $("<p>insertBefore</p>").insertBefore("#wrap p:eq(0)");
+    });
+  </script>
+</html>
