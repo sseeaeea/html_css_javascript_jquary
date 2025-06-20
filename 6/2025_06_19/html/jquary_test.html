@@ -39,8 +39,7 @@
       $(".wrap_1 p:eq(0)").text("내용1");
       //2. .wrap_1안에 있는 p태그중에서 class명이 active인 요소를 선택해서
       //클래스명 active를 삭제하고 on이라는 클래스명 추가하기
-      $(".wrap_1 p").removeClass("active");
-      $(".wrap_1 p").addClass("on");
+      $(".wrap_1 .active").removeClass("active").addClass("on");
       //3. .wrap_1안에 p태그중 인덱스번호 2번에 위치한 p태그안의 a태그를 선택해서
       //href속성을 https://www.naver.com으로 바꾸기
       $(".wrap_1 > p:eq(2) > a").attr({

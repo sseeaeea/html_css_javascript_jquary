@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    a, form태그에 클릭이벤트 적용 시 기본 이벤트 차단하기
+
+    a태그에 click이나 dbclick을 등록하면 클릭할때마다 a태그에 링크된
+    주소로 이동하는 문제가 발생한다. 이 문제를 해결하려면 a태그의 기본 이벤트를 차단해야 한다.
+    form요소중 button태그도 마찬가지로 기본 기능인 submit이 있기 때문에 이벤트 핸들러를 정상 작동시키려면
+    기본 이벤트를 잘 차단해주어야 한다.
+
+    [기본형]
+    1. return false를 이용하는 방식
+
+    $("a" 또는 "button").이벤트메서드(function(){
+       이벤트 핸들러코드 ~~~;
+
+       retunr false; -> 마지막줄에 쓰여져 있어야 함.
+    })
+
+    2. preventDefault()메서드를 이용하는 방식
+
+    $("a" 또는 "button").이벤트메서드(function(event){
+       event.preventDefault(); -> 첫줄에 먼저 써있어야함.
+
+       // prevent는 '막다'를 Default는 기본이벤트를 말한다.
+
+
+       이벤트 핸들러코드 ~~~;
+    })
+    -->
+    <div>
+      <a href="https://www.naver.com" class="btn1">버튼1</a>
+    </div>
+    <p class="text1">내용1</p>
+    <div>
+      <a href="https://www.naver.com" class="btn2">버튼2</a>
+    </div>
+    <p class="text2">내용2</p>
+    <div>
+      <button class="btn3">버튼3</button>
+    </div>
+    <p class="text3">내용3</p>
+  </body>
+  <script>
+    $(function () {
+      //버튼1은 기본이벤트 차단
+
+      $(".btn1").click(function (e) {
+        e.preventDefault(); // 기본이벤트를 차단
+
+        $(".text1").css("color", "pink");
+      });
+
+      //버튼2는 기본이벤트를 차단하지 않음
+      $(".btn2").click(function () {
+        $(".text2").css("color", "pink");
+      });
+
+      //버튼3의 기본이벤트를 차단하기 (return false이용)
+      $(".btn3").click(function () {
+        $(".text3").css("background-color", "red");
+
+        return false;
+      });
+    });
+  </script>
+</html>

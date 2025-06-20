@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .contents1,
+      .contents2 {
+        width: 300px;
+        height: 200px;
+        overflow: hidden;
+        margin: 20px 0;
+        padding: 0;
+        background-color: aqua;
+        transition: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    강제 이벤트
+
+    이벤트가 강제로 발생했다는 말은 '사용자에 의해' 이벤트가 발생한 것이 아니라
+    이벤트 핸들러에 의해 이벤트가 발생한 것을 말한다.
+    쉽게 말하자면 사용자의 동작과는 관계없이 이벤트 핸들러가 먼저 실행되어
+    사용자가 어떤 동작을 한 것처럼 만드는 것을 말한다.
+    예를 들어, 사용자가 검색창에 검색어를 입력하고 엔터를 눌렀을때
+    돋버기 버튼 안에 들어있는 click이벤트가 동작하게 만드려면 엔터를 치는 순간
+    click이벤트를 강제로 발생시켜야 한다. 이러한 경우에 주로 강제이벤트를 사용한다.
+
+    [기본형]
+    - $("요소").이벤트명();
+    - $("요소").trigger("이벤트명"); => 요소에 있는 여러 이벤트 중 특정이벤트를 강제 발생시키고 싶을때 사용
+
+    이벤트 제거 메서드
+
+    이벤트를 제거하는 메서드로는 off() 메서드가 있다.
+
+    [기본형]
+    $("이벤트가 동록된 요소").off("제거할 이벤트 종류")
+
+    -->
+    <div>
+      <button type="button" class="btn1">버튼1</button>
+    </div>
+    <div class="contents1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolore
+      praesentium quod corporis doloremque. Mollitia soluta voluptatum possimus.
+      Excepturi atque distinctio illum iusto eius sunt, dolores tempora earum
+      odio est!
+    </div>
+    <div>
+      <button type="button" class="btn2">버튼2</button>
+    </div>
+    <div class="contents2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolore
+      praesentium quod corporis doloremque. Mollitia soluta voluptatum possimus.
+      Excepturi atque distinctio illum iusto eius sunt, dolores tempora earum
+      odio est!
+    </div>
+  </body>
+  <script>
+    $(function () {
+      //단독이벤트 등록
+      $(".btn1").click(function () {
+        $(".contents1").css({ height: 0 });
+      });
+
+      //그룹이벤트 등록
+      $(".btn2").on({
+        "mouseover focus": function () {
+          $(".contents2").css("height", "0");
+        },
+        "mouseout blur": function () {
+          $(".contents2").css("height", "150px");
+        },
+      });
+
+      //click 강제발생 .content1이 강제로 발생됨.
+      $(".btn1").click();
+
+      //mouseover이벤트 강제 발생
+      $(".btn2").trigger("mouseover", "focus"); // 이벤트 종류에 따라 강제 발생
+
+      //이벤트 삭제
+      $(".btn1").off("click");
+
+      $(".btn2").off("blur");
+    });
+  </script>
+</html>

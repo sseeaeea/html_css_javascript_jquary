@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    제이쿼리 이벤트
+
+    이벤트란 브라우저 안에서 사용자가 행하는 모든 행위를 뜻한다
+    사용자가 어떤 행위를 했을때 동작하는 일련의 코드들을 '이벤트 핸들러'라고 하고
+    이벤트 핸들러를 만들기 위해서는 이벤트 등록 메서드를 알고 있어야 한다.
+
+    이벤트 등록 메서드
+
+    이벤트 등록 메서드에는 하나의 이벤트만 등록할 수 있는 '단독 이벤트 등록 메서드'와
+    여러개의 이벤트를 한 번에 등록할 수 있는 '그룹 이벤트 등록 메서드'가 있다.
+
+    [단독 이벤트 기본형]
+    $("요소").이벤트명(function(){
+       이벤트 핸들러 코드~;
+    });
+
+    [그룹 이벤트 기본형]
+    1. on이벤트 등록방식1
+    $("요소").on("이벤트종류1, 이벤트종류2...", function(){
+      이벤트 핸들러 코드~
+    })
+
+    2. on이벤트 등록방식2
+    $("요소").on({"이벤트종류1, 이벤트종류2...", function(){ 이벤트 핸들러 코드~}})
+
+    1,2이벤트 등록방식은 이벤트 종류의 갯수와는 상관없이 무조건 하나의 이벤트 핸들러가 동작한다.
+
+    3. on이벤트 등록방식3
+    $("요소").on({
+       "이벤트 종류1" : function(){ 이벤트 핸들러 },
+       "이벤트 종류2" : function(){ 이벤트 핸들러 },
+       "이벤트 종류3" : function(){ 이벤트 핸들러 },
+       ...
+    });
+    이벤트 종류에 따라 동작시킬 이벤트 핸들러가 다르다면 이 기본형을 사용한다.
+
+    이벤트 종류
+
+    [로딩이벤트]
+    - load() : 선택한 이미지 또는 프레임 요소에 연동된 소스의 로딩이 완료된 후 이벤트가 발생한다.
+    - ready() : 지정한 html문서 객체의 로딩이 완료되면 이벤트가 발생한다.
+    - error() : 이벤트 대상요소에 (보통은 html문서)에 오류가 발생하면 이벤트가 발생한다.
+    [마우스 이벤트]
+    - click() : 선택한 요소를 클릭했을때 이벤트가 발생한다.
+    - dbclick() : 선택한 요소를 더블클릭했을때 이벤트가 발생한다.
+    - mouseover() : 선택한 요소 위에 마우스가 올라가면 이벤트가 발생한다.
+    - mouseout() : 선택한 요소 위에 마우스가 벗어나면 이벤트가 발생한다.
+    - hover() : mouseover와 mouseout을 한꺼번에 지정할 수 있다. 단독이벤트로만 쓸 수 있다.
+    - mousedown() : 선택한 요소에서 마우스 버튼을 눌렀을때 이벤트가 발생한다.
+    - mouseup() : 선택한 요소에서 마우스 버튼을 눌렀다 땠을때 이벤트가 발생한다.
+    - mouseenter() : 선택한 요소의 범위에 마우스가 올라가면 이벤트가 발생한다.
+    - mouseleave() : 선택한 요소의 범위에 마우스가 벗어나면 이벤트가 발생한다.
+    - mousemove() : 선택한 요소의 범위에서 마우스 포인터를 움직일때마다 이벤트가 발생한다.
+    - scroll() : 가로, 세로 스크롤바를 움직일때마다 이벤트가 발생한다.
+    - wheel() : 마우스 휠을 움직일때마다 이벤트가 발생한다.
+    [포커스 이벤트]
+    - focus() : 선택한 요소에 포커스가 생성되었을때 이벤트를 발생하거나 선택한 요소에 강제로
+    포커스를 생성할때 사용한다.
+    - focusin() : 선택한 요소에 포커스가 생성되었을때 이벤트를 발생한다.
+    - focusout() : 포커스가 다른 요소로 이동되었을때 이벤트가 발생한다.
+    - blur() : 포커스가 다른 요소로 이동되었을때 이벤트가 발생하거나 선택한 요소에 강제로
+    포커스를 해제할때 사용한다.
+    - change() : 이벤트 대상의 입력값이 변경되고 포커스가 이동하면 이벤트가 발생한다.
+    그리고 강제로 change()이벤트를 발생시킬때에도 사용한다.
+    [키보드 이벤트]
+    - keypress() : 선택한 요소에서 키보드가 눌렸을때 이벤트가 발생한다. 문자 키와 숫자키의 코드값을
+    반환한다.
+    - keydown() : 선택한 요소에서 키보드를 눌렀을때 이벤트가 발생한다. 모든 키에 대한 코드값을 반환한다.
+    단 한/영키는 제외한다.
+    - keyup() : 선택한 요소에서 키보드를 눌렀다 땠을때 이벤트가 발생한다.
+    -->
+    <div>
+      <button type="button" class="btn1">버튼1</button>
+    </div>
+    <p>내용1</p>
+    <div>
+      <button type="button" class="btn2">버튼2</button>
+    </div>
+    <p>내용2</p>
+  </body>
+  <script>
+    $(function () {
+      // 단독이벤트
+      $(".btn1").click(function () {
+        //btn1의 부모의 바로 다음 동생
+        $(".btn1").parent().next().css("color", "blue");
+      });
+      // 그룹이벤트
+      $(".btn2").on({
+        "mouseover focus": function () {
+          $(".btn2").parent().next().css("color", "tomato");
+        },
+        "mouseout blur": function () {
+          $(".btn2").parent().next().css("color", "black");
+        },
+      });
+    });
+  </script>
+</html>

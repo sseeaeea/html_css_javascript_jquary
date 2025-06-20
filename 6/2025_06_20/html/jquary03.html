@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      $(function () {
+        //ready
+        $(document).ready(function () {
+          let img_height = $("img").height();
+          console.log("ready : ", img_height);
+        });
+        //load
+        $(document).load(function () {
+          let img_height = $("img").height();
+          console.log("load : ", img_height);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!-- 
+    .ready() / .road()이벤트
+
+    ready()이벤트는 사용자가 사이트 방문할때 요청한 html문서 객체의
+    로딩이 끝나면 이벤트를 발생시키고, load()이벤트는 html문서 객체의
+    로딩과 외부에 연동된 소스(ifame, img, video...)의 로딩이 끝나면 이벤트가
+    발생한다. 그래서 ready()이벤트의 실행속도가 조금 더 빠르며, 제이쿼리의 
+    기본 구조로서도 많이 사용된다.
+
+    [기본형]
+    - $(document).ready.(function(){ 제이쿼리 코드; });
+    - $(document).on("ready", function(){ 제이쿼리 코드; });
+
+    - $(window).load(function(){ 제이쿼리 코드; });
+    - $(window).on("load", function(){ 제이쿼리 코드; });
+
+    -->
+    <img
+      src="https://images.pexels.com/photos/28888994/pexels-photo-28888994.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+      alt=""
+    />
+  </body>
+</html>
