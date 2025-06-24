@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    change()
+    
+    change()이벤트는 form요소의 값을 새 값으로 바꾼다, 그리고
+    포커스가 다른 요소로 이동하면 이벤트를 발생시킨다.
+
+    [기본형]
+    $("요소").change(function(){ 코드 }) -> 단독이벤트
+    $("요소").on("change", function(){ 코드 }) -> 그룹이벤트
+    $("요소").change(); -> 강제이벤트
+    -->
+    <select name="rel_site" id="rel_site">
+      <option value="">사이트 선택</option>
+      <option value="www.google.con">구글</option>
+      <option value="www.naver.com">네이버</option>
+      <option value="www.daum.net">다음</option>
+    </select>
+    <p class="txt">0</p>
+  </body>
+  <script>
+    $(function () {
+      //rel_site의 선택된 옵션값이 바뀔때마다 이벤트가 실행됨
+      $("#rel_site").change(function () {
+        //.tex를 불러와서 이벤트가 실행중인 요소의 value값을 텍스트 메서드로 나타내기
+        let value = $(this).val();
+        $(".txt").text(value);
+      });
+    });
+  </script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    이벤트 제거 메서드
+
+    이벤트 제거 메서드를 사용하면 이전에 등록했던 이벤트를 제거할 수 있다.
+    이때 이벤트를 어떤 메서드로 등록했는지에 따라 제거 메서드도 달라지고,
+    이벤트를 등록했을때 일반 이벤트로 등록했는지, 라이브 이벤트로 등록했는지에
+    따라 기본형이 달라진다.
+
+    [기본형]
+    off() : on()메서드로 등록하거나 단독이벤트를 제거할때 사용한다.
+    unbind() : bind()메서드로 등록한 이벤트를 제거할때 사용한다.
+    undelegate() : delegate()메서드로 등록한 이벤트를 제거할때 사용한다.
+
+    [기본형]
+    1. off
+
+    기본이벤트 제거 방식
+    $("이벤트가 등록된 요소").off("제거할 이벤트 종류")
+
+    라이브 이벤트 제거 방식
+    $(document 또는 '상위요소').off("제거할 이벤트 종류", "이벤트가 등록된 요소")
+
+    2. bind()
+
+    기본 이벤트 제거 방식
+    $("이벤트가 등록된 요소").unbind("제거할 이벤트 종류")
+
+    3. undelegate()
+
+    기본 이벤트 제거 방식
+    $("이벤트가 등록된 요소").undelegate("제거할 이벤트 종류")
+
+    라이브 이벤트 제거 방식
+    $("document" 또는 "상위요소").undelegate("이벤트가 등록된 요소", "제거할 이벤트 종류")
+    -->
+
+    <div id="wrap">
+      <p>
+        <button class="btn1">버튼</button>
+      </p>
+    </div>
+
+    <p>
+      <button class="del1">버튼1 이벤트 해제</button>
+      <button class="del2">버튼2 이벤트 해제</button>
+    </p>
+  </body>
+  <script>
+    $(function () {
+      // 기본이벤트 등록방식으로 .btn1에 이벤트 추가하기 - on()
+      $(".btn1").on("click", function () {
+        event.preventDefault(); //기본이벤트 차단.
+
+        $(".btn1").after("<button class = 'btn2'>버튼2</button>");
+      });
+      // 라이브 이벤트 등록방식으로 btn2에 마우스를 올리면
+      // 새로 생성된 버튼입니다. 띄우기
+      $("#wrap").on("mouseover focus", ".btn2", function () {
+        alert("새로 생성된 버튼입니다.");
+      });
+
+      // 버튼1 이벤트 해제버튼을 누르면 버튼1에 있는 이벤트를 제거하기
+      // 버튼2 이벤트 해제버튼을 누르면 버튼1에 있는 이벤트를 제거하기
+    });
+  </script>
+</html>
