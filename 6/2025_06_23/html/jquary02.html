@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    mouseenter / mouseleave
+
+    mouseenter이벤트는 태상 요소의 경계 범위에 마우스가 들어오면
+    이벤트가 발생하고 mouseleave는 대상요소의 경계 범위에서 마우스가 벙서나면
+    이벤트가 발생한다.
+
+    mouseover와 mouseenter, mouseout과 mouseleave는 이벤트의
+    의미는 같지만, 대상 요소의 경계범위까지를 포함하는가 하지않는가의
+    차이가 있다.
+    mouseover와 mouseout의 경우 대상요소의 컨텐츠영역만큼만 이벤트
+    핸들러를 실행시키지만 
+    mouseenter와 mouseleave의 경우 대상요소들간의 사이 여백까지를
+    포함한 전체 영역에서 이벤트가 발생한다.
+
+    [기본형]
+    $("요소").mouseenter(function(){ 코드 }) -> 단독이벤트
+    $("요소").on("mouseleave", function(){ 코드 }) -> 그룹이벤트
+    $("요소").mouseenter(); -> 강제 이벤트
+
+    mouseleave는 메서드명만 다르고 기본형은 모두 같다
+    -->
+    <h3>mouseenter</h3>
+    <div class="box1">
+      <p><a href="#">내용1</a></p>
+      <p><a href="#">내용2</a></p>
+      <p><a href="#">내용3</a></p>
+    </div>
+
+    <h3>mouseleave</h3>
+    <div class="box2">
+      <p><a href="#">내용1</a></p>
+      <p><a href="#">내용2</a></p>
+      <p><a href="#">내용3</a></p>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      // mouseenter
+      $(".box1").on("mouseout", function () {
+        $(".box1").css("background-color", "skyblue");
+      });
+      // mouseleave
+      $(".box2").on("mouseleave", function () {
+        $(".box2").css("background-color", "");
+      });
+    });
+  </script>
+</html>

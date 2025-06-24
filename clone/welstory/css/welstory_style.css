@@ -10,7 +10,6 @@
   height: 100%;
   margin: 0 auto;
 }
-
 header {
   width: 100%;
   height: auto;
@@ -22,13 +21,15 @@ header {
   height: 100px;
   display: flex;
   justify-content: space-evenly;
-  gap: 300px;
+  gap: 130px;
+  box-sizing: border-box;
 }
 
 h1 {
   position: relative;
   width: fit-content;
   height: fit-content;
+  padding: 29px 0;
 }
 #gnb {
   width: fit-content;
@@ -47,9 +48,9 @@ h1 {
 #gnb > ul > li {
   height: 100%;
   width: 240px;
-  background-color: rgba(0, 0, 0, 0.5);
   transition: 0.5s;
   position: relative;
+  box-sizing: border-box;
 }
 #gnb > ul > li:first-child {
   left: 20px;
@@ -57,12 +58,13 @@ h1 {
 #gnb > ul > li:last-child {
   left: -20px;
 }
-#gnb > ul:hover > li:first-child {
+#gnb:hover > ul > li:first-child {
   left: 0;
 }
-#gnb > ul:hover > li:last-child {
+#gnb:hover > ul > li:last-child {
   left: 0;
 }
+
 .sub_menu {
   height: 0;
   overflow: hidden;
@@ -73,42 +75,47 @@ h1 {
   margin: 0 auto;
   flex-direction: column;
   border-left: 1px solid black;
+  position: relative;
+  z-index: 999;
 }
-
 #gnb_black {
   border-right: 1px solid black;
 }
 
 #gnb:hover .sub_menu {
   height: 300px;
+  z-index: 999;
 }
 
 .gnb_hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #222;
+  height: 100px;
   box-sizing: border-box;
 }
 
 .gnb_hover:hover {
-  color: orange;
-  border-bottom: 3px solid orange;
+  color: #ff5624;
+  border-bottom: 2px solid #ff5624;
+  position: relative;
+  z-index: 999;
 }
 
 #gnb::after {
   content: "";
   position: absolute;
-  width: 100%;
-  left: 0;
+  width: 1920px;
+  left: -59%;
   top: 100px;
   height: 1px;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0);
   transition: 0.5s;
+  background-color: #fff;
 }
 
 #gnb:hover::after {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(168, 68, 68);
 }
 
 #gnb:hover::after {

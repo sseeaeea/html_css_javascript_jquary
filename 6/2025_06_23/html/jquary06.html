@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 키보드 접근성 -->
+    <p>
+      <button id="btn1">버튼1</button>
+    </p>
+    <p>
+      <button id="btn2">버튼2</button>
+    </p>
+    <p class="text"></p>
+  </body>
+  <script>
+    $(function () {
+      // #btn1을 불러와서 마우스가 올라갔을때 data()메서드로 문구 나타내기
+      $("#btn1").data({ text: "javascript" }).on({
+        mouseover: overFnc,
+        mouseout: outFnc,
+      });
+
+      function overFnc() {
+        $(".text").text($(this).data("text"));
+      }
+      function outFnc() {
+        $(".text").text("");
+      }
+      // #btn2을 불러와서 마우스가 올라갔을때와 포커스가 되었을때
+      // data()메서드로 문구 나타내기
+      $("#btn2").data({ text: "javascipt" }).on({
+        "mouseover focus": overFnc,
+        "mouseover blur": outFnc,
+      });
+    });
+  </script>
+</html>

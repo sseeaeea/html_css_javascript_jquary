@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      .box1,
+      .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: aqua;
+        margin: 10px 0;
+        margin-bottom: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    mouseover / mouseout / hover
+
+    mouseover이벤트는 사용자가 대상 요소 위에 마우스를 올리면 이벤트가
+    실행되고, mouseout은 대상 요소에서 마우스가 벗어나면 이벤트를 실행시킨다.
+    hover는 선택한 요소에 대해 마우스가 올라갔을때와 벗어났을때 각각 이벤트를 
+    실행시키며, 단독 이벤트로만 사용가능하다.
+
+    [기본형]
+    1. mouseover
+
+    $.("요소").mouseover(function(){ 코드 }) -> 단독이벤트
+    $.("요소").on("mouseover", function(){ 코드 }) -> 그룹이벤트
+    $.("요소").mouseover(); -> 강제이벤트
+
+    2. mouseout
+
+    $.("요소").mouseout(function(){ 코드 }) -> 단독이벤트
+    $.("요소").on("mouseout", function(){ 코드 }) -> 그룹이벤트
+    $.("요소").mouseout(); -> 강제이벤트
+
+    3. hover
+    $("요소").hover(
+       function(){ 마우스가 올라갔을때 실행되는 코드 },
+       function(){ 마우스가 벗어났을때 실행되는 코드 }
+    );
+    -->
+    <div>
+      <button type="button" class="btn1">버튼1</button>
+    </div>
+    <div class="box1"></div>
+    <div>
+      <button type="button" class="btn2">버튼2</button>
+    </div>
+    <div class="box2"></div>
+  </body>
+  <script>
+    $(function () {
+      $(".btn1").on({
+        mouseover: function () {
+          $(".box1").css({
+            backgroundColor: "darkorange",
+            borderRadius: "50%",
+          });
+        },
+        mouseout: function () {
+          $(".box1").css({
+            backgroundColor: "", // css에서 기존모양으로 다시 되돌릴때 빈문자를 사용
+            borderRadius: "",
+          });
+        },
+      });
+      $(".btn2").hover(
+        function () {
+          $(".box2").css({ backgroundColor: "yellow" });
+        },
+        function () {
+          $(".box2").css({ backgroundColor: "" });
+        }
+      );
+    });
+  </script>
+</html>

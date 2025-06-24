@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <!-- 
+    mousemove
+
+    대상 요소 위에 또는 문서영역에서 마우스가 움직일때마다
+    이벤트가 발생하는 것을 말한다.
+
+    [기본형]
+    $("요소").mousemove(function(){ 코드 }); -> 단독이벤트
+    $("요소").on("mousemove", function(){ 코드 }); -> 그룹이벤트
+    $("요소").mousemove(); -> 강제이벤트
+    -->
+    <h3>mousemove</h3>
+    <p>x : <span class="pos_x">0</span>px</p>
+    <p>y : <span class="pos_y">0</span>px</p>
+  </body>
+  <script>
+    $(function () {
+      $(document).on("mousemove", function (e) {
+        console.log("x : " + e.pageX);
+        console.log("y : " + e.pageY);
+        //.pos_x에는 이벤트객체의 pagex읙 값을 텍스트로 쓰고
+        //.pos_y에는 이벤트객체의 pagey의 값을 텍스트로 쓰기
+        $(".pos_x").text(e.pageX);
+        $(".pos_y").text(e.pageY);
+      });
+    });
+  </script>
+</html>

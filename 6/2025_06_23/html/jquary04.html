@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        width: 5000px;
+        height: 10000px;
+      }
+      #wrap {
+        position: fixed;
+        left: 20px;
+        top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    이벤트 객체와 종류
+
+    사용자가 이벤트를 발생시킬때마다 이벤트 핸들러의 매개변수에는
+    이벤트 객체가 생성되며, 이벤트 객체에는 이벤트 타입에 맞는 다양한
+    정보를 제공하는 속성과 메서드가 포함되어 있다.
+    
+    [기본형]
+
+    $("이벤트 대상").이벤트명(function(이벤트객체 매개변수){
+
+       매개변수.프로퍼티명; => 이벤트 객체의 속성 사용하기
+       매개변수.메서드명(); => 이벤트 객체의 메서드 사용하기
+
+       [종류]
+       마우스이벤트
+
+       clientX: 마우스 포인터의 X좌표값을 반환한다.(스크롤이 이동한 거리는 무시)
+       clientY: 마우스 포인터의 Y좌표값을 반환한다.(스크롤이 이동한 거리는 무시)
+       pageX: 스크롤의 X축의 이동한 거리를 계산하여 마우스 포인터의 
+       X좌표값을 반환한다.
+       pageY: 스크롤의 Y축의 이동한 거리를 계산하여 마우스 포인터의 
+       Y좌표값을 반환한다.
+       screenX: 화면 모니터를 기준으로 마우스 포인터의 X좌표값을 반환한다.
+       screenY: 화면 모니터를 기준으로 마우스 포인터의 Y좌표값을 반환한다.
+       layerX: position을 적용한 요소를 기준으로 마우스포인터의 X좌표값을 반환한다.
+       layerY: position을 적용한 요소를 기준으로 마우스포인터의 Y좌표값을 반환한다.
+       button: 마우스 버튼의 종류에 따라 값을 반환(왼: 0, 휠: 1, 오른쪽: 2)
+
+       키보드 이벤트
+       keyCode: 키보드의 아스키코드값을 반환
+       altKey: 이벤트가 발생했을때 alt키가 눌렸으면 true, 아니면 false를 반환한다.
+       ctrlKey: 이벤트가 발생했을때 ctrl키가 눌렸으면 true, 아니면 false를 반환한다.
+       shiftKey: 이벤트가 발생했을때 shift키가 눌렸으면 true, 아니면 false를 반환한다.
+
+       전체이벤트(이벤트 종류랑 상관없이 쓸 수 있음)
+
+       target: 이벤트가 최초로 발생된 요소를 선택한다.
+       stopPropagation(): 이벤트의 전파(버블링)을 차단한다.
+       preventDefault(): 기본 이벤트를 차단한다.
+
+       scroll()이벤트
+
+       스크롤바가 움직일때마다 이벤트가 발생한다.
+
+       [기본형]
+       $(window 또는 "스크롤을 가지고 있는 요소").scroll(function(){ 코드 }) => 단독
+       $(window 또는 "스크롤을 가지고 있는 요소").on("scroll", function(){ 코드 }) => 그룹
+       $(window 또는 "스크롤을 가지고 있는 요소").scroll() => 그룹
+    })
+    -->
+    <div id="wrap">
+      <p>scrollTop : <span class="top">0</span>px</p>
+      <p>scrollLeft : <span class="left">0</span>px</p>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      $(window).scroll(function () {
+        let sc_top = $(this).scrollTop(); //window객체의 scroll의 top값을 받아옴.
+        let sc_left = $(this).scrollLeft(); //window객체의 scroll의 left값을 받아옴.
+
+        //top에 스크롤 top값을 텍스트로 나타내기
+        //left에 스크롤 left값을 텍스트로 나타내기
+        $(".top").text(sc_top);
+        $(".left").text(sc_left);
+      });
+    });
+  </script>
+</html>
