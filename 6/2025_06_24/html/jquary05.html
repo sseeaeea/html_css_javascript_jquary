@@ -61,20 +61,22 @@
   </body>
   <script>
     $(function () {
-      // 기본이벤트 등록방식으로 .btn1에 이벤트 추가하기 - on()
-      $(".btn1").on("click", function () {
-        event.preventDefault(); //기본이벤트 차단.
-
-        $(".btn1").after("<button class = 'btn2'>버튼2</button>");
+      $(".btn1").on("click", function (event) {
+        event.preventDefault();
+        $(".btn1").after("<button class='btn2'>버튼2</button>");
       });
-      // 라이브 이벤트 등록방식으로 btn2에 마우스를 올리면
-      // 새로 생성된 버튼입니다. 띄우기
+
       $("#wrap").on("mouseover focus", ".btn2", function () {
         alert("새로 생성된 버튼입니다.");
       });
 
-      // 버튼1 이벤트 해제버튼을 누르면 버튼1에 있는 이벤트를 제거하기
-      // 버튼2 이벤트 해제버튼을 누르면 버튼1에 있는 이벤트를 제거하기
+      $(".del1").on("click", function () {
+        $(".btn1").off("click"); //
+      });
+
+      $(".del2").on("click", function () {
+        $("#wrap").off("mouseover focus", ".btn2");
+      });
     });
   </script>
 </html>

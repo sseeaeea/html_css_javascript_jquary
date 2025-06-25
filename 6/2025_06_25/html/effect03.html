@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      p {
+        width: 120px;
+        text-align: center;
+      }
+      .txt1 {
+        background-color: aqua;
+      }
+      .txt2 {
+        background-color: rgb(31, 65, 116);
+      }
+      .txt3 {
+        background-color: rgb(113, 27, 121);
+      }
+      .txt4 {
+        background-color: rgb(204, 104, 38);
+      }
+      .txt5 {
+        background-color: rgb(189, 70, 76);
+      }
+    </style>
+  </head>
+  <body>
+    <p class="txt1">효과1</p>
+    <p class="txt2">효과2</p>
+    <button type="button" class="btn">50px씩 이동</button>
+    <p class="txt3">효과3</p>
+    <p class="txt4">효과4</p>
+    <p class="txt5">효과5</p>
+  </body>
+  <script>
+    $(function () {
+      //.txt1은 1초동안 300px이동
+      $(".txt1").animate({ marginLeft: "300px" }, 1000);
+      //.txt2는 1초를 기다린후 1초동안 300px이동
+      $(".txt2").delay(1000).animate({ marginLeft: "300px" }, 1000);
+      $(".btn").on("click", moveElement);
+
+      function moveElement() {
+        //txt3을 50px씩 0.5초동안 이동
+        $(".txt3").animate({ marginLeft: "+=50px" }, 500);
+        //.txt4의 첫번째 애니메이션을 제거한다
+        //버튼을 눌러도 애니메이션이 실행되지 않음.
+        $(".txt4").animate({ marginLeft: "+=50px" }, 500);
+        $(".txt4").stop();
+        //.txt5의 .stop(true, ture)메서드가 실행되면 버튼1을 눌러도
+        //애니메이션이 바로 종료시점으로 이동한다.
+        //첫번째 애니메이션을 제외하고는 대기중인 애니메이션이
+        //없으므로 clearQueue는 실행해도 아무런 효과가 나타나지 않는다.
+        $(".txt5").animate({ marginLeft: "+=50px" }, 500);
+        $(".txt5").stop(true, true);
+      }
+    });
+  </script>
+</html>

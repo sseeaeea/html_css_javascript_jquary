@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      .box {
+        width: 300px;
+        height: auto;
+        background-color: aqua;
+      }
+      .content {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    효과 메서드
+
+    선택한 요소를 역동적으로 숨겼다가 보이게 만드는 기능을 가진 메서드들로
+    이루어져 있다.
+
+    [종류]
+    1. 숨김효과
+    hide() : display : none 과 같이 요소를 숨긴다.
+    fadeOut() : 요소가 서서히 투명해지면서 사라진다.
+    slideUp() : 요소가 위로 접히면서 사라진다. (overflow.hidden과 동일효과)
+
+    2. 노출효과
+    show() : display : block과 같이 숨겨진 요소가 나타난다.
+    fadeIn() : 요소가 서서히 선명해지면서 나타난다.
+    slideDown() : 숨겨진 요소가 아래로 펼쳐지며 나타난다.
+
+    3. 숨김&노출효과
+    toggle() : hide(), show()효과를 적용한다.
+    fadeToggle() : fadeOut(), fadeIn()효과를 적용한다.
+    slideToggle() : slideUp(), slideDown()효과를 적용한다.
+
+    [기본형]
+    $("요소").효과메서드명(효과 소요시간, 가속도, 콜백함수)
+
+    효과 소요시간 : "show", "normal", "fast"값을 사용하거나 ms단위를 사용한다.
+    가속도 : "swing" 또는 "linear"값을 적용할 수 있다. 기본값은 "swing"
+    콜백함수 : 효과가 전부 끝나면 실행할 함수 생략 가능하다
+
+    [fadeTo기본형]
+    $("요소").fadeTo(효과 소요시간, 투명도, 콜백함수)
+    투명도 : 0~1사이의 값을 입력한다. 1에 가까울수록 선명하게 보임
+    -->
+    <p>
+      <button type="button" class="btn1">slideUp</button>
+      <button type="button" class="btn2">fadeIn</button>
+    </p>
+    <p>
+      <button type="button" class="btn3">toggleSlide</button>
+    </p>
+    <p>
+      <button type="button" class="btn4">fadeTo(0.3)</button>
+      <button type="button" class="btn5">fadeTo(1)</button>
+    </p>
+    <div class="box">
+      <div class="content">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam
+        veritatis veniam provident asperiores quaerat sunt voluptatem
+        consectetur, quas eveniet laboriosam voluptatibus possimus ratione
+        soluta qui enim deserunt incidunt consequatur ad.
+      </div>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      //.btn2 숨기기
+      $(".btn2").hide();
+      // .btn1을 클릭하면
+      $(".btn1").click(function () {
+        $(".box").slideUp(1000, "linear", function () {
+          //효과가 전부 끝나면 .btn1을 숨기고
+          $(".btn1").hide();
+          //숨겨놨던 .btn2를 다시 나타내기
+          $(".btn2").show();
+        });
+      });
+      //.btn2를 클릭하면
+      $(".btn2").click(function () {
+        $(".box").fadeIn(1000, "linear", function () {
+          //효과가 전부 끝나면 .btn2를 숨기고
+          $(".btn2").hide();
+          //숨겨놨던 .btn1을 다시 나타내기
+          $(".btn1").show();
+        });
+      });
+    });
+  </script>
+</html>

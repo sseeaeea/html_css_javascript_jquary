@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      button {
+        width: 100px;
+        height: 40px;
+        font-size: 20px;
+      }
+      .font_size {
+        font-size: 20px;
+      }
+      #wrap {
+        width: 500px;
+        height: auto;
+        padding: 10px;
+        background-color: tomato;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    글자 확대 & 축소 버튼 만들기
+
+    다음 조건을 만족하는 글자를 확대하고 축소하는 기능을만들어주세요
+
+    1. 글자 크기는 14px에서 시작하여 축소버튼(-)을 누르면 1px씩 감소하고
+    확대버튼(+)을 누르면 1px씩 증가해야 한다. (최소 8px 최대 20px까지)
+
+    2. 100%버튼을 누르면 다시 기본글자크기(14px)로 바뀌어야 한다.
+
+    3. 글자 크기에 맞춰서 div에 있는 본문 글자크기를 변경하기
+    -->
+    <p class="btn_wrap">
+      <button type="button" class="zoom_out">-</button>
+      <button type="button" class="origin_btn">100%</button>
+      <button type="button" class="zoom_in">+</button>
+    </p>
+    <!-- 버튼을 누르면 본문 font-size바뀌고 .font-size는 글자만 바꾸기 -->
+    <p class="font_size">14px</p>
+
+    <div id="wrap">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus blanditiis
+      voluptatum autem explicabo impedit cumque in cum, voluptatibus, eum nemo
+      architecto aliquid eveniet aliquam quam modi! Accusamus fuga atque minus?
+    </div>
+  </body>
+  <script>
+    $(function () {
+      // 기본글자크기
+      let base_font_size = 14;
+
+      $(".zoom_out").on("click", minus_px);
+      $(".origin_btn").on("click", origin_px);
+      $(".zoom_in").on("click", plus_px);
+
+      function minus_px() {
+        $("#wrap").css("font-size", "-=1px");
+        $(".font_size").text((base_font_size = base_font_size - 1) + "px");
+      }
+
+      function origin_px() {
+        $("#wrap").css("font-size", "14px");
+        $(".font_size").text((base_font_size = 14) + "px");
+      }
+
+      function plus_px() {
+        $("#wrap").css("font-size", "+=1px");
+        $(".font_size").text((base_font_size = base_font_size + 1) + "px");
+      }
+    });
+  </script>
+</html>
