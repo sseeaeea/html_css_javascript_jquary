@@ -202,3 +202,46 @@ main {
 .swiper-button-prev {
   background-color: #fff;
 }
+
+#deg {
+  transform: rotate(90deg);
+  display: inline-block;
+  width: 310px;
+  height: 20px;
+  margin-bottom: 70px;
+}
+
+#deg::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url(../image/arrow_up.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 2px;
+  left: -24px;
+}
+
+#slide3 > .button_wrap > .swiper-button-next > #deg {
+  margin-top: 40px;
+}
+
+.swiper-button-prev {
+  border-top-right-radius: 20px;
+}
+
+.swiper-button-next {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+#slide2 > .button_wrap > .swiper-button-prev > span {
+  text-align: left;
+}
+
+.swiper-button-prev > span {
+  margin-left: 10px;
+}

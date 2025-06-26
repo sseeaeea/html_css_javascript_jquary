@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>삼성웰스토리</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link rel="stylesheet" href="./css/welstory_style.css" />
     <link
       rel="stylesheet"
@@ -83,30 +89,44 @@
           <section id="sec1">
             <div class="swiper mySwiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <div class="swiper-slide" id="slide1">
                   <img
                     src="https://www.samsungwelstory.com/assets/image/main/main_visual_1.jpg"
                     alt=""
                   />
+                  <div class="button_wrap">
+                    <div class="swiper-button-next">
+                      <span id="deg">INNOVATION</span>
+                    </div>
+                    <div class="swiper-button-prev">
+                      <i class="xi-angle-left"></i>
+                      <span>FRONTRUNNER</span>
+                    </div>
+                  </div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide" id="slide2">
                   <img
                     src="https://www.samsungwelstory.com/assets/image/main/main_visual_2.jpg"
                     alt=""
                   />
+                  <div class="button_wrap">
+                    <div class="swiper-button-prev">
+                      <i class="xi-angle-left"></i>
+                      <span>SOLUTION & SERVICE</span>
+                    </div>
+                  </div>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide" id="slide3">
                   <img
                     src="https://www.samsungwelstory.com/assets/image/main/main_visual_0.jpg"
                     alt=""
                   />
+                  <div class="button_wrap">
+                    <div class="swiper-button-next">
+                      <span id="deg">SOLUTION&SERVICE</span>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="swiper-button-next">
-                <i class="xi-angle-right"></i>
-              </div>
-              <div class="swiper-button-prev">
-                <i class="xi-angle-left"></i>
               </div>
             </div>
           </section>

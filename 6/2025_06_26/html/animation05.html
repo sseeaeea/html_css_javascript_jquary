@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <style>
+    p {
+      width: 50px;
+      text-align: center;
+      background-color: sandybrown;
+    }
+    .txt2 {
+      background-color: aquamarine;
+    }
+  </style>
+  <body>
+    <!-- 
+    clearQueue()
+
+    clearQueue()메서드는 진행중인 첫 번째 애니메이션을 제외하고
+    queue에서 대기중인 모든 애니메이션 함수를 제거한다.
+
+    [기본형]
+    $("요소").clearQueue();
+    -->
+    <p class="txt1">내용1</p>
+    <p class="txt2">내용2</p>
+  </body>
+  <script>
+    $(function () {
+      //브라우저의 0점으로부터 100px위치 300px, 400px위치로 이동
+      $(".txt1")
+        .animate({ marginLeft: "100px" }, 1000)
+        .animate({ marginLeft: "300px" }, 1000)
+        .animate({ marginLeft: "400px" }, 1000);
+      $(".txt2")
+        .animate({ marginLeft: "100px" }, 1000)
+        .animate({ marginLeft: "300px" }, 1000)
+        .animate({ marginLeft: "400px" }, 1000);
+      $(".txt2").clearQueue();
+    });
+  </script>
+</html>

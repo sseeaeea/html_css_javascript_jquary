@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>애니메이션hw</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      button {
+        width: 100px;
+        height: 40px;
+      }
+      .wrap {
+        width: 1000px;
+        height: 50px;
+        background-color: aquamarine;
+        border: 1px solid #585858;
+      }
+      .txt {
+        width: fit-content;
+        height: 50px;
+        background-color: tomato;
+        line-height: 50px;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    animate()메서드를 사용하여 슬라이드 요소 만들기
+
+    go버튼을 누르면 요소가 오른쪽으로 이동하고 back버튼을 누르면 반대로 이동해야 한다.
+    요소는 지정한 슬라이드의 넓이를 넘어서는 벗어나면 안된다.
+
+    back버튼을 누를때마다 변수의 값이 1만큼 감소해야한다.또한 요소가 1/10만큼 뒤로가야 한다.
+    go버튼을 누를때마다 변수의 값이 1만큼 증가해야한다.또한 요소가 1/10만큼 앞으로가야 한다.
+    -->
+    <p class="btn_wrap">
+      <button type="button" class="back">back</button>
+      <button type="button" class="go">go</button>
+    </p>
+
+    <div class="wrap">
+      <p class="txt">move</p>
+    </div>
+  </body>
+  <script>
+    $(function () {
+      let txt = $(".txt"); // 이동할 요소
+      let count = 1; //버튼을 누를떄마다 증가하거나 감소할 변수
+      $(".back").on("click", back);
+      $(".go").on("click", go);
+      function back() {
+        $(".txt").animate({ marginLeft: "-=100px" });
+        count = count - 1;
+        if (count < 1) {
+          alert("1보다 아래로 갈 수 없습니다.");
+          $(".txt").animate({ marginLeft: "+=100px" });
+          count = count + 1;
+        }
+      }
+
+      function go() {
+        $(".txt").animate({ marginLeft: "+=100px" });
+        count = count + 1;
+        if (count > 11) {
+          alert("10보다 위로 갈 수 없습니다.");
+          $(".txt").animate({ marginLeft: "-=100px" });
+          count = count - 1;
+        }
+      }
+    });
+  </script>
+</html>

@@ -59,7 +59,6 @@
     $(function () {
       // 기본글자크기
       let base_font_size = 14;
-
       $(".zoom_out").on("click", minus_px);
       $(".origin_btn").on("click", origin_px);
       $(".zoom_in").on("click", plus_px);
@@ -67,6 +66,11 @@
       function minus_px() {
         $("#wrap").css("font-size", "-=1px");
         $(".font_size").text((base_font_size = base_font_size - 1) + "px");
+        if (base_font_size < 8) {
+          alert("fontsize가 8px미만이 될 수 없습니다.");
+          $("#wrap").css("font-size", "+=1px");
+          $(".font_size").text((base_font_size = base_font_size + 1) + "px");
+        }
       }
 
       function origin_px() {
@@ -77,6 +81,11 @@
       function plus_px() {
         $("#wrap").css("font-size", "+=1px");
         $(".font_size").text((base_font_size = base_font_size + 1) + "px");
+        if (base_font_size > 20) {
+          alert("fontsize가 20px를 초과할 수 없습니다.");
+          $("#wrap").css("font-size", "-=1px");
+          $(".font_size").text((base_font_size = base_font_size - 1) + "px");
+        }
       }
     });
   </script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"
+      integrity="sha512-jGsMH83oKe9asCpkOVkBnUrDDTp8wl+adkB2D+//JtlxO4SrLoJdhbOysIFQJloQFD+C4Fl1rMsQZF76JjV0eQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .txt {
+        width: 80px;
+        text-align: center;
+        background-color: aquamarine;
+        line-height: 40px;
+        border-radius: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    queue() / dequeue()
+
+    queue()메서드는 큐에 적용된 애니메이션 함수를 반환하거나
+    큐에 지정한 함수를 추가한다. queue()메서드를 실행하면
+    실행 이후에 대기중인 애니메이션이 모두 제거된다.
+    dequeue()메서드는 queue()메서드 이후에 적용된 애니메이션이
+    사라지지 않도록 연결해주는 메서드이다.
+
+    [기본형]
+    $("애니메이션이 적용된 요소").queue()
+    Queue에 대기중인 애니메이션을 배열로 담아 반환한다.
+
+    $("애니메이션이 적용된 요소")
+    -->
+    <p class="txt">moving</p>
+  </body>
+  <script>
+    $(function () {
+      $(".txt").animate({ marginLeft: "200px" }, 1000);
+      $(".txt")
+        .animate({ marginTop: "200px" }, 1000)
+        .queue(function () {
+          $(this).css({ backgroundColor: "orange", borderRadius: "50px" });
+          //밑에 있는 애니메이션이 삭제되지 않도록 다시 연결
+          $(this).dequeue();
+        });
+      $(".txt").animate({ marginLeft: "-50px" }, 1000);
+      $(".txt").animate({ marginTop: "0px" }, 1000);
+    });
+  </script>
+</html>
