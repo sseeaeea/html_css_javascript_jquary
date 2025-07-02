@@ -5,6 +5,9 @@
   font-size: 40px;
   color: black;
 }
+.xi-angle-left {
+  color: black;
+}
 .container {
   width: 100%;
   height: 100%;
@@ -162,6 +165,10 @@ main {
   padding-top: 100px;
 }
 /* swiper */
+.swiper-button-prev > span {
+  color: #222;
+}
+
 #sec1 {
   width: 1760px;
   height: 973px;
@@ -209,6 +216,7 @@ main {
   width: 310px;
   height: 20px;
   margin-bottom: 70px;
+  color: #222;
 }
 
 #deg::before {
@@ -231,11 +239,14 @@ main {
 
 .swiper-button-prev {
   border-top-right-radius: 20px;
+  color: #222;
+  z-index: 999;
 }
 
 .swiper-button-next {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+  z-index: 999;
 }
 
 #slide2 > .button_wrap > .swiper-button-prev > span {
@@ -244,4 +255,298 @@ main {
 
 .swiper-button-prev > span {
   margin-left: 10px;
+}
+
+/* 슬라이드 애니메이션 */
+.circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: scale(20);
+  display: none;
+}
+
+.animation {
+  animation: circle_quater 1s ease-in forwards;
+}
+
+@keyframes circle_quater {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+    border-radius: 100%;
+  }
+
+  100% {
+    width: 170px;
+    height: 170px;
+    border-radius: 100%;
+    background-color: #ff5624;
+    opacity: 0.3;
+    display: none;
+  }
+}
+/* 슬라이드 텍스트 애니메이션 */
+.circle_word {
+  position: absolute;
+  top: 15%;
+  left: 12%;
+  animation: circle_word_quater 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.circle_word1 {
+  position: absolute;
+  top: 15%;
+  left: 9.5%;
+  animation: circle_word_quater 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.circle_word > path {
+  transform-origin: right top;
+}
+@keyframes circle_word_quater {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+  }
+
+  100% {
+    width: 42px;
+    height: 42px;
+    opacity: 1;
+  }
+}
+
+#slide1 h2 {
+  position: absolute;
+  top: 22%;
+  left: 9.5%;
+  text-align: left;
+  font-size: 68px;
+  font-weight: 400;
+  line-height: 70px;
+  color: #fff;
+}
+
+#slide1 p {
+  position: absolute;
+  top: 50%;
+  left: 9.5%;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #fff;
+}
+
+#slide2 h2 {
+  position: absolute;
+  top: 22%;
+  left: 9.5%;
+  text-align: left;
+  font-size: 68px;
+  font-weight: 400;
+  line-height: 70px;
+  color: #fff;
+}
+
+#slide2 p {
+  position: absolute;
+  top: 50%;
+  left: 9.5%;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #fff;
+}
+
+#slide3 h2 {
+  position: absolute;
+  top: 22%;
+  left: 9.5%;
+  text-align: left;
+  font-size: 68px;
+  font-weight: 400;
+  line-height: 70px;
+  color: #fff;
+}
+
+#slide3 p {
+  position: absolute;
+  top: 50%;
+  left: 9.5%;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #fff;
+}
+
+.circle_text {
+  animation: circle_text_drop 1s ease forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+@keyframes circle_text_drop {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* prev, next버튼 애니메이션 */
+#next_animation {
+  animation: next_height 1s ease forwards;
+  opacity: 0;
+}
+
+#prev_animation {
+  animation: prev_wide 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+@keyframes next_height {
+  0% {
+    width: 74px;
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 74px;
+    height: 310px;
+    opacity: 1;
+  }
+}
+@keyframes prev_wide {
+  0% {
+    width: 0px;
+    height: 98px;
+    opacity: 0;
+  }
+  100% {
+    width: 190px;
+    height: 98px;
+    opacity: 1;
+  }
+}
+/* sec2 */
+#sec2 {
+  width: 1760px;
+  height: auto;
+  margin: 0 80px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  margin-top: 250px;
+  margin-bottom: 325px;
+}
+
+.sec2_left_con {
+  width: 45%;
+  text-align: center;
+  opacity: 0;
+}
+.sec2_left_con h2 {
+  font-size: 75px;
+  font-weight: 700;
+  color: #434243;
+}
+.sec2_right_con {
+  width: 755px;
+  height: 358px;
+  opacity: 0;
+}
+
+.sec2_right_con h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 35px;
+  margin-bottom: 4px;
+}
+
+.sec2_right_con h4 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #767575;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #434243;
+}
+
+.box {
+  margin-top: 30px;
+  display: flex;
+  gap: 100px;
+}
+
+.box em {
+  font-size: 80px;
+  font-weight: 600;
+  line-height: 80px;
+  color: #ff5624;
+}
+
+.box span {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25px;
+  margin-left: 7px;
+}
+
+.box p {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 25px;
+  margin-top: 40px;
+}
+
+/* sec3 */
+#sec3::before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 1000px;
+  background-image: url("https://www.samsungwelstory.com/assets/image/main/sec2_bg_300.jpg");
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -175px;
+  left: 0;
+  z-index: 0;
+}
+
+#sec3 {
+  position: relative;
+  z-index: 999;
+}
+.sec3_con {
+  width: 1760px;
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+}
+.sec3_left_box {
+  width: 650px;
+  height: 650px;
+  background-color: #fff;
+  margin-left: 230px;
+}
+
+.sec3_left_box h2 {
+  top: 50%;
+  left: 50%;
 }

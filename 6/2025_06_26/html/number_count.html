@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <em
+      class="num countstart"
+      data-count-target="110"
+      data-count-delay="600"
+      aria-label="110"
+      >0</em
+    >
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".countstart").each(function () {
+          const $this = $(this);
+          const target = parseInt($this.data("count-target"));
+          const delay = parseInt($this.data("count-delay"));
+          let count = 0;
+          const duration = 2000; // 총 시간
+          const step = Math.floor(duration / target);
+
+          setTimeout(function () {
+            const counter = setInterval(function () {
+              if (count < target) {
+                count++;
+                $this.text(count);
+              } else {
+                clearInterval(counter);
+              }
+            }, step);
+          }, delay);
+        });
+      });
+    </script>
+  </body>
+</html>
