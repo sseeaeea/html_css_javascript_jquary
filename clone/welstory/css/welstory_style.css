@@ -163,7 +163,7 @@ h1 {
 main {
   padding-top: 100px;
   border-bottom: 1px solid #434243;
-  padding-bottom: 350px;
+  padding-bottom: 200px;
   margin-bottom: 100px;
 }
 /* swiper */
@@ -996,7 +996,7 @@ main {
   display: flex;
   margin: 0 auto;
 }
-
+/* left */
 .sec6_left_box {
   width: 30%;
   height: 600px;
@@ -1004,15 +1004,24 @@ main {
   box-sizing: border-box;
   font-size: 75px;
   font-weight: 700;
+  opacity: 0;
 }
-
+/* right */
 .sec6_right_box {
   width: 70%;
   height: 600px;
   padding: 100px;
   box-sizing: border-box;
 }
-
+#sec6_right_con_border1 > a {
+  opacity: 0;
+}
+#sec6_right_con_border2 > a {
+  opacity: 0;
+}
+#sec6_right_con_border3 > a {
+  opacity: 0;
+}
 #sec6 h2 {
   width: 710px;
   font-size: 24px;

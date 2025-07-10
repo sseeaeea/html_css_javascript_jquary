@@ -118,11 +118,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
         start: "top 80%",
         end: "top 70%",
         onEnter: () => {
-          // 첫 번째 줄만 먼저 실행
           $(".sec4_up_con > a").css("background-size", "0% 1px, 100% 1px");
           $(".sec4_down_con > a").css("background-size", "100% 1px");
 
-          // 두 번째 줄 (top 선)은 500ms 후에 실행
           setTimeout(() => {
             $(".sec4_up_con > a").css("background-size", "100% 1px, 100% 1px");
           }, 500);
@@ -193,19 +191,28 @@ document.addEventListener("DOMContentLoaded", (event) => {
         },
       },
     })
-    .to(".sec4_container > h2", {
+    .to(".sec6_left_box", {
       y: -100,
       opacity: 1,
+      duration: 0.3,
       ease: "linear",
     })
-    .to(".sec4_up_con", {
+    .to("#sec6_right_con_border1 > a", {
       y: -100,
       opacity: 1,
+      duration: 0.3,
       ease: "linear",
     })
-    .to(".sec4_down_con", {
+    .to("#sec6_right_con_border2 > a", {
       y: -100,
       opacity: 1,
+      duration: 0.5,
+      ease: "linear",
+    })
+    .to("#sec6_right_con_border3 > a", {
+      y: -100,
+      opacity: 1,
+      duration: 0.7,
       ease: "linear",
     });
 });
